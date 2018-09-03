@@ -8,13 +8,15 @@ import android.widget.ArrayAdapter;
 
 public class Skin
 {
+    public String id;
     public String name;
     public String rarity;
     public String desc;
     public int iconID;
 
-    public Skin(String theName, String theRarity, int theIconID)
+    public Skin(String theId, String theName, String theRarity, int theIconID)
     {
+        id = theId;
         name = theName;
         rarity = theRarity;
         iconID = theIconID;
