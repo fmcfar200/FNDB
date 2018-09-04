@@ -2,7 +2,6 @@ package com.example.fraser.fndb;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.widget.ListView;
 
 import com.google.firebase.database.DataSnapshot;
@@ -32,9 +31,11 @@ public class SkinActivity extends AppCompatActivity {
         skins = new ArrayList<Skin>();
 
         final FirebaseDatabase database = FirebaseDatabase.getInstance();
-        DatabaseReference ref = database.getReference("SPSkin");
+        DatabaseReference dataRef = database.getReference("SPSkin");
 
-        ref.addValueEventListener(new ValueEventListener() {
+
+
+        dataRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
 
@@ -49,7 +50,6 @@ public class SkinActivity extends AppCompatActivity {
 
                     Skin theSkin = new Skin(id,name,rarity,iImageID);
                     skins.add(theSkin);
-
                 }
 
                 adapter = new SkinAdapter(getApplicationContext(), R.layout.simple_list_item,skins);

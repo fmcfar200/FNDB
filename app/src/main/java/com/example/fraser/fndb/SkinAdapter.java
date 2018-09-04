@@ -1,8 +1,11 @@
 package com.example.fraser.fndb;
 
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Typeface;
 import android.support.annotation.NonNull;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
@@ -12,6 +15,13 @@ import android.widget.Filterable;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.storage.FileDownloadTask;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
+
+import java.io.File;
+import java.io.IOException;
 import java.util.List;
 
 public class SkinAdapter extends BaseAdapter {
@@ -43,21 +53,37 @@ public class SkinAdapter extends BaseAdapter {
     }
 
     @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
+    public View getView(final int position, View convertView, ViewGroup parent) {
+
+        StorageReference imageStore = FirebaseStorage.getInstance().getReference();
+        final StorageReference imageRef = imageStore.child("test_images");
 
         View view = View.inflate(context,layoutId,null);
 
         Typeface font = Typeface.createFromAsset(context.getAssets(), "font/LuckiestGuy.ttf");
         TextView nameText = view.findViewById(R.id.itemHeading);
-        ImageView icon = view.findViewById(R.id.itemIcon);
+        final ImageView icon = view.findViewById(R.id.itemIcon);
 
         nameText.setText(data.get(position).name);
         nameText.setTypeface(font);
 
-        int id = context.getResources().getIdentifier("ic" + data.get(position).iconID,
-                "drawable", context.getPackageName());
+        try {
+            final StorageReference fileRef = imageRef.child("ic" + data.get(position).imageId + ".jpg");
+            final File localFile = File.createTempFile("ic" + data.get(position).imageId,".jpg");
 
-        icon.setImageResource(id);
+            fileRef.getFile(localFile).addOnSuccessListener(new OnSuccessListener<FileDownloadTask.TaskSnapshot>() {
+                @Override
+                public void onSuccess(FileDownloadTask.TaskSnapshot taskSnapshot) {
+                    Bitmap bmp = BitmapFactory.decodeFile(localFile.getAbsolutePath());
+                    icon.setImageBitmap(bmp);
+
+                }
+            });
+
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
         view.setTag(data.get(position));
         return view;
