@@ -16,8 +16,10 @@
             android:layout_width="wrap_content"
             android:layout_margin="10dp"
             android:layout_gravity="left"
+
             android:textSize="20dp"
             android:textColor="@color/colorWhite"
+            android:fontFamily="@font/luckiestguy"
             android:text="OMEGA"
             />
 
@@ -31,10 +33,13 @@
 
     <ImageView
         android:id="@+id/itemIcon"
-        android:layout_width="75dp"
-        android:layout_height="75dp"
-        android:padding="5dp"
+        android:layout_width="125dp"
+        android:layout_height="125dp"
+        android:layout_marginRight="25dp"
+
+        android:padding="15dp"
         android:layout_alignParentRight="true"
+        android:src="@drawable/image_placeholder"
 
         />
 

@@ -6,4 +6,11 @@
 
     <color name="colorWhite">#FFFFFF</color>
     <color name="colorYellow">#FFFF00</color>
+
+    <color name="colorOffRed">#ff0077</color>
+    <color name="colorGreen">#40f972</color>
+    <color name="colorPurple">#7800a8</color>
+    <color name="colorOrange">#f78c00</color>
+    <color name="colorPink">#f75ba4</color>
+
 </resources>

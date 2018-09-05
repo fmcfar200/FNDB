@@ -13,9 +13,9 @@ public class Skin
     public String name;
     public String rarity;
     public String desc;
-    public int imageId;
+    public String imageId;
 
-    public Skin(String theId, String theName, String theRarity, int theImageId)
+    public Skin(String theId, String theName, String theRarity, String theImageId)
     {
         id = theId;
         name = theName;
