@@ -7,7 +7,9 @@ import android.media.Image;
 import android.support.annotation.NonNull;
 import android.widget.ArrayAdapter;
 
-public class Skin
+import java.io.Serializable;
+
+public class Skin implements Serializable
 {
     public String id;
     public String name;

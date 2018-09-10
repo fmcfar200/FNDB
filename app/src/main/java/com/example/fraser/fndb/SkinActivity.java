@@ -1,9 +1,11 @@
 package com.example.fraser.fndb;
 
 import android.content.Intent;
+import android.os.Parcelable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 import android.support.v7.widget.Toolbar;
 
@@ -15,6 +17,7 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -89,42 +92,23 @@ public class SkinActivity extends AppCompatActivity {
             }
         });
 
-        /*
-        try
-        {
 
-            JSONObject jsonObject = new JSONObject(GetJSONLocal());
-            JSONArray jsonSkinsArray = jsonObject.getJSONArray("SPSkin");
-
-            for(int i = 0; i < jsonSkinsArray.length(); i++)
-            {
-                JSONObject s = jsonSkinsArray.getJSONObject(i);
-
-                String id = s.getString("id");
-                String name = s.getString("name");
-                String rarity = s.getString("rarity");
-                int imageID = s.getInt("imageId");
-
-                Skin theSkin = new Skin(id,name,rarity,imageID);
-                skins.add(theSkin);
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener(){
 
 
+            @Override
+            public void onItemClick(AdapterView<?> adapter, View view, int position, long id) {
+                Skin item = (Skin) adapter.getItemAtPosition(position);
+                StartFullDetail(item);
             }
+        });
+    }
 
-
-
-
-
-        }
-        catch (JSONException e)
-        {
-            e.printStackTrace();
-        }
-
-        */
-
-
-
+    private void StartFullDetail(Skin skin)
+    {
+        Intent intent = new Intent(getApplicationContext(),DetailActivity.class);
+        intent.putExtra("Skin", skin);
+        startActivity(intent);
     }
 
     public String GetJSONLocal()
