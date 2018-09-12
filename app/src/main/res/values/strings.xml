@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">FNDB</string>
+    <string name="nav_open">Open Nav Drawer</string>
+    <string name="nav_closed">Close Nav Drawer</string>
 </resources>

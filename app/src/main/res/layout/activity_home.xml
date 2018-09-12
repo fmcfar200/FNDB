@@ -1,90 +1,112 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawerLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".HomeActivity"
     android:background="@color/colorPrimary"
-    android:padding="5dp">
+    android:fitsSystemWindows="true"
+    tools:openDrawer="start">
 
 
-    <GridLayout
-        android:id="@+id/gridLayout1"
+    <android.support.design.widget.NavigationView
+        android:id="@+id/nav_view"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:fitsSystemWindows="true"
+        app:headerLayout="@layout/nav_header"
+        app:menu="@menu/drawermenu" />
+
+
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:columnCount="2"
-        android:orientation="horizontal"
-        android:rowCount="2"
-        android:layout_gravity="center"
-        android:paddingLeft="25dp"
-        android:layout_marginVertical="50dp"
+        android:layout_height="match_parent">
 
-        >
+        <include layout="@layout/app_toolbar"></include>
 
-        <Button
-            android:id="@+id/skinButton"
+
+        <GridLayout
+            android:id="@+id/gridL1ayout1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:columnCount="2"
+            android:orientation="horizontal"
+            android:rowCount="2"
             android:layout_gravity="center"
-            android:background="@drawable/image_placeholder"
+            android:paddingTop="25dp"
+            android:paddingLeft="25dp"
+            android:layout_marginVertical="50dp"
 
-            android:fontFamily="@font/luckiestguy"
-            android:textColor="@color/colorWhite"
-            android:textSize="20dp"
-            android:paddingTop="20dp"
-            android:gravity="center|top"
-            android:text="Skins"
-            />
+            >
 
-        <Button
-            android:id="@+id/weaponsButton"
-            android:layout_gravity="top|center"
-            android:background="@drawable/image_placeholder"
+            <Button
+                android:id="@+id/skinButton"
+                android:layout_gravity="center"
+                android:background="@drawable/image_placeholder"
 
-            android:fontFamily="@font/luckiestguy"
-            android:textColor="@color/colorWhite"
-            android:textSize="20dp"
-            android:paddingTop="20dp"
-            android:gravity="center|top"
-            android:text="Weapons"
-            android:backgroundTintMode="multiply"
-            android:backgroundTint="@color/colorPrimary"
-            />
+                android:fontFamily="@font/luckiestguy"
+                android:textColor="@color/colorWhite"
+                android:textSize="20dp"
+                android:paddingTop="20dp"
+                android:gravity="center|top"
+                android:text="Skins"
+                />
 
-        <Button
-            android:id="@+id/statsButton"
-            android:layout_gravity="top|center"
-            android:layout_marginTop="20dp"
-            android:background="@drawable/image_placeholder"
+            <Button
+                android:id="@+id/weaponsButton"
+                android:layout_gravity="top|center"
+                android:background="@drawable/image_placeholder"
 
-            android:fontFamily="@font/luckiestguy"
-            android:textColor="@color/colorWhite"
-            android:textSize="19dp"
-            android:paddingTop="20dp"
-            android:gravity="center|top"
-            android:text="Player Stats"
-            android:backgroundTintMode="multiply"
-            android:backgroundTint="@color/colorPrimary"
+                android:fontFamily="@font/luckiestguy"
+                android:textColor="@color/colorWhite"
+                android:textSize="20dp"
+                android:paddingTop="20dp"
+                android:gravity="center|top"
+                android:text="Weapons"
+                android:backgroundTintMode="multiply"
+                android:backgroundTint="@color/colorPrimary"
+                />
 
+            <Button
+                android:id="@+id/statsButton"
+                android:layout_gravity="top|center"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/image_placeholder"
 
-            />
-
-        <Button
-            android:id="@+id/collectionButton"
-            android:layout_gravity="top|center"
-            android:layout_marginTop="20dp"
-            android:background="@drawable/image_placeholder"
-
-            android:fontFamily="@font/luckiestguy"
-            android:textColor="@color/colorWhite"
-            android:textSize="20dp"
-            android:paddingTop="20dp"
-            android:gravity="center|top"
-            android:text="Collection"
-            android:backgroundTintMode="multiply"
-            android:backgroundTint="@color/colorPrimary"/>
+                android:fontFamily="@font/luckiestguy"
+                android:textColor="@color/colorWhite"
+                android:textSize="19dp"
+                android:paddingTop="20dp"
+                android:gravity="center|top"
+                android:text="Player Stats"
+                android:backgroundTintMode="multiply"
+                android:backgroundTint="@color/colorPrimary"
 
 
-    </GridLayout>
+                />
+
+            <Button
+                android:id="@+id/collectionButton"
+                android:layout_gravity="top|center"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/image_placeholder"
+
+                android:fontFamily="@font/luckiestguy"
+                android:textColor="@color/colorWhite"
+                android:textSize="20dp"
+                android:paddingTop="20dp"
+                android:gravity="center|top"
+                android:text="Collection"
+                android:backgroundTintMode="multiply"
+                android:backgroundTint="@color/colorPrimary"/>
 
 
-</LinearLayout>
+        </GridLayout>
+    </RelativeLayout>
+
+
+
+</android.support.v4.widget.DrawerLayout>
