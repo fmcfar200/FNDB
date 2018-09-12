@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@color/colorPrimary">
+
+    <android.support.v7.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/toolbarID"
+        android:background="@color/colorWhite"
+        app:titleTextColor="@color/colorPrimary"
+        >
+    </android.support.v7.widget.Toolbar>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <Button
+            android:id="@+id/s1Skins"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"
+            android:layout_marginBottom="25dp"
+            android:background="@color/colorOffRed"
+            android:fontFamily="@font/luckiestguy"
+            android:textColor="@color/colorWhite"
+            android:text="Season 1">
+
+        </Button>
+
+        <Button
+            android:id="@+id/s2Skins"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"
+            android:layout_marginBottom="25dp"
+
+            android:background="@color/colorGreen"
+            android:fontFamily="@font/luckiestguy"
+            android:textColor="@color/colorWhite"
+
+            android:text="Season 2">
+
+        </Button>
+        <Button
+            android:id="@+id/s3Skins"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"
+            android:layout_marginBottom="25dp"
+
+            android:background="@color/colorPurple"
+            android:fontFamily="@font/luckiestguy"
+            android:textColor="@color/colorWhite"
+            android:text="Season 3">
+
+        </Button>
+        <Button
+            android:id="@+id/s4Skins"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"
+            android:layout_marginBottom="25dp"
+
+            android:background="@color/colorOrange"
+            android:fontFamily="@font/luckiestguy"
+            android:textColor="@color/colorWhite"
+            android:text="Season 4">
+
+        </Button>
+        <Button
+            android:id="@+id/s5Skins"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"
+            android:layout_marginBottom="25dp"
+
+            android:background="@color/colorPink"
+            android:fontFamily="@font/luckiestguy"
+            android:textColor="@color/colorWhite"
+            android:text="Season 5">
+
+        </Button>
+
+    </LinearLayout>
+
+
+
+
+</RelativeLayout>

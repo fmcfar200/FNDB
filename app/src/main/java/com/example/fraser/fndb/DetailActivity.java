@@ -8,8 +8,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.support.v7.widget.Toolbar;
 
-import org.w3c.dom.Text;
-
 public class DetailActivity extends AppCompatActivity {
 
     Toolbar toolbar;
@@ -42,7 +40,7 @@ public class DetailActivity extends AppCompatActivity {
             toolbar.setNavigationOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    startActivity(new Intent(getApplicationContext(), HomeActivity.class));
+                    startActivity(new Intent(getApplicationContext(), SeasonSelectActivity.class));
                     finish();
                 }
             });
