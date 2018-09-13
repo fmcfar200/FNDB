@@ -117,6 +117,24 @@ public class SeasonSelectActivity extends AppCompatActivity implements View.OnCl
             searchType = SearchType.UNCOMMON;
             StartListActivity(season,searchType);
         }
+        else if(v == rareButton)
+        {
+            season = 0;
+            searchType = SearchType.RARE;
+            StartListActivity(season,searchType);
+        }
+        else if(v == epicButton)
+        {
+            season = 0;
+            searchType = SearchType.EPIC;
+            StartListActivity(season,searchType);
+        }
+        else if(v == legendaryButton)
+        {
+            season = 0;
+            searchType = SearchType.LEGENDARY;
+            StartListActivity(season,searchType);
+        }
 
     }
 

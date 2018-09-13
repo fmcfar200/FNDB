@@ -27,6 +27,7 @@ public class DetailActivity extends AppCompatActivity {
     TextView descText;
 
     int seasonNo;
+    SeasonSelectActivity.SearchType searchType;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +42,7 @@ public class DetailActivity extends AppCompatActivity {
         Bundle extras = getIntent().getExtras();
         Skin skin = (Skin) extras.get("Skin");
         seasonNo = (int) extras.get("seasonNo");
+        searchType = (SeasonSelectActivity.SearchType) extras.get("searchType");
 
         toolbar = findViewById(R.id.toolbarID);
         setSupportActionBar(toolbar);
@@ -61,7 +63,15 @@ public class DetailActivity extends AppCompatActivity {
         nameText.setText(skin.name);
 
         StorageReference imageStore = FirebaseStorage.getInstance().getReference();
-        final StorageReference imageRef = imageStore.child("s" + seasonNo + "_images");
+        final StorageReference imageRef;
+        if (searchType == SeasonSelectActivity.SearchType.BP)
+        {
+            imageRef = imageStore.child("s" + seasonNo + "_images");
+        }
+        else
+        {
+            imageRef = imageStore.child(searchType.toString().toLowerCase() + "_images");
+        }
 
         try {
             final StorageReference fileRef = imageRef.child(skin.imageId + ".JPG");

@@ -48,7 +48,11 @@ public class SkinActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         if (getSupportActionBar() != null)
         {
-            getSupportActionBar().setTitle("Battle Pass S" + seasonNo);
+            if (searchType == SeasonSelectActivity.SearchType.BP)
+            {
+                getSupportActionBar().setTitle("Battle Pass S" + seasonNo);
+
+            }
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
             getSupportActionBar().setDisplayShowHomeEnabled(true);
 
@@ -124,6 +128,7 @@ public class SkinActivity extends AppCompatActivity {
         Intent intent = new Intent(getApplicationContext(),DetailActivity.class);
         intent.putExtra("Skin", skin);
         intent.putExtra("seasonNo",seasonNo);
+        intent.putExtra("searchType", searchType);
         startActivity(intent);
     }
 
