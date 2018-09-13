@@ -1,12 +1,22 @@
 package com.example.fraser.fndb;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.support.v7.widget.Toolbar;
+
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.storage.FileDownloadTask;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
+
+import java.io.File;
+import java.io.IOException;
 
 public class DetailActivity extends AppCompatActivity {
 
@@ -15,6 +25,8 @@ public class DetailActivity extends AppCompatActivity {
     TextView nameText;
     TextView costText;
     TextView descText;
+
+    int seasonNo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,11 +40,11 @@ public class DetailActivity extends AppCompatActivity {
 
         Bundle extras = getIntent().getExtras();
         Skin skin = (Skin) extras.get("Skin");
+        seasonNo = (int) extras.get("seasonNo");
 
         toolbar = findViewById(R.id.toolbarID);
         setSupportActionBar(toolbar);
-        if (getSupportActionBar() != null)
-        {
+        if (getSupportActionBar() != null) {
             getSupportActionBar().setTitle(skin.name);
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
             getSupportActionBar().setDisplayShowHomeEnabled(true);
@@ -40,16 +52,33 @@ public class DetailActivity extends AppCompatActivity {
             toolbar.setNavigationOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    startActivity(new Intent(getApplicationContext(), SeasonSelectActivity.class));
                     finish();
                 }
             });
         }
 
 
-
         nameText.setText(skin.name);
 
+        StorageReference imageStore = FirebaseStorage.getInstance().getReference();
+        final StorageReference imageRef = imageStore.child("s" + seasonNo + "_images");
 
+        try {
+            final StorageReference fileRef = imageRef.child(skin.imageId + ".JPG");
+            final File localFile = File.createTempFile(skin.imageId.toString(), ".jpg");
+
+            fileRef.getFile(localFile).addOnSuccessListener(new OnSuccessListener<FileDownloadTask.TaskSnapshot>() {
+                @Override
+                public void onSuccess(FileDownloadTask.TaskSnapshot taskSnapshot) {
+                    Bitmap bmp = BitmapFactory.decodeFile(localFile.getAbsolutePath());
+                    imageView.setImageBitmap(bmp);
+
+                }
+            });
+
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }

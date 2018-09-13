@@ -3,6 +3,7 @@ package com.example.fraser.fndb;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
@@ -25,6 +26,8 @@ public class SkinActivity extends AppCompatActivity {
     SkinAdapter adapter;
     List<Skin> skins;
 
+    SeasonSelectActivity.SearchType searchType;
+    int seasonNo;
     Toolbar toolbar;
 
     @Override
@@ -37,7 +40,9 @@ public class SkinActivity extends AppCompatActivity {
         skins = new ArrayList<Skin>();
 
         Bundle extras = getIntent().getExtras();
-        final int seasonNo = extras.getInt("seasonNo");
+        seasonNo = extras.getInt("seasonNo");
+        searchType = (SeasonSelectActivity.SearchType) extras.get("type");
+
 
         toolbar = findViewById(R.id.toolbarID);
         setSupportActionBar(toolbar);
@@ -50,7 +55,6 @@ public class SkinActivity extends AppCompatActivity {
             toolbar.setNavigationOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    startActivity(new Intent(getApplicationContext(), SeasonSelectActivity.class));
                     finish();
                 }
             });
@@ -59,7 +63,20 @@ public class SkinActivity extends AppCompatActivity {
 
 
         final FirebaseDatabase database = FirebaseDatabase.getInstance();
-        DatabaseReference dataRef = database.getReference("SPSkin").child("SP_S"+ seasonNo +"_Skins");
+        DatabaseReference dataRef;
+        if (searchType == SeasonSelectActivity.SearchType.BP)
+        {
+            dataRef = database.getReference("SPSkin").child("SP_S"+ seasonNo +"_Skins");
+        }
+        else if (searchType == SeasonSelectActivity.SearchType.UNCOMMON)
+        {
+            dataRef = database.getReference("ISSkin").child(searchType.toString().toLowerCase() + "_Skins");
+        }
+        else
+        {
+            dataRef =  database.getReference("SPSkin").child("SP_S"+ seasonNo +"_Skins");
+
+        }
 
         dataRef.addValueEventListener(new ValueEventListener() {
             @Override
@@ -78,7 +95,7 @@ public class SkinActivity extends AppCompatActivity {
                     skins.add(theSkin);
                 }
 
-                adapter = new SkinAdapter(getApplicationContext(), R.layout.simple_list_item,skins, seasonNo);
+                adapter = new SkinAdapter(getApplicationContext(), R.layout.simple_list_item,skins, seasonNo, searchType);
                 listView.setAdapter(adapter);
 
 
@@ -106,6 +123,7 @@ public class SkinActivity extends AppCompatActivity {
     {
         Intent intent = new Intent(getApplicationContext(),DetailActivity.class);
         intent.putExtra("Skin", skin);
+        intent.putExtra("seasonNo",seasonNo);
         startActivity(intent);
     }
 
