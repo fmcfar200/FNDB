@@ -13,6 +13,7 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
 import java.io.IOException;
@@ -67,7 +68,8 @@ public class SkinActivity extends AppCompatActivity {
 
 
         final FirebaseDatabase database = FirebaseDatabase.getInstance();
-        DatabaseReference dataRef;
+
+        final DatabaseReference dataRef;
         if (searchType == SeasonSelectActivity.SearchType.BP)
         {
             dataRef = database.getReference("SPSkin").child("SP_S"+ seasonNo +"_Skins");
@@ -128,7 +130,7 @@ public class SkinActivity extends AppCompatActivity {
         Intent intent = new Intent(getApplicationContext(),DetailActivity.class);
         intent.putExtra("Skin", skin);
         intent.putExtra("seasonNo",seasonNo);
-        intent.putExtra("searchType", searchType);
+        intent.putExtra("type", searchType);
         startActivity(intent);
     }
 

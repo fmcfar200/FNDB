@@ -78,9 +78,22 @@ public class SkinAdapter extends BaseAdapter {
         View view = View.inflate(context,layoutId,null);
 
         TextView nameText = view.findViewById(R.id.itemHeading);
+        ImageView currencyIcon = view.findViewById(R.id.currencyIcon);
+        TextView costText = view.findViewById(R.id.costText);
         final ImageView icon = view.findViewById(R.id.itemIcon);
 
         nameText.setText(data.get(position).name);
+        if(type == SeasonSelectActivity.SearchType.BP)
+        {
+            currencyIcon.setImageResource(R.drawable.ic_battlepass);
+            costText.setText("");
+        }
+        else
+        {
+            currencyIcon.setImageResource(R.drawable.ic_vbucks);
+            costText.setText(data.get(position).cost);
+
+        }
 
 
         try {

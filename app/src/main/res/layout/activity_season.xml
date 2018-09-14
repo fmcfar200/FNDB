@@ -28,6 +28,60 @@
             android:gravity="center">
 
             <Button
+                android:id="@+id/battlePassButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="25dp"
+                android:layout_marginRight="25dp"
+                android:layout_marginBottom="25dp"
+
+                android:background="@color/legendaryColor"
+                android:drawableRight="@mipmap/ic_battlepass_foreground"
+                android:fontFamily="@font/luckiestguy"
+                android:textColor="@color/colorWhite"
+                android:textSize="25dp"
+                android:text="Battle Pass">
+            </Button>
+
+            <Button
+                android:id="@+id/shopSkins"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="25dp"
+                android:layout_marginRight="25dp"
+                android:layout_marginBottom="25dp"
+
+                android:background="@color/legendaryColor"
+                android:fontFamily="@font/luckiestguy"
+                android:textColor="@color/colorWhite"
+                android:textSize="25dp"
+                android:drawableRight="@mipmap/ic_vbucks_foreground"
+                android:text="Item Shop Skins">
+            </Button>
+            <Button
+                android:id="@+id/miscSkins"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="25dp"
+                android:layout_marginRight="25dp"
+                android:layout_marginBottom="25dp"
+
+                android:background="@color/legendaryColor"
+                android:fontFamily="@font/luckiestguy"
+                android:textColor="@color/colorWhite"
+                android:textSize="25dp"
+                android:text="Miscellaneous Skins">
+            </Button>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <Button
                 android:id="@+id/s1Skins"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -49,7 +103,7 @@
                 android:layout_marginRight="25dp"
                 android:layout_marginBottom="25dp"
 
-                android:background="@color/colorGreen"
+                android:background="@color/uncommonColor"
                 android:fontFamily="@font/luckiestguy"
                 android:textColor="@color/colorWhite"
 
@@ -64,7 +118,7 @@
                 android:layout_marginRight="25dp"
                 android:layout_marginBottom="25dp"
 
-                android:background="@color/colorPurple"
+                android:background="@color/rareColor"
                 android:fontFamily="@font/luckiestguy"
                 android:textColor="@color/colorWhite"
                 android:text="Season 3">
@@ -78,7 +132,7 @@
                 android:layout_marginRight="25dp"
                 android:layout_marginBottom="25dp"
 
-                android:background="@color/colorOrange"
+                android:background="@color/epicColor"
                 android:fontFamily="@font/luckiestguy"
                 android:textColor="@color/colorWhite"
                 android:text="Season 4">
@@ -92,39 +146,12 @@
                 android:layout_marginRight="25dp"
                 android:layout_marginBottom="25dp"
 
-                android:background="@color/colorPink"
+                android:background="@color/legendaryColor"
                 android:fontFamily="@font/luckiestguy"
                 android:textColor="@color/colorWhite"
                 android:text="Season 5">
 
             </Button>
-            <Button
-                android:id="@+id/shopSkins"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="25dp"
-                android:layout_marginRight="25dp"
-                android:layout_marginBottom="25dp"
-
-                android:background="@color/colorPink"
-                android:fontFamily="@font/luckiestguy"
-                android:textColor="@color/colorWhite"
-                android:text="Item Shop Skins">
-            </Button>
-            <Button
-                android:id="@+id/miscSkins"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="25dp"
-                android:layout_marginRight="25dp"
-                android:layout_marginBottom="25dp"
-
-                android:background="@color/colorPink"
-                android:fontFamily="@font/luckiestguy"
-                android:textColor="@color/colorWhite"
-                android:text="Miscellaneous Skins">
-            </Button>
-
         </LinearLayout>
 
         <LinearLayout
@@ -140,7 +167,7 @@
                 android:layout_marginLeft="25dp"
                 android:layout_marginRight="25dp"
                 android:layout_marginBottom="25dp"
-                android:background="@color/colorGreen"
+                android:background="@color/uncommonColor"
                 android:fontFamily="@font/luckiestguy"
                 android:textColor="@color/colorWhite"
                 android:text="Uncommon">
@@ -155,7 +182,7 @@
                 android:layout_marginRight="25dp"
                 android:layout_marginBottom="25dp"
 
-                android:background="@color/colorPrimary"
+                android:background="@color/rareColor"
                 android:fontFamily="@font/luckiestguy"
                 android:textColor="@color/colorWhite"
 
@@ -170,7 +197,7 @@
                 android:layout_marginRight="25dp"
                 android:layout_marginBottom="25dp"
 
-                android:background="@color/colorPurple"
+                android:background="@color/epicColor"
                 android:fontFamily="@font/luckiestguy"
                 android:textColor="@color/colorWhite"
                 android:text="Epic">
