@@ -8,7 +8,7 @@
     tools:context=".HomeActivity"
     android:background="@color/colorPrimary"
     android:fitsSystemWindows="true"
-    tools:openDrawer="start">
+    tools:openDrawer="end">
 
 
     <android.support.design.widget.NavigationView
@@ -20,16 +20,17 @@
         app:headerLayout="@layout/nav_header"
         app:menu="@menu/drawermenu" />
 
+    <include layout="@layout/app_toolbar"></include>
 
-    <RelativeLayout
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-        <include layout="@layout/app_toolbar"></include>
 
 
         <GridLayout
-            android:id="@+id/gridL1ayout1"
+            android:id="@+id/homeButtonLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:columnCount="2"
@@ -38,7 +39,7 @@
             android:layout_gravity="center"
             android:paddingTop="25dp"
             android:paddingLeft="25dp"
-            android:layout_marginVertical="50dp"
+            android:layout_marginTop="50dp"
 
             >
 
@@ -58,7 +59,7 @@
             <Button
                 android:id="@+id/weaponsButton"
                 android:layout_gravity="top|center"
-                android:src="@drawable/image_placeholder"
+                android:background="@drawable/image_placeholder"
 
                 android:fontFamily="@font/luckiestguy"
                 android:textColor="@color/colorWhite"
@@ -74,7 +75,7 @@
                 android:id="@+id/statsButton"
                 android:layout_gravity="top|center"
                 android:layout_marginTop="20dp"
-                android:src="@drawable/image_placeholder"
+                android:background="@drawable/image_placeholder"
 
                 android:fontFamily="@font/luckiestguy"
                 android:textColor="@color/colorWhite"
@@ -103,7 +104,45 @@
 
 
         </GridLayout>
-    </RelativeLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="4dp"
+                android:background="@color/rareColor"
+                android:textSize="20dp"
+                android:fontFamily="@font/luckiestguy"
+                android:textColor="@color/colorYellow"
+                android:textStyle="bold"
+                android:text="Item Shop"/>
+
+            <GridView
+                android:id="@+id/itemShopGrid"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:horizontalSpacing="10dp"
+                android:verticalSpacing="5dp"
+                android:layout_marginTop="10dp"
+
+                android:numColumns="3"
+                android:gravity="center"
+                >
+
+            </GridView>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
 
 
 
