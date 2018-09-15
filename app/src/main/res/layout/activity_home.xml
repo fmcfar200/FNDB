@@ -58,7 +58,7 @@
             <Button
                 android:id="@+id/weaponsButton"
                 android:layout_gravity="top|center"
-                android:background="@drawable/image_placeholder"
+                android:src="@drawable/image_placeholder"
 
                 android:fontFamily="@font/luckiestguy"
                 android:textColor="@color/colorWhite"
@@ -74,7 +74,7 @@
                 android:id="@+id/statsButton"
                 android:layout_gravity="top|center"
                 android:layout_marginTop="20dp"
-                android:background="@drawable/image_placeholder"
+                android:src="@drawable/image_placeholder"
 
                 android:fontFamily="@font/luckiestguy"
                 android:textColor="@color/colorWhite"
@@ -82,8 +82,6 @@
                 android:paddingTop="20dp"
                 android:gravity="center|top"
                 android:text="Player Stats"
-                android:backgroundTintMode="multiply"
-                android:backgroundTint="@color/colorPrimary"
 
 
                 />

@@ -2,6 +2,7 @@ package com.example.fraser.fndb;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -10,14 +11,25 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.util.JsonReader;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
 
 public class HomeActivity extends AppCompatActivity implements View.OnClickListener, NavigationView.OnNavigationItemSelectedListener {
 
     Toolbar toolbar;
     Button skinBtn;
+    Button testButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,6 +62,9 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
 
         skinBtn = findViewById(R.id.skinButton);
         skinBtn.setOnClickListener(this);
+
+        testButton = findViewById(R.id.statsButton);
+        testButton.setOnClickListener(this);
     }
 
 
@@ -59,6 +74,19 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         if (v ==skinBtn)
         {
             StartActivity(SeasonSelectActivity.class);
+        }
+        else if (v == testButton)
+        {
+            AsyncTask.execute(new Runnable() {
+                @Override
+                public void run() {
+                    try {
+                        TestAPI();
+                    } catch (MalformedURLException e) {
+                        e.printStackTrace();
+                    }
+                }
+            });
         }
     }
 
@@ -85,5 +113,45 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawerLayout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    void TestAPI() throws MalformedURLException {
+        URL endpoint = new URL("https://api.fortnitetracker.com/v1/store");
+
+        try {
+            HttpURLConnection connection = (HttpURLConnection) endpoint.openConnection();
+            connection.setRequestProperty("TRN-Api-Key", "246a06d4-9ecc-443f-bd96-67e18bb94e4d");
+
+            if (connection.getResponseCode() == 200)
+            {
+
+                InputStream responseBody = connection.getInputStream();
+                BufferedReader r = new BufferedReader(new InputStreamReader(responseBody));
+                StringBuilder total = new StringBuilder();
+                String line;
+                while ((line = r.readLine()) != null) {
+                    total.append(line).append('\n');
+                }
+
+                Log.e("Response", "200: " + total);
+
+
+                //InputStreamReader reader = new InputStreamReader(responseBody, "UTF-8");
+
+
+                //JsonReader jsonReader = new JsonReader(reader);
+
+
+
+
+            }
+            else
+            {
+                Log.e("Response", "Error");
+
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }

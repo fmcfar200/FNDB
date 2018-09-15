@@ -1,4 +1,7 @@
 <resources>
+
+    <string name="TRACKER_API_KEY">246a06d4-9ecc-443f-bd96-67e18bb94e4d</string>
+
     <string name="app_name">FNDB</string>
     <string name="nav_open">Open Nav Drawer</string>
     <string name="nav_closed">Close Nav Drawer</string>
