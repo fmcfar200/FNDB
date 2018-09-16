@@ -54,6 +54,8 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
     ShopGridAdapter adapter;
     ProgressDialog dialog;
 
+    ShopFetch fetch;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -109,7 +111,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         counter.start();
 
 
-        ShopFetch fetch = new ShopFetch();
+        fetch = new ShopFetch();
         fetch.execute();
 
     }
@@ -184,6 +186,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         @Override
         public void onFinish()
         {
+            fetch.execute();
         }
     }
 
@@ -194,7 +197,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         @Override
         protected void onPreExecute() {
             dialog = new ProgressDialog(HomeActivity.this);
-            dialog.setMessage("Getting Ready...");
+            dialog.setMessage("Getting Shop Items...");
             dialog.show();
         }
 
@@ -207,7 +210,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
             try {
                 URL endpoint = new URL("https://api.fortnitetracker.com/v1/store");
                 HttpURLConnection connection = (HttpURLConnection) endpoint.openConnection();
-                connection.setRequestProperty("TRN-Api-Key", "246a06d4-9ecc-443f-bd96-67e18bb94e4d");
+                connection.setRequestProperty("TRN-Api-Key", getString(R.string.TRACKER_API_KEY));
 
                 if (connection.getResponseCode() == 200)
                 {
