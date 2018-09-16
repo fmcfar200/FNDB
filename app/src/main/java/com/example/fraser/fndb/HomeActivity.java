@@ -33,6 +33,7 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.sql.Time;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -46,6 +47,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
     Toolbar toolbar;
     Button skinBtn;
     Button testButton;
+    TextView timerTextView;
 
     GridView itemShopGrid;
     List<ShopItem> shopItems = new ArrayList<>();
@@ -85,7 +87,26 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         testButton = findViewById(R.id.statsButton);
         testButton.setOnClickListener(this);
 
+        timerTextView = findViewById(R.id.shopTimerText);
+
         itemShopGrid = findViewById(R.id.itemShopGrid);
+
+        String endTimeString = "01:00:00";
+        SimpleDateFormat formatter = new SimpleDateFormat("HH:mm:ss");
+
+        Calendar calendar = Calendar.getInstance();
+        Date currentDate = calendar.getTime();
+
+        calendar.add(Calendar.DATE, 1);
+        calendar.set(Calendar.HOUR_OF_DAY, 1);
+        calendar.set(Calendar.MINUTE,0);
+        calendar.set(Calendar.SECOND, 0);
+        Date tomorrow = calendar.getTime();
+
+        long diffInMS = tomorrow.getTime() - currentDate.getTime();
+
+        MyCount counter = new MyCount(diffInMS,1000);
+        counter.start();
 
 
         ShopFetch fetch = new ShopFetch();
@@ -146,9 +167,18 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         public void onTick(long millisUntilFinished)
         {
             long millis = millisUntilFinished;
-            String hm = (TimeUnit.MILLISECONDS.toHours(millis) - TimeUnit.DAYS.toHours(TimeUnit.MILLISECONDS.toDays(millis)) + ":")
-                    + (TimeUnit.MILLISECONDS.toMinutes(millis) - TimeUnit.HOURS.toMinutes(TimeUnit.MILLISECONDS.toHours(millis)) + ":")
-                    + (TimeUnit.MILLISECONDS.toSeconds(millis) - TimeUnit.MINUTES.toSeconds(TimeUnit.MILLISECONDS.toMinutes(millis)));
+            long diffInHours = TimeUnit.MILLISECONDS.toHours(millis);
+            millis -= TimeUnit.HOURS.toMillis(diffInHours);
+
+            long diffInMins = TimeUnit.MILLISECONDS.toMinutes(millis);
+            millis -= TimeUnit.MINUTES.toMillis(diffInMins);
+
+            long diffInSecs = TimeUnit.MILLISECONDS.toSeconds(millis);
+            //millis -= TimeUnit.SECONDS.toMillis(diffInSecs);
+
+
+            timerTextView.setText(String.valueOf(diffInHours) + ":" +
+            String.valueOf(diffInMins) + ":" + String.valueOf(diffInSecs));
         }
 
         @Override
