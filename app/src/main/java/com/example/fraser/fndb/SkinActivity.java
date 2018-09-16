@@ -74,14 +74,9 @@ public class SkinActivity extends AppCompatActivity {
         {
             dataRef = database.getReference("SPSkin").child("SP_S"+ seasonNo +"_Skins");
         }
-        else if (searchType == SeasonSelectActivity.SearchType.UNCOMMON)
-        {
-            dataRef = database.getReference("ISSkin").child(searchType.toString().toLowerCase() + "_Skins");
-        }
         else
         {
-            dataRef =  database.getReference("SPSkin").child("SP_S"+ seasonNo +"_Skins");
-
+            dataRef = database.getReference("ISSkin").child(searchType.toString().toLowerCase() + "_Skins");
         }
 
         dataRef.addValueEventListener(new ValueEventListener() {
