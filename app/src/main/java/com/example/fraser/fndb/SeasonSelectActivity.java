@@ -4,13 +4,13 @@ import android.content.Intent;
 import android.support.v4.view.MenuItemCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.support.v7.widget.SearchView;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.View;
 import android.widget.Button;
-import android.widget.SearchView;
 import android.widget.ViewFlipper;
 
 import com.google.firebase.database.DataSnapshot;
@@ -241,7 +241,7 @@ public class SeasonSelectActivity extends AppCompatActivity implements View.OnCl
         startActivity(intent);
     }
 
-    private void StartDetail(Skin skin, int seasonNo, SearchType type)
+    public void StartDetail(Skin skin, int seasonNo, SearchType type)
     {
         Intent intent = new Intent(getApplicationContext(),DetailActivity.class);
         intent.putExtra("seasonNo", seasonNo);

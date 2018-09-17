@@ -23,13 +23,16 @@ import com.google.firebase.storage.StorageReference;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
-public class SkinAdapter extends BaseAdapter {
+public class SkinAdapter extends BaseAdapter implements Filterable{
 
     Context context;
     int layoutId;
     List<Skin> data;
+    List<Skin> filterData;
+    Filter mFilter;
 
     SeasonSelectActivity.SearchType type;
     int seasonNo;
@@ -41,6 +44,8 @@ public class SkinAdapter extends BaseAdapter {
         this.data = data;
         seasonNo = theSeasonNo;
         type = theType;
+
+        filterData = data;
     }
 
     @Override
@@ -116,5 +121,52 @@ public class SkinAdapter extends BaseAdapter {
 
         view.setTag(data.get(position));
         return view;
+    }
+
+    @Override
+    public Filter getFilter()
+    {
+        if (mFilter == null)
+        {
+            mFilter = new ItemFilter();
+        }
+        return mFilter;
+    }
+
+    private class ItemFilter extends Filter
+    {
+
+        @Override
+        protected FilterResults performFiltering(CharSequence constraint)
+        {
+            FilterResults results = new FilterResults();
+            if (constraint != null && constraint.length() > 0)
+            {
+                List<Skin> filteredList = new ArrayList<>();
+                for(int i = 0; i < filterData.size(); i++)
+                {
+                    if (filterData.get(i).name.toUpperCase().contains(constraint.toString().toUpperCase()))
+                    {
+                        Skin item = filterData.get(i);
+                        filteredList.add(item);
+                    }
+                }
+                results.count = filteredList.size();
+                results.values = filteredList;
+            }
+            else
+            {
+                results.count = filterData.size();
+                results.values = filterData;
+            }
+            return results;
+        }
+
+        @Override
+        protected void publishResults(CharSequence constraint, FilterResults results)
+        {
+            data = (List<Skin>) results.values;
+            notifyDataSetChanged();
+        }
     }
 }

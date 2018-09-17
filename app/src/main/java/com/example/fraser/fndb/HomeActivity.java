@@ -1,11 +1,9 @@
 package com.example.fraser.fndb;
 
-import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.CountDownTimer;
-import android.os.Environment;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -14,8 +12,6 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
-import android.telecom.Call;
-import android.util.JsonReader;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
@@ -28,17 +24,11 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
 import java.net.URL;
-import java.sql.Time;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
@@ -208,7 +198,6 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         protected List<ShopItem> doInBackground(Void... voids)
         {
             shopItems = new ArrayList<>();
-            List<ShopItem> theShopItems = new ArrayList<>();
 
             try {
                 URL endpoint = new URL("https://api.fortnitetracker.com/v1/store");
