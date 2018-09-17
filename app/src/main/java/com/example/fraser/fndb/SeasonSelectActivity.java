@@ -120,7 +120,7 @@ public class SeasonSelectActivity extends AppCompatActivity implements View.OnCl
                             {
                                 for (DataSnapshot item: objSnap.getChildren())
                                 {
-                                    if (item.child("name").getValue().equals(query))
+                                    if (item.child("name").getValue().toString().toUpperCase().equals(query.toUpperCase()))
                                     {
                                         String id = String.valueOf(item.child("id").getValue());
                                         String name = String.valueOf(item.child("name").getValue());
