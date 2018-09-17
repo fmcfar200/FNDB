@@ -36,6 +36,7 @@
                                       <entry key="assetType" value="IMAGE" />
                                       <entry key="imageAsset" value="D:\Pictures\fnapp\skin_icon.png" />
                                       <entry key="outputName" value="ic_action_search" />
+                                      <entry key="theme" value="CUSTOM" />
                                     </map>
                                   </option>
                                 </PersistentState>
@@ -51,7 +52,7 @@
                                           <PersistentState>
                                             <option name="values">
                                               <map>
-                                                <entry key="scalingPercent" value="103" />
+                                                <entry key="scalingPercent" value="15" />
                                               </map>
                                             </option>
                                           </PersistentState>
@@ -85,7 +86,7 @@
                                           <PersistentState>
                                             <option name="values">
                                               <map>
-                                                <entry key="scalingPercent" value="96" />
+                                                <entry key="scalingPercent" value="26" />
                                               </map>
                                             </option>
                                           </PersistentState>
@@ -95,11 +96,8 @@
                                   </option>
                                   <option name="values">
                                     <map>
-                                      <entry key="backgroundLayerName" value="ic_stats_background" />
-                                      <entry key="foregroundAssetType" value="CLIP_ART" />
-                                      <entry key="foregroundImage" value="C:\Users\Fraser\AndroidStudioProjects\FNDB\app\src\main\res\drawable\skin_icon.png" />
-                                      <entry key="foregroundLayerName" value="ic_stats_foreground" />
-                                      <entry key="outputName" value="ic_Stats" />
+                                      <entry key="foregroundImage" value="C:\Users\Fraser\AndroidStudioProjects\FNDB\app\src\main\res\drawable\ic_vbucks.png" />
+                                      <entry key="outputName" value="ic_vbucks_small" />
                                     </map>
                                   </option>
                                 </PersistentState>

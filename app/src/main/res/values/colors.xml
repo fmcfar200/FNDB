@@ -6,11 +6,13 @@
 
     <color name="colorWhite">#FFFFFF</color>
     <color name="colorYellow">#FFFF00</color>
-
     <color name="colorOffRed">#ff0077</color>
     <color name="colorGreen">#40f972</color>
     <color name="colorOrange">#f78c00</color>
     <color name="colorPink">#f75ba4</color>
+    <color name="darkGrey">#ced3e0</color>
+    <color name="blackAlpha">#000000</color>
+
 
     <color name="uncommonColor">#15a32f</color>
     <color name="rareColor">#0a59d8</color>

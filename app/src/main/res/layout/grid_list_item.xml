@@ -1,37 +1,68 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    android:id="@+id/itemRootLayout"
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="wrap_content"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_height="wrap_content"
+    android:layout_width="wrap_content"
     android:background="@color/legendaryColor"
+    android:orientation="vertical"
     >
 
-    <LinearLayout
+    <FrameLayout
+        android:id="@+id/itemRootLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:gravity="center"
-        android:orientation="vertical">
+        android:layout_gravity="center"
+        >
 
         <ImageView
             android:id="@+id/sItemImage"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
+            android:layout_width="125dp"
+            android:layout_height="125dp"
+            android:layout_gravity="center"
             android:src="@mipmap/ic_vbucks_foreground"
 
             />
         <TextView
             android:id="@+id/sItemName"
-            android:layout_width="wrap_content"
+            android:layout_width="125dp"
             android:layout_height="match_parent"
+            android:layout_gravity="bottom|center"
+            android:maxLines="2"
+            android:paddingBottom="10dp"
             android:fontFamily="@font/luckiestguy"
             android:textColor="@color/colorWhite"
             android:text="HEllO WORLD"
+            android:textSize="20dp"
             android:autoSizeTextType="uniform"
-            android:gravity="center"
             android:textAlignment="center"
             />
 
-    </LinearLayout>
+    </FrameLayout>
 
-</RelativeLayout>
+    <FrameLayout
+        android:id="@+id/costLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/costText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="5dp"
+            android:fontFamily="@font/luckiestguy"
+            android:textColor="@color/colorWhite"
+            android:text="1000"
+            android:textSize="17.5dp"
+            android:autoSizeTextType="uniform"
+            android:textAlignment="center"
+            />
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_gravity="left|center"
+            android:layout_marginLeft="10dp"
+            android:src="@mipmap/ic_vbucks_foreground"/>
+    </FrameLayout>
+
+
+</LinearLayout>

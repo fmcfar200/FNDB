@@ -87,22 +87,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
 
         itemShopGrid = findViewById(R.id.itemShopGrid);
 
-
-        Calendar calendar = Calendar.getInstance();
-        Date currentDate = calendar.getTime();
-
-        calendar.add(Calendar.DATE, 1);
-        calendar.set(Calendar.HOUR_OF_DAY, 1);
-        calendar.set(Calendar.MINUTE,5);
-        calendar.set(Calendar.SECOND, 0);
-        calendar.setTimeZone(TimeZone.getTimeZone("GMT+01:00"));
-        Date tomorrow = calendar.getTime();
-
-        long diffInMS = tomorrow.getTime() - currentDate.getTime();
-
-        MyCount counter = new MyCount(diffInMS,1000);
-        counter.start();
-
+        StartShopTimer();
 
         fetch = new ShopFetch();
         fetch.execute();
@@ -144,6 +129,43 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         return true;
     }
 
+    private void StartShopTimer()
+    {
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTimeZone(TimeZone.getTimeZone("GMT+01:00"));
+        Date currentDate = calendar.getTime();
+        Date end = new Date();
+
+        if (calendar.get(Calendar.HOUR_OF_DAY) >= 0 && calendar.get(Calendar.HOUR_OF_DAY) < 2)
+        {
+            if (calendar.get(Calendar.MINUTE) >= 0 && calendar.get(Calendar.MINUTE) <= 59)
+            {
+                calendar.set(Calendar.HOUR_OF_DAY, 1);
+                calendar.set(Calendar.MINUTE,2);
+                calendar.set(Calendar.SECOND, 0);
+                calendar.setTimeZone(TimeZone.getTimeZone("GMT+01:00"));
+                end = calendar.getTime();
+
+            }
+        }
+        else
+        {
+            calendar.add(Calendar.DATE, 1);
+            calendar.set(Calendar.HOUR_OF_DAY, 1);
+            calendar.set(Calendar.MINUTE,2);
+            calendar.set(Calendar.SECOND, 0);
+            calendar.setTimeZone(TimeZone.getTimeZone("GMT+01:00"));
+            end = calendar.getTime();
+        }
+
+
+        long diffInMS = end.getTime() - currentDate.getTime();
+
+        MyCount counter = new MyCount(diffInMS,1000);
+        counter.start();
+
+    }
+
     public class MyCount extends CountDownTimer
     {
 
@@ -179,7 +201,9 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         @Override
         public void onFinish()
         {
+            ShopFetch fetch = new ShopFetch();
             fetch.execute();
+            StartShopTimer();
         }
     }
 
