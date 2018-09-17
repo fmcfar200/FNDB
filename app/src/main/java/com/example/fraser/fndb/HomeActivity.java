@@ -5,6 +5,7 @@ import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.CountDownTimer;
+import android.os.Environment;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -27,6 +28,8 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -40,6 +43,7 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
+import java.util.TimeZone;
 import java.util.concurrent.TimeUnit;
 
 public class HomeActivity extends AppCompatActivity implements View.OnClickListener, NavigationView.OnNavigationItemSelectedListener {
@@ -93,16 +97,15 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
 
         itemShopGrid = findViewById(R.id.itemShopGrid);
 
-        String endTimeString = "01:00:00";
-        SimpleDateFormat formatter = new SimpleDateFormat("HH:mm:ss");
 
         Calendar calendar = Calendar.getInstance();
         Date currentDate = calendar.getTime();
 
         calendar.add(Calendar.DATE, 1);
         calendar.set(Calendar.HOUR_OF_DAY, 1);
-        calendar.set(Calendar.MINUTE,0);
+        calendar.set(Calendar.MINUTE,5);
         calendar.set(Calendar.SECOND, 0);
+        calendar.setTimeZone(TimeZone.getTimeZone("GMT+01:00"));
         Date tomorrow = calendar.getTime();
 
         long diffInMS = tomorrow.getTime() - currentDate.getTime();
@@ -248,6 +251,41 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
             } catch (JSONException e) {
                 e.printStackTrace();
             }
+
+            /*
+            try
+            {
+                URL statsEndPoint = new URL("https://api.fortnitetracker.com/v1/profile/xbox/mattglen");
+                HttpURLConnection connection = (HttpURLConnection) statsEndPoint.openConnection();
+                connection.setRequestProperty("TRN-Api-Key", getString(R.string.TRACKER_API_KEY));
+
+                if (connection.getResponseCode() == 200) {
+
+                    InputStream responseBody = connection.getInputStream();
+                    BufferedReader r = new BufferedReader(new InputStreamReader(responseBody));
+                    StringBuilder jsonString = new StringBuilder();
+                    String line;
+                    while ((line = r.readLine()) != null) {
+                        jsonString.append(line).append('\n');
+
+                    }
+
+                }
+                else
+                {
+                    Log.e("Error Tag", "Not Connected");
+
+                }
+
+
+            } catch (MalformedURLException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+            */
+
 
             return shopItems;
         }
