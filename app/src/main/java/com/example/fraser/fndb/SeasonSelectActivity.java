@@ -24,7 +24,7 @@ public class SeasonSelectActivity extends AppCompatActivity implements View.OnCl
 
 
     private Button s1Button, s2Button, s3Button, s4Button, s5Button, battlePassButton,
-    itemShopButton,miscButton,uncommonButton, rareButton, epicButton, legendaryButton;
+    itemShopButton,promoButton, holidayButton,uncommonButton, rareButton, epicButton, legendaryButton;
 
     private ViewFlipper layoutFlipper;
     private Toolbar toolbar;
@@ -33,7 +33,7 @@ public class SeasonSelectActivity extends AppCompatActivity implements View.OnCl
 
     public enum SearchType
     {
-        BP,UNCOMMON, RARE, EPIC, LEGENDARY
+        BP,UNCOMMON, RARE, EPIC, LEGENDARY, PROMOTIONAL, HOLIDAY
     }
     private SearchType searchType;
 
@@ -54,7 +54,8 @@ public class SeasonSelectActivity extends AppCompatActivity implements View.OnCl
         s5Button = findViewById(R.id.s5Skins);
         battlePassButton = findViewById(R.id.battlePassButton);
         itemShopButton = findViewById(R.id.shopSkins);
-        miscButton = findViewById(R.id.miscSkins);
+        promoButton = findViewById(R.id.promoSkins);
+        holidayButton = findViewById(R.id.holidaySkins);
 
         uncommonButton = findViewById(R.id.uncommonSkins);
         rareButton = findViewById(R.id.rareSkins);
@@ -68,7 +69,9 @@ public class SeasonSelectActivity extends AppCompatActivity implements View.OnCl
         s5Button.setOnClickListener(this);
         battlePassButton.setOnClickListener(this);
         itemShopButton.setOnClickListener(this);
-        miscButton.setOnClickListener(this);
+        promoButton.setOnClickListener(this);
+        holidayButton.setOnClickListener(this);
+
 
         uncommonButton.setOnClickListener(this);
         rareButton.setOnClickListener(this);
@@ -229,6 +232,18 @@ public class SeasonSelectActivity extends AppCompatActivity implements View.OnCl
             season = 0;
             searchType = SearchType.LEGENDARY;
             StartListActivity(season,searchType);
+        }
+        else if (v == promoButton)
+        {
+            season = 0;
+            searchType = SearchType.PROMOTIONAL;
+            StartListActivity(season, searchType);
+        }
+        else if(v == holidayButton)
+        {
+            season = 0;
+            searchType = SearchType.HOLIDAY;
+            StartListActivity(season, searchType);
         }
 
     }

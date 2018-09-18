@@ -59,7 +59,7 @@
                 android:text="Item Shop Skins">
             </Button>
             <Button
-                android:id="@+id/miscSkins"
+                android:id="@+id/promoSkins"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="25dp"
@@ -70,7 +70,21 @@
                 android:fontFamily="@font/luckiestguy"
                 android:textColor="@color/colorWhite"
                 android:textSize="25dp"
-                android:text="Miscellaneous Skins">
+                android:text="Promo Skins">
+            </Button>
+            <Button
+                android:id="@+id/holidaySkins"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="25dp"
+                android:layout_marginRight="25dp"
+                android:layout_marginBottom="25dp"
+
+                android:background="@color/legendaryColor"
+                android:fontFamily="@font/luckiestguy"
+                android:textColor="@color/colorWhite"
+                android:textSize="25dp"
+                android:text="holiday Skins">
             </Button>
 
         </LinearLayout>

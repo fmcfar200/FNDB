@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/colorPrimary"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PlayerStatsActivity"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/toolbarID"
+        android:background="@color/colorWhite"
+        app:titleTextColor="@color/colorPrimary"
+        >
+    </android.support.v7.widget.Toolbar>
+
+    <ViewFlipper
+        android:id="@+id/statsFlipper"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <RadioGroup
+                android:id="@+id/radioGroup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:checkedButton="@id/pcPlatformButton"
+                >
+
+                <RadioButton
+                    android:id="@+id/pcPlatformButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+
+                    android:fontFamily="@font/luckiestguy"
+                    android:text="PC"/>
+
+                <RadioButton
+                    android:id="@+id/xboxPlatformButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+
+                    android:fontFamily="@font/luckiestguy"
+                    android:text="xbox"/>
+
+                <RadioButton
+                    android:id="@+id/psnPlatformButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+
+                    android:fontFamily="@font/luckiestguy"
+                    android:text="Psn"/>
+
+            </RadioGroup>
+
+
+
+            <EditText
+                android:id="@+id/usernameEdit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:padding= "7.5dp"
+
+                android:singleLine="true"
+                android:imeOptions="actionDone"
+
+                android:textColor="@color/colorWhite"
+                android:background="@color/blackAlpha"
+                android:textColorHint="@color/colorWhite"
+                android:hint="Enter Epic Username..."
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <ScrollView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <include layout="@layout/stats_box_item" android:id="@+id/totalWinsBox"></include>
+                    <include layout="@layout/stats_box_item" android:id="@+id/totalKillsBox"></include>
+                    <include layout="@layout/stats_box_item" android:id="@+id/totalMatchesBox"></include>
+
+
+                </LinearLayout>
+
+            </ScrollView>
+
+
+        </LinearLayout>
+
+
+    </ViewFlipper>
+
+
+
+</LinearLayout>

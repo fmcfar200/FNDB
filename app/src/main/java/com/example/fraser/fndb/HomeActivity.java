@@ -39,8 +39,10 @@ import java.util.concurrent.TimeUnit;
 public class HomeActivity extends AppCompatActivity implements View.OnClickListener, NavigationView.OnNavigationItemSelectedListener {
 
     Toolbar toolbar;
+
     Button skinBtn;
-    Button testButton;
+    Button statsButton;
+
     TextView timerTextView;
 
     GridView itemShopGrid;
@@ -78,17 +80,15 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         navigationView.setNavigationItemSelectedListener(this);
 
         skinBtn = findViewById(R.id.skinButton);
+        statsButton = findViewById(R.id.statsButton);
         skinBtn.setOnClickListener(this);
-
-        testButton = findViewById(R.id.statsButton);
-        testButton.setOnClickListener(this);
+        statsButton.setOnClickListener(this);
 
         timerTextView = findViewById(R.id.shopTimerText);
-
         itemShopGrid = findViewById(R.id.itemShopGrid);
 
-        StartShopTimer();
 
+        StartShopTimer();
         fetch = new ShopFetch();
         fetch.execute();
 
@@ -98,10 +98,9 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View v)
     {
-        if (v ==skinBtn)
-        {
-            StartActivity(SeasonSelectActivity.class);
-        }
+        if (v ==skinBtn) { StartActivity(SeasonSelectActivity.class); }
+        if (v == statsButton) { StartActivity(PlayerStatsActivity.class); }
+
     }
 
     void StartActivity(Class theclass)
@@ -265,39 +264,6 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
                 e.printStackTrace();
             }
 
-            /*
-            try
-            {
-                URL statsEndPoint = new URL("https://api.fortnitetracker.com/v1/profile/xbox/mattglen");
-                HttpURLConnection connection = (HttpURLConnection) statsEndPoint.openConnection();
-                connection.setRequestProperty("TRN-Api-Key", getString(R.string.TRACKER_API_KEY));
-
-                if (connection.getResponseCode() == 200) {
-
-                    InputStream responseBody = connection.getInputStream();
-                    BufferedReader r = new BufferedReader(new InputStreamReader(responseBody));
-                    StringBuilder jsonString = new StringBuilder();
-                    String line;
-                    while ((line = r.readLine()) != null) {
-                        jsonString.append(line).append('\n');
-
-                    }
-
-                }
-                else
-                {
-                    Log.e("Error Tag", "Not Connected");
-
-                }
-
-
-            } catch (MalformedURLException e) {
-                e.printStackTrace();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-
-            */
 
 
             return shopItems;
