@@ -15,6 +15,7 @@ import android.view.View;
 import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
+import android.widget.ListView;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -35,6 +36,7 @@ import java.io.OutputStreamWriter;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.HashMap;
 
 public class PlayerStatsActivity extends AppCompatActivity {
 
@@ -46,6 +48,9 @@ public class PlayerStatsActivity extends AppCompatActivity {
     EditText inputText;
     View winsBox, killsBox, matchesBox;
     TextView winBoxTitle, killBoxTitle, matchesBoxTitle;
+
+    ListView lifetimeStatsList;
+    StatsListAdapter lifeTimeStatsAdapter;
 
     ProgressDialog dialog;
 
@@ -110,6 +115,8 @@ public class PlayerStatsActivity extends AppCompatActivity {
         matchesBoxTitle = matchesBox.findViewById(R.id.dataTitle);
         matchesBoxTitle.setText("Matches Played");
 
+        lifetimeStatsList = findViewById(R.id.lifetimeStatsListView);
+
         if (getSupportActionBar() != null)
         {
             getSupportActionBar().setTitle("Player Stats");
@@ -166,15 +173,16 @@ public class PlayerStatsActivity extends AppCompatActivity {
                     int wins = 0;
                     int kills = 0;
                     int matches = 0;
+                    HashMap<String, String> lifetimeStatsMap = new HashMap<>();
 
                     JSONObject rootObject = new JSONObject(jsonString.toString());
                     name = rootObject.get("epicUserHandle").toString();
 
+                    //LIFETIME OBJECTS
                     JSONArray lifeTimeStatsArray = rootObject.getJSONArray("lifeTimeStats");
                     for (int i = 0; i < lifeTimeStatsArray.length(); i++)
                     {
                         JSONObject lifeTimeObject = lifeTimeStatsArray.getJSONObject(i);
-
                         if (lifeTimeObject.get("key").toString().equals("Wins"))
                         {
                             wins = Integer.valueOf(lifeTimeObject.get("value").toString());
@@ -188,13 +196,20 @@ public class PlayerStatsActivity extends AppCompatActivity {
                             matches = Integer.valueOf(lifeTimeObject.get("value").toString());
                         }
 
+                        lifetimeStatsMap.put(lifeTimeObject.get("key").toString(),lifeTimeObject.get("value").toString());
                     }
 
+                    lifetimeStatsMap.remove("Wins");
+                    lifetimeStatsMap.remove("Kills");
+                    lifetimeStatsMap.remove("Matches Played");
+
+
                     Player player = new Player();
-                    player.name = name;
-                    player.setTotalKills(kills);
-                    player.setTotalWins(wins);
-                    player.setTotalMatches(matches);
+                    player.setName(name);
+                    player.lifetime.setTotalKills(kills);
+                    player.lifetime.setTotalWins(wins);
+                    player.lifetime.setTotalMatches(matches);
+                    player.lifetime.setLifetimeStatsMap(lifetimeStatsMap);
                     return player;
 
                 }
@@ -226,16 +241,20 @@ public class PlayerStatsActivity extends AppCompatActivity {
 
             if (player != null)
             {
+                toolbar.setTitle(player.getName());
+
                 TextView winsText = winsBox.findViewById(R.id.dataText);
-                winsText.setText(String.valueOf(player.totalWins));
+                winsText.setText(String.valueOf(player.lifetime.getTotalWins()));
 
                 TextView killsText = killsBox.findViewById(R.id.dataText);
-                killsText.setText(String.valueOf(player.totalKills));
+                killsText.setText(String.valueOf(player.lifetime.getTotalKills()));
 
                 TextView matchesText = matchesBox.findViewById(R.id.dataText);
-                matchesText.setText(String.valueOf(player.totalMatches));
+                matchesText.setText(String.valueOf(player.lifetime.getTotalMatches()));
 
-                toolbar.setTitle(player.name);
+                lifeTimeStatsAdapter = new StatsListAdapter(getApplicationContext(),R.layout.stats_list_item, player.lifetime.getLifetimeStatsMap());
+                lifetimeStatsList.setAdapter(lifeTimeStatsAdapter);
+
                 vFlipper.setDisplayedChild(1);
                 dialog.dismiss();
 

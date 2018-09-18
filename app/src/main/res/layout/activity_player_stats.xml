@@ -101,10 +101,29 @@
                     <include layout="@layout/stats_box_item" android:id="@+id/totalKillsBox"></include>
                     <include layout="@layout/stats_box_item" android:id="@+id/totalMatchesBox"></include>
 
-
                 </LinearLayout>
 
             </ScrollView>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ListView
+                    android:id="@+id/lifetimeStatsListView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/colorPrimary"
+                    android:divider="@color/colorYellow"
+                    android:dividerHeight="4dp"
+                    android:padding="5dp"
+
+                    >
+
+
+                </ListView>
+            </LinearLayout>
 
 
         </LinearLayout>

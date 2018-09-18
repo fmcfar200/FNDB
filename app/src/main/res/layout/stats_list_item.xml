@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:background="@color/colorPrimary">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/statTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left|center"
+
+            android:layout_margin="10dp"
+            android:textColor="@color/darkGrey"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            android:text="Wins"/>
+
+        <TextView
+            android:id="@+id/statData"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="right"
+
+            android:layout_margin="10dp"
+            android:textColor="@color/colorWhite"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            android:text="Wins"/>
+
+
+    </LinearLayout>
+
+
+
+
+
+</LinearLayout>

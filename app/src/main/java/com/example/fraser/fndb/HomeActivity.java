@@ -28,6 +28,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -264,9 +265,46 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
                 e.printStackTrace();
             }
 
+            /*
+                TEST CODE
 
+
+            try {
+                URL endpoint = new URL("https://api.fortnitetracker.com/v1/news");
+                HttpURLConnection connection = (HttpURLConnection) endpoint.openConnection();
+                connection.setRequestProperty("TRN-Api-Key", getString(R.string.TRACKER_API_KEY));
+
+                if (connection.getResponseCode() == 200)
+                {
+
+                    InputStream responseBody = connection.getInputStream();
+                    BufferedReader r = new BufferedReader(new InputStreamReader(responseBody));
+                    StringBuilder jsonString = new StringBuilder();
+                    String line;
+                    while ((line = r.readLine()) != null) {
+                        jsonString.append(line).append('\n');
+                    }
+
+                    Log.e("TEST SUCCESS", jsonString.toString());
+                }
+                else
+                {
+                    Log.e("TEST FAIL", "FAIL");
+
+                }
+            } catch (MalformedURLException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+
+
+            TES CODE END
+             */
 
             return shopItems;
+
         }
 
 

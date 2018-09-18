@@ -1,6 +1,8 @@
 <resources>
 
     <string name="TRACKER_API_KEY">246a06d4-9ecc-443f-bd96-67e18bb94e4d</string>
+    <string name="FORTNITE_API_KEY">a4587bc8429ba5f7e2be4d869fddf5ff</string>
+
 
     <string name="app_name">FNDB</string>
     <string name="nav_open">Open Nav Drawer</string>
