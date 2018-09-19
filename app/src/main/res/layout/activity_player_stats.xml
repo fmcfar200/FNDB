@@ -170,6 +170,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
                 android:padding= "7.5dp"
+                android:singleLine="true"
 
                 android:textColor="@color/colorWhite"
                 android:background="@color/blackAlpha"

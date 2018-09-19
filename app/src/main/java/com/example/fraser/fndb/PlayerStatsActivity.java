@@ -3,8 +3,10 @@ package com.example.fraser.fndb;
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Environment;
+import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -21,6 +23,9 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.ViewFlipper;
+
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -144,9 +149,7 @@ public class PlayerStatsActivity extends AppCompatActivity {
             {
                 if (actionId == EditorInfo.IME_ACTION_DONE)
                 {
-                    hideKeyboard(PlayerStatsActivity.this);
-                    PlayerFetch fetch = new PlayerFetch();
-                    fetch.execute();
+                    GetPlayerStats();
                     return true;
                 }
                 return false;
@@ -159,9 +162,7 @@ public class PlayerStatsActivity extends AppCompatActivity {
             public void onClick(View v) {
                 if (v == submitButton)
                 {
-                    hideKeyboard(PlayerStatsActivity.this);
-                    PlayerFetch fetch = new PlayerFetch();
-                    fetch.execute();
+                    GetPlayerStats();
                 }
             }
         });
@@ -189,6 +190,34 @@ public class PlayerStatsActivity extends AppCompatActivity {
                 }
             });
         }
+
+    }
+
+    private void GetPlayerStats()
+    {
+        hideKeyboard(PlayerStatsActivity.this);
+        PlayerFetch fetch = new PlayerFetch();
+        fetch.execute();
+    }
+
+    private void saveSearch(String key, Object object)
+    {
+        SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(this.getApplicationContext());
+        SharedPreferences.Editor editor = sharedPref.edit();
+        Gson gson = new Gson();
+        String json = gson.toJson(object);
+        editor.putString(key,json);
+        editor.apply();
+
+    }
+
+    public HashMap<String,String> getSavedHashMap(String key) {
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this.getApplicationContext());
+        Gson gson = new Gson();
+        String json = prefs.getString(key,"");
+        java.lang.reflect.Type type = new TypeToken<HashMap<String,String>>(){}.getType();
+        HashMap<String,String> obj = gson.fromJson(json, type);
+        return obj;
     }
 
 
@@ -396,8 +425,10 @@ public class PlayerStatsActivity extends AppCompatActivity {
                 squadStatsAdapter = new StatsListAdapter(getApplicationContext(),R.layout.stats_list_item, player.squad.getSquadStatsMap());
                 squadStatsList.setAdapter(squadStatsAdapter);
 
+
                 vFlipper.setDisplayedChild(1);
                 dialog.dismiss();
+
 
 
             }
