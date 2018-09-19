@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -52,7 +53,7 @@ public class ShopGridAdapter extends BaseAdapter
     {
         View view = View.inflate(mContext,layoutId,null);
 
-        FrameLayout rootLayout = view.findViewById(R.id.itemRootLayout);
+        LinearLayout rootLayout = view.findViewById(R.id.itemRootLayout);
         ImageView imageView = view.findViewById(R.id.sItemImage);
         TextView nameText = view.findViewById(R.id.sItemName);
 
@@ -63,25 +64,25 @@ public class ShopGridAdapter extends BaseAdapter
         if (rarity == "Uncommon")
         {
             rootLayout.setBackgroundResource(R.color.uncommonColor);
-            costLayout.setBackgroundResource(R.color.uncommonColor);
+            //costLayout.setBackgroundResource(R.color.uncommonColor);
 
         }
         else if (rarity == "Rare")
         {
             rootLayout.setBackgroundResource(R.color.rareColor);
-            costLayout.setBackgroundResource(R.color.rareColor);
+            //costLayout.setBackgroundResource(R.color.rareColor);
 
         }
         else if (rarity == "Epic")
         {
             rootLayout.setBackgroundResource(R.color.epicColor);
-            costLayout.setBackgroundResource(R.color.rareColor);
+            //costLayout.setBackgroundResource(R.color.rareColor);
 
         }
         else if (rarity == "Legendary")
         {
             rootLayout.setBackgroundResource(R.color.legendaryColor);
-            costLayout.setBackgroundResource(R.color.rareColor);
+            //costLayout.setBackgroundResource(R.color.rareColor);
 
         }
 

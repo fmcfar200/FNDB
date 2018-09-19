@@ -28,7 +28,6 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -89,7 +88,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         itemShopGrid = findViewById(R.id.itemShopGrid);
 
 
-        StartShopTimer();
+        //StartShopTimer();
         fetch = new ShopFetch();
         fetch.execute();
 
@@ -138,7 +137,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
 
         if (calendar.get(Calendar.HOUR_OF_DAY) >= 0 && calendar.get(Calendar.HOUR_OF_DAY) < 2)
         {
-            if (calendar.get(Calendar.MINUTE) >= 0 && calendar.get(Calendar.MINUTE) <= 59)
+            if (calendar.get(Calendar.MINUTE) >= 0 && calendar.get(Calendar.MINUTE) < 2)
             {
                 calendar.set(Calendar.HOUR_OF_DAY, 1);
                 calendar.set(Calendar.MINUTE,2);
@@ -146,6 +145,15 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
                 calendar.setTimeZone(TimeZone.getTimeZone("GMT+01:00"));
                 end = calendar.getTime();
 
+            }
+            else
+            {
+                calendar.add(Calendar.DATE, 1);
+                calendar.set(Calendar.HOUR_OF_DAY, 1);
+                calendar.set(Calendar.MINUTE,2);
+                calendar.set(Calendar.SECOND, 0);
+                calendar.setTimeZone(TimeZone.getTimeZone("GMT+01:00"));
+                end = calendar.getTime();
             }
         }
         else
@@ -203,7 +211,6 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         {
             ShopFetch fetch = new ShopFetch();
             fetch.execute();
-            StartShopTimer();
         }
     }
 
@@ -310,9 +317,10 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
 
         @Override
         protected void onPostExecute(List<ShopItem> shopItems) {
-            adapter = new ShopGridAdapter(getApplicationContext(),R.layout.grid_list_item,shopItems);
+            adapter = new ShopGridAdapter(getApplicationContext(),R.layout.grid_shoplist_item,shopItems);
             itemShopGrid.setAdapter(adapter);
             dialog.dismiss();
+            StartShopTimer();
         }
     }
 }
