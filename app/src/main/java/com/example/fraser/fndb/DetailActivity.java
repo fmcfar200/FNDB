@@ -93,6 +93,7 @@ public class DetailActivity extends AppCompatActivity {
 
 
         nameText.setText(skin.name);
+        descText.setText(skin.desc.toString());
         if(searchType == SeasonSelectActivity.SearchType.BP)
         {
             currencyIcon.setImageResource(R.drawable.ic_battlepass);

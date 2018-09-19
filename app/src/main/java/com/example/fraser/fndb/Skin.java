@@ -18,12 +18,13 @@ public class Skin implements Serializable
     public String imageId;
     public String cost;
 
-    public Skin(String theId, String theName, String theRarity, String theImageId)
+    public Skin(String theId, String theName, String theRarity, String theImageId, String theDesc)
     {
         id = theId;
         name = theName;
         rarity = theRarity;
         imageId = theImageId;
+        desc = theDesc;
 
         switch (rarity)
         {

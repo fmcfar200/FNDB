@@ -17,29 +17,114 @@
         >
     </android.support.v7.widget.Toolbar>
 
+    <RadioGroup
+        android:id="@+id/modeRadioGroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:checkedButton="@id/pcPlatformButton"
+        android:weightSum="4"
+        >
+
+        <RadioButton
+            android:id="@+id/lifetimeButton"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_margin="2.5dp"
+            android:button="@null"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:padding="5dp"
+            android:background="@drawable/radio_button_background"
+            android:checked="true"
+
+            android:fontFamily="@font/luckiestguy"
+            android:text="Lifetime"/>
+
+        <RadioButton
+            android:id="@+id/soloButton"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_margin="2.5dp"
+
+            android:button="@null"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:padding="5dp"
+            android:background="@drawable/radio_button_background"
+
+            android:fontFamily="@font/luckiestguy"
+            android:text="solo"/>
+
+        <RadioButton
+            android:id="@+id/duoButton"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_margin="2.5dp"
+
+            android:button="@null"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:padding="5dp"
+            android:background="@drawable/radio_button_background"
+
+
+            android:fontFamily="@font/luckiestguy"
+            android:text="duo"/>
+
+        <RadioButton
+            android:id="@+id/squadButton"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_margin="2.5dp"
+
+            android:button="@null"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:padding="5dp"
+            android:background="@drawable/radio_button_background"
+
+
+            android:fontFamily="@font/luckiestguy"
+            android:text="squad"/>
+
+    </RadioGroup>
+
     <ViewFlipper
         android:id="@+id/statsFlipper"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        >
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            >
 
             <RadioGroup
                 android:id="@+id/radioGroup"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
                 android:gravity="center"
                 android:orientation="horizontal"
                 android:checkedButton="@id/pcPlatformButton"
+                android:weightSum="3"
                 >
 
                 <RadioButton
                     android:id="@+id/pcPlatformButton"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
+                    android:layout_margin="2.5dp"
+                    android:button="@null"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:padding="5dp"
+                    android:background="@drawable/radio_button_background"
 
                     android:fontFamily="@font/luckiestguy"
                     android:text="PC"/>
@@ -48,6 +133,13 @@
                     android:id="@+id/xboxPlatformButton"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
+                    android:layout_margin="2.5dp"
+
+                    android:button="@null"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:padding="5dp"
+                    android:background="@drawable/radio_button_background"
 
                     android:fontFamily="@font/luckiestguy"
                     android:text="xbox"/>
@@ -56,6 +148,14 @@
                     android:id="@+id/psnPlatformButton"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
+                    android:layout_margin="2.5dp"
+
+                    android:button="@null"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:padding="5dp"
+                    android:background="@drawable/radio_button_background"
+
 
                     android:fontFamily="@font/luckiestguy"
                     android:text="Psn"/>
@@ -68,65 +168,69 @@
                 android:id="@+id/usernameEdit"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="10dp"
+                android:layout_margin="5dp"
                 android:padding= "7.5dp"
-
-                android:singleLine="true"
-                android:imeOptions="actionDone"
 
                 android:textColor="@color/colorWhite"
                 android:background="@color/blackAlpha"
                 android:textColorHint="@color/colorWhite"
                 android:hint="Enter Epic Username..."
+
                 />
 
+            <Button
+                android:id="@+id/submitButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:background="@color/legendaryColor"
+                android:textColor="@color/blackAlpha"
+                android:textSize="20dp"
+                android:autoSizeTextType="uniform"
+                android:fontFamily="@font/luckiestguy"
+                android:text="Submit"/>
+
+
+
         </LinearLayout>
 
-        <LinearLayout
+        <ViewFlipper
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:layout_height="wrap_content"
+            android:id="@+id/modeFlipper">
 
-            <ScrollView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
-                    <include layout="@layout/stats_box_item" android:id="@+id/totalWinsBox"></include>
-                    <include layout="@layout/stats_box_item" android:id="@+id/totalKillsBox"></include>
-                    <include layout="@layout/stats_box_item" android:id="@+id/totalMatchesBox"></include>
-
-                </LinearLayout>
-
-            </ScrollView>
 
             <LinearLayout
-                android:orientation="vertical"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <ListView
-                    android:id="@+id/lifetimeStatsListView"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="@color/colorPrimary"
-                    android:divider="@color/colorYellow"
-                    android:dividerHeight="4dp"
-                    android:padding="5dp"
-
-                    >
-
-
-                </ListView>
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+                <include layout="@layout/stats_view_layout" android:id="@+id/lifetimeLayout"></include>
             </LinearLayout>
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+                <include layout="@layout/stats_view_layout" android:id="@+id/soloLayout"></include>
+            </LinearLayout>
 
-        </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+                <include layout="@layout/stats_view_layout" android:id="@+id/duoLayout"></include>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+                <include layout="@layout/stats_view_layout" android:id="@+id/squadLayout"></include>
+            </LinearLayout>
+
+        </ViewFlipper>
+
 
 
     </ViewFlipper>

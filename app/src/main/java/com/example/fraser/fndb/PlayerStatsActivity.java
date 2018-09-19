@@ -14,6 +14,7 @@ import android.view.KeyEvent;
 import android.view.View;
 import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputMethodManager;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.RadioGroup;
@@ -36,25 +37,37 @@ import java.io.OutputStreamWriter;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.Collections;
 import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
 
 public class PlayerStatsActivity extends AppCompatActivity {
 
     ViewFlipper vFlipper;
+    ViewFlipper modeFlipper;
     Toolbar toolbar;
 
-    RadioGroup rGroup;
-
+    RadioGroup platformGroup;
+    RadioGroup modeGroup;
     EditText inputText;
-    View winsBox, killsBox, matchesBox;
-    TextView winBoxTitle, killBoxTitle, matchesBoxTitle;
+    Button submitButton;
 
-    ListView lifetimeStatsList;
-    StatsListAdapter lifeTimeStatsAdapter;
+    View lifetimeLayout, soloLayout, duoLayout, squadLayout;
+
+
+    ListView lifetimeStatsList, soloStatsList, duoStatsList, squadStatsList;
+    StatsListAdapter lifeTimeStatsAdapter, soloStatsAdapter, duoStatsAdapter, squadStatsAdapter;
 
     ProgressDialog dialog;
 
     String platform = "pc";
+
+    HashMap<String,String> soloStatsMap = new HashMap<>();
+    HashMap<String,String> dueStatsMap = new HashMap<>();
+    HashMap<String,String> squadStatsMap = new HashMap<>();
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -64,11 +77,26 @@ public class PlayerStatsActivity extends AppCompatActivity {
 
         toolbar = findViewById(R.id.toolbarID);
         setSupportActionBar(toolbar);
+
         vFlipper = findViewById(R.id.statsFlipper);
         vFlipper.setDisplayedChild(0);
+        modeFlipper = findViewById(R.id.modeFlipper);
+        modeFlipper.setDisplayedChild(0);
 
-        rGroup = findViewById(R.id.radioGroup);
-        rGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+        lifetimeLayout = findViewById(R.id.lifetimeLayout);
+        lifetimeStatsList = lifetimeLayout.findViewById(R.id.statsListView);
+
+        soloLayout = findViewById(R.id.soloLayout);
+        soloStatsList = soloLayout.findViewById(R.id.statsListView);
+
+        duoLayout = findViewById(R.id.duoLayout);
+        duoStatsList = duoLayout.findViewById(R.id.statsListView);
+
+        squadLayout = findViewById(R.id.squadLayout);
+        squadStatsList = squadLayout.findViewById(R.id.statsListView);
+
+        platformGroup = findViewById(R.id.radioGroup);
+        platformGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
                 switch (checkedId)
@@ -81,6 +109,29 @@ public class PlayerStatsActivity extends AppCompatActivity {
                         break;
                     case R.id.psnPlatformButton:
                         platform = "psn";
+                        break;
+                }
+            }
+        });
+
+        modeGroup = findViewById(R.id.modeRadioGroup);
+        modeGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+
+                switch (checkedId)
+                {
+                    case R.id.lifetimeButton:
+                        modeFlipper.setDisplayedChild(0);
+                        break;
+                    case R.id.soloButton:
+                        modeFlipper.setDisplayedChild(1);
+                        break;
+                    case R.id.duoButton:
+                        modeFlipper.setDisplayedChild(2);
+                        break;
+                    case R.id.squadButton:
+                        modeFlipper.setDisplayedChild(3);
                         break;
                 }
             }
@@ -102,20 +153,21 @@ public class PlayerStatsActivity extends AppCompatActivity {
             }
         });
 
-        winsBox = findViewById(R.id.totalWinsBox);
-        killsBox = findViewById(R.id.totalKillsBox);
-        matchesBox = findViewById(R.id.totalMatchesBox);
+        submitButton = findViewById(R.id.submitButton);
+        submitButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (v == submitButton)
+                {
+                    hideKeyboard(PlayerStatsActivity.this);
+                    PlayerFetch fetch = new PlayerFetch();
+                    fetch.execute();
+                }
+            }
+        });
 
-        winBoxTitle = winsBox.findViewById(R.id.dataTitle);
-        winBoxTitle.setText("Wins");
 
-        killBoxTitle = killsBox.findViewById(R.id.dataTitle);
-        killBoxTitle.setText("Kills");
 
-        matchesBoxTitle = matchesBox.findViewById(R.id.dataTitle);
-        matchesBoxTitle.setText("Matches Played");
-
-        lifetimeStatsList = findViewById(R.id.lifetimeStatsListView);
 
         if (getSupportActionBar() != null)
         {
@@ -138,6 +190,7 @@ public class PlayerStatsActivity extends AppCompatActivity {
             });
         }
     }
+
 
     class PlayerFetch extends AsyncTask<Void, Void, Player>
     {
@@ -169,6 +222,7 @@ public class PlayerStatsActivity extends AppCompatActivity {
 
                     }
 
+                    Player player = new Player();
                     String name = "";
                     int wins = 0;
                     int kills = 0;
@@ -180,36 +234,44 @@ public class PlayerStatsActivity extends AppCompatActivity {
 
                     //LIFETIME OBJECTS
                     JSONArray lifeTimeStatsArray = rootObject.getJSONArray("lifeTimeStats");
-                    for (int i = 0; i < lifeTimeStatsArray.length(); i++)
-                    {
+                    for (int i = 0; i < lifeTimeStatsArray.length(); i++) {
                         JSONObject lifeTimeObject = lifeTimeStatsArray.getJSONObject(i);
-                        if (lifeTimeObject.get("key").toString().equals("Wins"))
-                        {
+                        if (lifeTimeObject.get("key").toString().equals("Wins")) {
                             wins = Integer.valueOf(lifeTimeObject.get("value").toString());
                         }
-                        if (lifeTimeObject.get("key").toString().equals("Kills"))
-                        {
+                        if (lifeTimeObject.get("key").toString().equals("Kills")) {
                             kills = Integer.valueOf(lifeTimeObject.get("value").toString());
                         }
-                        if (lifeTimeObject.get("key").toString().equals("Matches Played"))
-                        {
+                        if (lifeTimeObject.get("key").toString().equals("Matches Played")) {
                             matches = Integer.valueOf(lifeTimeObject.get("value").toString());
                         }
 
-                        lifetimeStatsMap.put(lifeTimeObject.get("key").toString(),lifeTimeObject.get("value").toString());
+                        lifetimeStatsMap.put(lifeTimeObject.get("key").toString(), lifeTimeObject.get("value").toString());
                     }
+
 
                     lifetimeStatsMap.remove("Wins");
                     lifetimeStatsMap.remove("Kills");
                     lifetimeStatsMap.remove("Matches Played");
 
-
-                    Player player = new Player();
                     player.setName(name);
                     player.lifetime.setTotalKills(kills);
                     player.lifetime.setTotalWins(wins);
                     player.lifetime.setTotalMatches(matches);
                     player.lifetime.setLifetimeStatsMap(lifetimeStatsMap);
+
+                    //SOLO PARSE
+                    soloStatsMap = parseModeStats("p2",rootObject);
+                    player.solo.setSoloStatsMap(soloStatsMap);
+
+                    //DUO PARSE
+                    dueStatsMap = parseModeStats("p10", rootObject);
+                    player.duo.setDuoStatsMap(dueStatsMap);
+
+                    //SQUAD PARSE
+                    squadStatsMap = parseModeStats("p9",rootObject);
+                    player.squad.setSquadStatsMap(squadStatsMap);
+
                     return player;
 
                 }
@@ -243,17 +305,96 @@ public class PlayerStatsActivity extends AppCompatActivity {
             {
                 toolbar.setTitle(player.getName());
 
-                TextView winsText = winsBox.findViewById(R.id.dataText);
+                //LIFETIME SCREEN
+                View lifetimeWinBox = lifetimeLayout.findViewById(R.id.totalWinsBox);
+                TextView winsText = lifetimeWinBox.findViewById(R.id.dataText);
                 winsText.setText(String.valueOf(player.lifetime.getTotalWins()));
+                TextView winsTitle = lifetimeWinBox.findViewById(R.id.dataTitle);
+                winsTitle.setText("Wins");
 
-                TextView killsText = killsBox.findViewById(R.id.dataText);
+                View lifetimeKillbox = lifetimeLayout.findViewById(R.id.totalKillsBox);
+                TextView killsText = lifetimeKillbox.findViewById(R.id.dataText);
                 killsText.setText(String.valueOf(player.lifetime.getTotalKills()));
+                TextView killsTitle = lifetimeKillbox.findViewById(R.id.dataTitle);
+                killsTitle.setText("Kills");
 
-                TextView matchesText = matchesBox.findViewById(R.id.dataText);
+                View lifetimeMatchBox = lifetimeLayout.findViewById(R.id.totalMatchesBox);
+                TextView matchesText = lifetimeMatchBox.findViewById(R.id.dataText);
                 matchesText.setText(String.valueOf(player.lifetime.getTotalMatches()));
+                TextView matchesTitle = lifetimeMatchBox.findViewById(R.id.dataTitle);
+                matchesTitle.setText("Matches Played");
 
                 lifeTimeStatsAdapter = new StatsListAdapter(getApplicationContext(),R.layout.stats_list_item, player.lifetime.getLifetimeStatsMap());
                 lifetimeStatsList.setAdapter(lifeTimeStatsAdapter);
+
+                //SOLO SCREEN
+                View soloWinBox = soloLayout.findViewById(R.id.totalWinsBox);
+                TextView soloWinsText = soloWinBox.findViewById(R.id.dataText);
+                soloWinsText.setText(String.valueOf(player.solo.getSoloStatsMap().get("Wins").toString()));
+                TextView soloWinsTitle = soloWinBox.findViewById(R.id.dataTitle);
+                soloWinsTitle.setText("Wins");
+
+                View soloKillbox = soloLayout.findViewById(R.id.totalKillsBox);
+                TextView soloKillsText = soloKillbox.findViewById(R.id.dataText);
+                soloKillsText.setText(String.valueOf(player.solo.getSoloStatsMap().get("Kills").toString()));
+                TextView soloKillsTitle = soloKillbox.findViewById(R.id.dataTitle);
+                soloKillsTitle.setText("Kills");
+
+                View soloMatchBox = soloLayout.findViewById(R.id.totalMatchesBox);
+                TextView soloMatchesText = soloMatchBox.findViewById(R.id.dataText);
+                soloMatchesText.setText(String.valueOf(player.solo.getSoloStatsMap().get("Matches").toString()));
+                TextView soloMatchesTitle = soloMatchBox.findViewById(R.id.dataTitle);
+                soloMatchesTitle.setText("Matches Played");
+
+
+                soloStatsAdapter = new StatsListAdapter(getApplicationContext(),R.layout.stats_list_item, player.solo.getSoloStatsMap());
+                soloStatsList.setAdapter(soloStatsAdapter);
+
+                //DUO SCREEN
+                View duoWinBox = duoLayout.findViewById(R.id.totalWinsBox);
+                TextView duoWinsText = duoWinBox.findViewById(R.id.dataText);
+                duoWinsText.setText(String.valueOf(player.duo.getDuoStatsMap().get("Wins").toString()));
+                TextView duoWinTitle = duoWinBox.findViewById(R.id.dataTitle);
+                duoWinTitle.setText("Wins");
+
+                View duoKillbox = duoLayout.findViewById(R.id.totalKillsBox);
+                TextView duoKillsText = duoKillbox.findViewById(R.id.dataText);
+                duoKillsText.setText(String.valueOf(player.duo.getDuoStatsMap().get("Kills").toString()));
+                TextView duoKillsTitle = duoKillbox.findViewById(R.id.dataTitle);
+                duoKillsTitle.setText("Kills");
+
+                View duoMatchBox = duoLayout.findViewById(R.id.totalMatchesBox);
+                TextView duoMatchesText = duoMatchBox.findViewById(R.id.dataText);
+                duoMatchesText.setText(String.valueOf(player.duo.getDuoStatsMap().get("Matches").toString()));
+                TextView duoMatchesTitle = duoMatchBox.findViewById(R.id.dataTitle);
+                duoMatchesTitle.setText("Matches Played");
+
+
+                duoStatsAdapter = new StatsListAdapter(getApplicationContext(),R.layout.stats_list_item, player.duo.getDuoStatsMap());
+                duoStatsList.setAdapter(duoStatsAdapter);
+
+                //Squad SCREEN
+                View squadWinBox = squadLayout.findViewById(R.id.totalWinsBox);
+                TextView squadWinsText = squadWinBox.findViewById(R.id.dataText);
+                squadWinsText.setText(String.valueOf(player.squad.getSquadStatsMap().get("Wins").toString()));
+                TextView squadWinTitle = squadWinBox.findViewById(R.id.dataTitle);
+                squadWinTitle.setText("Wins");
+
+                View squadKillbox = squadLayout.findViewById(R.id.totalKillsBox);
+                TextView squadKillsText = squadKillbox.findViewById(R.id.dataText);
+                squadKillsText.setText(String.valueOf(player.squad.getSquadStatsMap().get("Kills").toString()));
+                TextView squadKillsTitle = squadKillbox.findViewById(R.id.dataTitle);
+                squadKillsTitle.setText("Kills");
+
+                View squadMatchBox = squadLayout.findViewById(R.id.totalMatchesBox);
+                TextView squadMatchesText = squadMatchBox.findViewById(R.id.dataText);
+                squadMatchesText.setText(String.valueOf(player.squad.getSquadStatsMap().get("Matches").toString()));
+                TextView squadMatchesTitle = squadMatchBox.findViewById(R.id.dataTitle);
+                squadMatchesTitle.setText("Matches Played");
+
+
+                squadStatsAdapter = new StatsListAdapter(getApplicationContext(),R.layout.stats_list_item, player.squad.getSquadStatsMap());
+                squadStatsList.setAdapter(squadStatsAdapter);
 
                 vFlipper.setDisplayedChild(1);
                 dialog.dismiss();
@@ -269,6 +410,53 @@ public class PlayerStatsActivity extends AppCompatActivity {
 
 
         }
+    }
+
+    HashMap<String, String> parseModeStats(String type, JSONObject root) throws JSONException {
+
+        HashMap<String,String> thereturnMap = new HashMap<>();
+        JSONObject soloStatsObject = root.getJSONObject("stats").getJSONObject(type);
+
+        for (Iterator<String> iterator = soloStatsObject.keys(); iterator.hasNext();)
+        {
+            String theKey = null;
+            String theVal = null;
+            String key =  iterator.next();
+            Object value = soloStatsObject.get(key);
+            JSONObject jsonValue = null;
+            if (value instanceof JSONObject)
+            {
+                jsonValue = (JSONObject) value;
+                for (Iterator<String> it = jsonValue.keys(); it.hasNext(); )
+                {
+                    String attKey = it.next();
+                    String val = jsonValue.get(attKey).toString();
+                    if (attKey.equals("label"))
+                    {
+                        theKey = val;
+                        for (Iterator<String> i = jsonValue.keys(); i.hasNext();)
+                        {
+                            String attKey2 = i.next();
+                            String val2 = jsonValue.get(attKey2).toString();
+                            if (attKey2.equals("value"))
+                            {
+                                theVal = val2;
+                            }
+                        }
+                    }
+
+                }
+
+            }
+
+            if (theKey != null && theVal != null)
+            {
+                thereturnMap.put(theKey,theVal);
+            }
+        }
+
+        return thereturnMap;
+
     }
 
 

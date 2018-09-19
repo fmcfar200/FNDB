@@ -129,9 +129,10 @@ public class SeasonSelectActivity extends AppCompatActivity implements View.OnCl
                                         String name = String.valueOf(item.child("name").getValue());
                                         String rarity = String.valueOf(item.child("rarity").getValue());
                                         String imageID = String.valueOf(item.child("imageId").getValue());
+                                        String desc = String.valueOf(item.child("dsc").getValue());
                                         //int iImageID = Integer.parseInt(imageID);
 
-                                        Skin theSkin = new Skin(id,name,rarity,imageID);
+                                        Skin theSkin = new Skin(id,name,rarity,imageID, desc);
 
                                         if (typeSnap.getKey().contains("SP"))
                                         {
