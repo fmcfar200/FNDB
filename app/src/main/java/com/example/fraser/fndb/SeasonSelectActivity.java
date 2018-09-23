@@ -19,7 +19,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-public class SeasonSelectActivity extends AppCompatActivity implements View.OnClickListener
+public class SeasonSelectActivity extends BaseActivity implements View.OnClickListener
 {
 
 
@@ -27,7 +27,6 @@ public class SeasonSelectActivity extends AppCompatActivity implements View.OnCl
     itemShopButton,promoButton, holidayButton,uncommonButton, rareButton, epicButton, legendaryButton;
 
     private ViewFlipper layoutFlipper;
-    private Toolbar toolbar;
 
     private int season = 1;
 
@@ -41,9 +40,7 @@ public class SeasonSelectActivity extends AppCompatActivity implements View.OnCl
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_season);
-
-        toolbar = findViewById(R.id.toolbarID);
-        setSupportActionBar(toolbar);
+        super.onCreateDrawer();
         getSupportActionBar().setTitle("Battle Pass Skins");
 
         layoutFlipper = findViewById(R.id.viewFlipper);
@@ -82,8 +79,13 @@ public class SeasonSelectActivity extends AppCompatActivity implements View.OnCl
         if (getSupportActionBar() != null)
         {
             getSupportActionBar().setTitle("Skins");
-            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-            getSupportActionBar().setDisplayShowHomeEnabled(true);
+
+            //getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+            //getSupportActionBar().setDisplayShowHomeEnabled(true);
+
+
+            /*
+
 
             toolbar.setNavigationOnClickListener(new View.OnClickListener() {
                 @Override
@@ -96,6 +98,9 @@ public class SeasonSelectActivity extends AppCompatActivity implements View.OnCl
                     }
                 }
             });
+
+            */
+
         }
 
 

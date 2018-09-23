@@ -37,9 +37,7 @@ import java.util.List;
 import java.util.TimeZone;
 import java.util.concurrent.TimeUnit;
 
-public class HomeActivity extends AppCompatActivity implements View.OnClickListener, NavigationView.OnNavigationItemSelectedListener {
-
-    Toolbar toolbar;
+public class HomeActivity extends BaseActivity implements View.OnClickListener{
 
     Button skinBtn;
     Button statsButton;
@@ -59,29 +57,10 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+        super.onCreateDrawer();
 
-        toolbar = findViewById(R.id.toolbarID);
-        setSupportActionBar(toolbar);
         getSupportActionBar().setTitle("Home");
 
-        DrawerLayout drawer = findViewById(R.id.drawerLayout);
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
-                this, drawer, toolbar, R.string.nav_open, R.string.nav_closed)
-        {
-            @Override
-            public void onDrawerOpened(View drawerView) {
-                super.onDrawerOpened(drawerView);
-                drawerView.bringToFront();
-            }
-        };
-
-
-
-        drawer.addDrawerListener(toggle);
-        toggle.syncState();
-
-        NavigationView navigationView = findViewById(R.id.nav_view);
-        navigationView.setNavigationItemSelectedListener(this);
 
         skinBtn = findViewById(R.id.skinButton);
         statsButton = findViewById(R.id.statsButton);
@@ -97,8 +76,6 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         itemShopGrid = findViewById(R.id.itemShopGrid);
         itemShopGrid.setExpanded(true);
 
-
-        //StartShopTimer();
         fetch = new ShopFetch();
         fetch.execute();
 
@@ -123,24 +100,6 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         startActivity(i);
     }
 
-    @Override
-    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-
-        int id = item.getItemId();
-
-        if (id == R.id.drHome)
-        {
-
-        }
-        else if (id == R.id.drSkins)
-        {
-            StartActivity(SeasonSelectActivity.class);
-        }
-
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawerLayout);
-        drawer.closeDrawer(GravityCompat.START);
-        return true;
-    }
 
     private void StartShopTimer()
     {

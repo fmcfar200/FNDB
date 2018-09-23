@@ -12,6 +12,7 @@
         android:background="@color/colorWhite"
         app:titleTextColor="@color/colorPrimary"
         >
+
     </android.support.v7.widget.Toolbar>
 
 </LinearLayout>

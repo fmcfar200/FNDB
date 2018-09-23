@@ -9,21 +9,21 @@ import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 import android.view.View;
 import android.support.v7.widget.Toolbar;
 
-public class BaseActivity extends Activity implements NavigationView.OnNavigationItemSelectedListener
+public class BaseActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener
 {
     public DrawerLayout drawer;
     public Toolbar toolbar;
 
-    @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState)
+    protected void onCreateDrawer()
     {
-        super.onCreate(savedInstanceState);
         drawer = findViewById(R.id.drawerLayout);
         toolbar = findViewById(R.id.toolbarID);
+        setSupportActionBar(toolbar);
 
 
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -40,6 +40,8 @@ public class BaseActivity extends Activity implements NavigationView.OnNavigatio
 
         NavigationView navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+
     }
 
     @Override
@@ -55,7 +57,7 @@ public class BaseActivity extends Activity implements NavigationView.OnNavigatio
             StartActivity(SeasonSelectActivity.class);
         }
 
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawerLayout);
+        DrawerLayout drawer = findViewById(R.id.drawerLayout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
