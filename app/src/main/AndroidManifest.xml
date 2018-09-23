@@ -21,7 +21,9 @@
         <activity android:name=".DetailActivity" />
         <activity android:name=".PlayerStatsActivity" />
         <activity android:name=".NewsActivity" />
-        <activity android:name=".WeaponsActivity"></activity>
+        <activity android:name=".WeaponsActivity" />
+        <activity android:name=".PopActivity"
+            android:theme="@style/AppTheme.Pop"></activity>
     </application>
 
 </manifest>

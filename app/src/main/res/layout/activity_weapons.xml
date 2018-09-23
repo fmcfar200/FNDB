@@ -8,19 +8,33 @@
     android:background="@color/colorPrimary"
     android:orientation="vertical">
 
-    <include layout="@layout/app_toolbar"></include>
-
-
-    <GridView
-        android:id="@+id/weaponsGrid"
+    <android.support.v7.widget.Toolbar
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:horizontalSpacing="10dp"
-        android:verticalSpacing="5dp"
-        android:gravity="center"
-        android:numColumns="5"
+        android:layout_height="wrap_content"
+        android:id="@+id/toolbarID"
+        android:background="@color/colorWhite"
+        app:titleTextColor="@color/colorPrimary"
         >
+    </android.support.v7.widget.Toolbar>
 
-    </GridView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <GridView
+            android:id="@+id/weaponsGrid"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:horizontalSpacing="10dp"
+            android:verticalSpacing="10dp"
+            android:gravity="center"
+            android:numColumns="4"
+            >
+
+        </GridView>
+
+    </LinearLayout>
+
 
 </LinearLayout>

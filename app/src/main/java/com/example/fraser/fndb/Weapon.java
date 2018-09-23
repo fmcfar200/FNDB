@@ -1,6 +1,10 @@
 package com.example.fraser.fndb;
 
-public class Weapon
+import android.os.Parcelable;
+
+import java.io.Serializable;
+
+public class Weapon implements Serializable
 {
     private String name;
     private String rarity;
@@ -51,7 +55,7 @@ public class Weapon
 
 }
 
-class WeaponStats
+class WeaponStats implements Serializable
 {
     private Damage damage;
     private double dps;
@@ -88,7 +92,7 @@ class WeaponStats
         this.ammoCost = ammoCost;
     }
 }
-class Damage
+class Damage implements Serializable
 {
     private double body;
 
@@ -107,7 +111,7 @@ class Damage
 
     private double head;
 }
-class Magazine
+class Magazine implements Serializable
 {
     private double reload;
     private int magSize;

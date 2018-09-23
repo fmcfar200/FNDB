@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/pop_background"
+        tools:context=".PopActivity"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/popWeaponImage"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:src="@drawable/image_placeholder"/>
+
+        <TextView
+            android:id="@+id/popWeaponName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="5dp"
+            android:textColor="@color/colorWhite"
+            android:textSize="26dp"
+            android:autoSizeTextType="uniform"
+            android:textStyle="bold"
+            android:text="Assault Rifle" />
+
+        <TextView
+            android:id="@+id/popWeaponRarity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="5dp"
+            android:textColor="@color/colorWhite"
+            android:textSize="20dp"
+            android:autoSizeTextType="uniform"
+            android:textStyle="bold"
+            android:text="Assault Rifle" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_margin="10dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Weapon Stats"
+                    android:textSize="20dp"
+                    android:padding="5dp"
+                    android:fontFamily="@font/luckiestguy"
+                    android:textColor="@color/colorYellow"
+                    android:background="@color/rareColor"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_margin="5dp"
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Damage"
+                    android:textSize="20dp"
+                    android:padding="5dp"
+                    android:textStyle="bold"
+                    android:textColor="@color/blackAlpha"
+                    android:background="@color/legendaryColor"/>
+
+                <TextView
+                    android:id="@+id/popWeaponDamage"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="right|center"
+
+                    android:text="Body: 120  Head: 200"
+                    android:textSize="15dp"
+                    android:padding="5dp"
+                    android:textStyle="bold"
+                    android:textColor="@color/blackAlpha"
+                    android:background="@color/legendaryColor"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_margin="5dp"
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="DPS"
+                    android:textSize="20dp"
+                    android:padding="5dp"
+                    android:textStyle="bold"
+                    android:textColor="@color/blackAlpha"
+                    android:background="@color/legendaryColor"/>
+
+                <TextView
+                    android:id="@+id/popWeaponDPS"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="right|center"
+
+                    android:text="165"
+                    android:textSize="15dp"
+                    android:padding="5dp"
+                    android:textStyle="bold"
+                    android:textColor="@color/blackAlpha"
+                    android:background="@color/legendaryColor"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_margin="5dp"
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Rate of Fire"
+                    android:textSize="20dp"
+                    android:padding="5dp"
+                    android:textStyle="bold"
+                    android:textColor="@color/blackAlpha"
+                    android:background="@color/legendaryColor"/>
+
+                <TextView
+                    android:id="@+id/popWeaponFireRate"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="right|center"
+
+                    android:text="5.5"
+                    android:textSize="15dp"
+                    android:padding="5dp"
+                    android:textStyle="bold"
+                    android:textColor="@color/blackAlpha"
+                    android:background="@color/legendaryColor"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_margin="5dp"
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Reload Time"
+                    android:textSize="20dp"
+                    android:padding="5dp"
+                    android:textStyle="bold"
+                    android:textColor="@color/blackAlpha"
+                    android:background="@color/legendaryColor"/>
+
+                <TextView
+                    android:id="@+id/popWeaponReloadTime"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="right|center"
+
+                    android:text="5.5"
+                    android:textSize="15dp"
+                    android:padding="5dp"
+                    android:textStyle="bold"
+                    android:textColor="@color/blackAlpha"
+                    android:background="@color/legendaryColor"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_margin="5dp"
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Magazine Size"
+                    android:textSize="20dp"
+                    android:padding="5dp"
+                    android:textStyle="bold"
+                    android:textColor="@color/blackAlpha"
+                    android:background="@color/legendaryColor"/>
+
+                <TextView
+                    android:id="@+id/popWeaponMagSize"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="right|center"
+
+                    android:text="5.5"
+                    android:textSize="15dp"
+                    android:padding="5dp"
+                    android:textStyle="bold"
+                    android:textColor="@color/blackAlpha"
+                    android:background="@color/legendaryColor"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_margin="5dp"
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Ammo Cost"
+                    android:textSize="20dp"
+                    android:padding="5dp"
+                    android:textStyle="bold"
+                    android:textColor="@color/blackAlpha"
+                    android:background="@color/legendaryColor"/>
+
+                <TextView
+                    android:id="@+id/popWeaponAmmoCost"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="right|center"
+
+                    android:text="5.5"
+                    android:textSize="15dp"
+                    android:padding="5dp"
+                    android:textStyle="bold"
+                    android:textColor="@color/blackAlpha"
+                    android:background="@color/legendaryColor"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+
+</ScrollView>
+

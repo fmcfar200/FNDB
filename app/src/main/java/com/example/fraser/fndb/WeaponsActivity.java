@@ -1,12 +1,14 @@
 package com.example.fraser.fndb;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.support.v7.widget.Toolbar;
+import android.widget.AdapterView;
 import android.widget.GridView;
 
 import com.google.gson.JsonArray;
@@ -21,6 +23,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.io.Serializable;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
@@ -59,6 +62,16 @@ public class WeaponsActivity extends AppCompatActivity
 
         WeaponsFetch fetch = new WeaponsFetch();
         fetch.execute();
+
+        weaponsGridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Weapon weapon = (Weapon) parent.getItemAtPosition(position);
+                Intent i = new Intent(getApplicationContext(),PopActivity.class);
+                i.putExtra("weapon", weapon);
+                startActivity(i);
+            }
+        });
     }
 
     private class WeaponsFetch extends AsyncTask<Void, Void, List<Weapon>> {

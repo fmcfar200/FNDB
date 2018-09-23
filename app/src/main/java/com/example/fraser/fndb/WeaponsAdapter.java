@@ -1,12 +1,18 @@
 package com.example.fraser.fndb;
 
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
+import android.os.Build;
+import android.support.annotation.RequiresApi;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 
 import com.squareup.picasso.Picasso;
+import com.squareup.picasso.Target;
 
 import java.util.List;
 
@@ -43,10 +49,27 @@ public class WeaponsAdapter extends BaseAdapter
     public View getView(int position, View convertView, ViewGroup parent)
     {
         View view = View.inflate(mContext,layoutId,null);
-        ImageView imageView = view.findViewById(R.id.weaponImage);
+        final ImageView imageView = view.findViewById(R.id.weaponImage);
+
+        Picasso.with(mContext).load(data.get(position).getBacgroundURL()).into(new Target() {
+            @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
+            @Override
+            public void onBitmapLoaded(Bitmap bitmap, Picasso.LoadedFrom from) {
+                imageView.setBackground(new BitmapDrawable(mContext.getResources(),bitmap));
+            }
+
+            @Override
+            public void onBitmapFailed(Drawable errorDrawable) {
+
+            }
+
+            @Override
+            public void onPrepareLoad(Drawable placeHolderDrawable) {
+
+            }
+        });
+
         Picasso.with(mContext).load(data.get(position).getImageURL()).into(imageView);
-
-
 
         view.setTag(data.get(position));
         return view;
