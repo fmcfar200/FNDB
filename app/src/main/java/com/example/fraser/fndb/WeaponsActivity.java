@@ -9,11 +9,7 @@ import android.util.Log;
 import android.view.View;
 import android.support.v7.widget.Toolbar;
 import android.widget.AdapterView;
-import android.widget.GridView;
-
-import com.google.gson.JsonArray;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
+import android.widget.TextView;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -23,18 +19,18 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.io.Serializable;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
-public class WeaponsActivity extends AppCompatActivity
+public class WeaponsActivity extends AppCompatActivity implements AdapterView.OnItemClickListener
 {
     Toolbar toolbar;
     ProgressDialog dialog;
 
-    GridView weaponsGridView;
+    ExpandableHeightGridView assaultGridView, heavyGridView, shotgunGrid,
+    smgGrid, pistolGrid, sniperGrid, launcherGrid, otherGrid;
 
 
     @Override
@@ -58,20 +54,60 @@ public class WeaponsActivity extends AppCompatActivity
             });
         }
 
-        weaponsGridView = findViewById(R.id.weaponsGrid);
+        assaultGridView = findViewById(R.id.assaultGrid);
+        assaultGridView.setOnItemClickListener(this);
+        assaultGridView.setExpanded(true);
+
+        heavyGridView = findViewById(R.id.heavyGrid);
+        heavyGridView.setOnItemClickListener(this);
+        heavyGridView.setExpanded(true);
+
+        shotgunGrid = findViewById(R.id.shotgunGrid);
+        shotgunGrid.setOnItemClickListener(this);
+        shotgunGrid.setExpanded(true);
+
+        smgGrid = findViewById(R.id.smgGrid);
+        smgGrid.setOnItemClickListener(this);
+        smgGrid.setExpanded(true);
+
+        pistolGrid = findViewById(R.id.pistolGrid);
+        pistolGrid.setOnItemClickListener(this);
+        pistolGrid.setExpanded(true);
+
+        sniperGrid = findViewById(R.id.sniperGrid);
+        sniperGrid.setOnItemClickListener(this);
+        sniperGrid.setExpanded(true);
+
+        launcherGrid = findViewById(R.id.launcherGrid);
+        launcherGrid.setOnItemClickListener(this);
+        launcherGrid.setExpanded(true);
+
+        otherGrid = findViewById(R.id.otherGrid);
+        otherGrid.setOnItemClickListener(this);
+        otherGrid.setExpanded(true);
 
         WeaponsFetch fetch = new WeaponsFetch();
         fetch.execute();
 
-        weaponsGridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        /*
+        assaultGridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Weapon weapon = (Weapon) parent.getItemAtPosition(position);
-                Intent i = new Intent(getApplicationContext(),PopActivity.class);
-                i.putExtra("weapon", weapon);
-                startActivity(i);
+
             }
         });
+        */
+    }
+
+    @Override
+    public void onItemClick(AdapterView<?> parent, View view, int position, long id)
+    {
+
+            Weapon weapon = (Weapon) parent.getItemAtPosition(position);
+            Intent i = new Intent(getApplicationContext(),PopActivity.class);
+            i.putExtra("weapon", weapon);
+            startActivity(i);
+
     }
 
     private class WeaponsFetch extends AsyncTask<Void, Void, List<Weapon>> {
@@ -160,8 +196,88 @@ public class WeaponsActivity extends AppCompatActivity
         @Override
         protected void onPostExecute(List<Weapon> weapons)
         {
-            WeaponsAdapter adapter = new WeaponsAdapter(getApplicationContext(),R.layout.grid_weapon_item,weapons);
-            weaponsGridView.setAdapter(adapter);
+            List<Weapon> assault = new ArrayList<>();
+            List<Weapon> heavy = new ArrayList<>();
+            List<Weapon> shotgun = new ArrayList<>();
+            List<Weapon> smg = new ArrayList<>();
+            List<Weapon> pistol = new ArrayList<>();
+            List<Weapon> sniper = new ArrayList<>();
+            List<Weapon> launcher = new ArrayList<>();
+            List<Weapon> other = new ArrayList<>();
+
+
+
+            for(Weapon w: weapons)
+            {
+                if (w.getName().contains("Assault"))
+                {
+                    assault.add(w);
+                }
+                else if (w.getName().toLowerCase().contains("minigun") || w.getName().toLowerCase().contains("light machine"))
+                {
+                    heavy.add(w);
+                }
+                else if(w.getName().toLowerCase().contains("shotgun"))
+                {
+                    shotgun.add(w);
+                }
+                else if (w.getName().toLowerCase().contains("compact")||w.getName().toLowerCase().contains("submachine"))
+                {
+                    smg.add(w);
+                }
+                else if (w.getName().toLowerCase().contains("pistol") || w.getName().toLowerCase().contains("cannon") ||
+                        w.getName().toLowerCase().contains("revolver"))
+                {
+                    pistol.add(w);
+                }
+                else if(w.getName().toLowerCase().contains("sniper") || w.getName().toLowerCase().contains("hunting"))
+                {
+                    sniper.add(w);
+                }
+                else if(w.getName().toLowerCase().contains("launcher") || w.getName().toLowerCase().contains("missile"))
+                {
+                    launcher.add(w);
+                }
+                else
+                {
+                    other.add(w);
+                }
+
+
+            }
+
+            WeaponsAdapter assaultAdapter = new WeaponsAdapter(getApplicationContext(),R.layout.grid_weapon_item,assault);
+            assaultGridView.setAdapter(assaultAdapter);
+
+            WeaponsAdapter heavyAdapter = new WeaponsAdapter(getApplicationContext(),R.layout.grid_weapon_item,heavy);
+            heavyGridView.setAdapter(heavyAdapter);
+
+            WeaponsAdapter shotgunAdapter = new WeaponsAdapter(getApplicationContext(),R.layout.grid_weapon_item,shotgun);
+            shotgunGrid.setAdapter(shotgunAdapter);
+
+            WeaponsAdapter smgAdapter = new WeaponsAdapter(getApplicationContext(),R.layout.grid_weapon_item,smg);
+            smgGrid.setAdapter(smgAdapter);
+
+            WeaponsAdapter pistolAdapter = new WeaponsAdapter(getApplicationContext(),R.layout.grid_weapon_item,pistol);
+            pistolGrid.setAdapter(pistolAdapter);
+
+            WeaponsAdapter sniperAdapter = new WeaponsAdapter(getApplicationContext(),R.layout.grid_weapon_item,sniper);
+            sniperGrid.setAdapter(sniperAdapter);
+
+            WeaponsAdapter launcherAdapter = new WeaponsAdapter(getApplicationContext(),R.layout.grid_weapon_item,launcher);
+            launcherGrid.setAdapter(launcherAdapter);
+
+            if (other.size() != 0)
+            {
+                WeaponsAdapter otherAdapter = new WeaponsAdapter(getApplicationContext(),R.layout.grid_weapon_item,other);
+                otherGrid.setAdapter(otherAdapter);
+            }
+            else if (other.isEmpty())
+            {
+                TextView otherText = findViewById(R.id.otherText);
+                otherText.setVisibility(View.INVISIBLE);
+            }
+
 
             dialog.dismiss();
         }

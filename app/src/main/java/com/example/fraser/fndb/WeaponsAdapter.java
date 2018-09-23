@@ -49,26 +49,9 @@ public class WeaponsAdapter extends BaseAdapter
     public View getView(int position, View convertView, ViewGroup parent)
     {
         View view = View.inflate(mContext,layoutId,null);
-        final ImageView imageView = view.findViewById(R.id.weaponImage);
-
-        Picasso.with(mContext).load(data.get(position).getBacgroundURL()).into(new Target() {
-            @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
-            @Override
-            public void onBitmapLoaded(Bitmap bitmap, Picasso.LoadedFrom from) {
-                imageView.setBackground(new BitmapDrawable(mContext.getResources(),bitmap));
-            }
-
-            @Override
-            public void onBitmapFailed(Drawable errorDrawable) {
-
-            }
-
-            @Override
-            public void onPrepareLoad(Drawable placeHolderDrawable) {
-
-            }
-        });
-
+        ImageView imageView = view.findViewById(R.id.weaponImage);
+        ImageView backgroundView = view.findViewById(R.id.weaponBackground);
+        Picasso.with(mContext).load(data.get(position).getBacgroundURL()).into(backgroundView);
         Picasso.with(mContext).load(data.get(position).getImageURL()).into(imageView);
 
         view.setTag(data.get(position));

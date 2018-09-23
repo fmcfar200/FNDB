@@ -20,149 +20,162 @@
         app:headerLayout="@layout/nav_header"
         app:menu="@menu/drawermenu" />
 
-    <include layout="@layout/app_toolbar"></include>
 
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        >
 
-
-        <GridLayout
-            android:id="@+id/homeButtonLayout"
-            android:layout_width="275dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginLeft="25dp"
-            android:layout_marginRight="25dp"
-            android:layout_marginTop="70dp"
-
-            android:columnCount="2"
-            android:orientation="horizontal"
-            android:rowCount="2"
-
-
-            >
-
-            <Button
-                android:id="@+id/skinButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:background="@color/legendaryColor"
-
-                android:drawableBottom="@mipmap/ic_skin_foreground"
-                android:fontFamily="@font/luckiestguy"
-                android:gravity="center|top"
-                android:paddingTop="20dp"
-                android:text="Skins"
-                android:textColor="@color/colorWhite"
-                android:textSize="20dp" />
-
-            <Button
-                android:id="@+id/statsButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:background="@color/legendaryColor"
-                android:drawableBottom="@mipmap/ic_stats_foreground"
-                android:fontFamily="@font/luckiestguy"
-                android:gravity="center|top"
-                android:paddingTop="20dp"
-                android:text="Stats"
-                android:textColor="@color/colorWhite"
-                android:textSize="20dp" />
-
-            <Button
-                android:id="@+id/weaponsButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="10dp"
-                android:background="@color/legendaryColor"
-                android:drawableBottom="@mipmap/ic_weapon_small_foreground"
-                android:fontFamily="@font/luckiestguy"
-                android:gravity="center|top"
-                android:paddingTop="20dp"
-                android:text="Weapons"
-                android:textColor="@color/colorWhite"
-                android:textSize="20dp" />
-
-            <Button
-                android:id="@+id/newsButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="10dp"
-                android:background="@color/legendaryColor"
-                android:drawableBottom="@mipmap/ic_news_small_foreground"
-                android:fontFamily="@font/luckiestguy"
-                android:gravity="center|top"
-                android:paddingTop="20dp"
-                android:text="News"
-                android:textColor="@color/colorWhite"
-                android:textSize="20dp" />
-
-
-        </GridLayout>
 
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:layout_marginTop="20dp"
-            android:layout_marginLeft="25dp"
-            android:layout_marginRight="25dp">
+            android:orientation="vertical">
+
+            <include layout="@layout/app_toolbar"></include>
+
+
+            <GridLayout
+                android:id="@+id/homeButtonLayout"
+                android:layout_width="275dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="25dp"
+                android:layout_marginRight="25dp"
+                android:layout_marginTop="20dp"
+
+                android:columnCount="2"
+                android:orientation="horizontal"
+                android:rowCount="2"
+
+
+                >
+
+                <Button
+                    android:id="@+id/skinButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:background="@color/legendaryColor"
+
+                    android:drawableBottom="@mipmap/ic_skin_foreground"
+                    android:fontFamily="@font/luckiestguy"
+                    android:gravity="center|top"
+                    android:paddingTop="20dp"
+                    android:text="Skins"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="20dp" />
+
+                <Button
+                    android:id="@+id/statsButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:background="@color/legendaryColor"
+                    android:drawableBottom="@mipmap/ic_stats_foreground"
+                    android:fontFamily="@font/luckiestguy"
+                    android:gravity="center|top"
+                    android:paddingTop="20dp"
+                    android:text="Stats"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="20dp" />
+
+                <Button
+                    android:id="@+id/weaponsButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="10dp"
+                    android:background="@color/legendaryColor"
+                    android:drawableBottom="@mipmap/ic_weapon_small_foreground"
+                    android:fontFamily="@font/luckiestguy"
+                    android:gravity="center|top"
+                    android:paddingTop="20dp"
+                    android:text="Weapons"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="20dp" />
+
+                <Button
+                    android:id="@+id/newsButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="10dp"
+                    android:background="@color/legendaryColor"
+                    android:drawableBottom="@mipmap/ic_news_small_foreground"
+                    android:fontFamily="@font/luckiestguy"
+                    android:gravity="center|top"
+                    android:paddingTop="20dp"
+                    android:text="News"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="20dp" />
+
+
+            </GridLayout>
+
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:padding="4dp"
-                    android:background="@color/rareColor"
-                    android:textSize="20dp"
-                    android:fontFamily="@font/luckiestguy"
-                    android:textColor="@color/colorYellow"
-                    android:textStyle="bold"
-                    android:text="Item Shop"/>
-                <TextView
-                    android:id="@+id/shopTimerText"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="25dp"
+                android:layout_marginRight="25dp">
+
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:gravity="right"
-                    android:padding="4dp"
-                    android:background="@color/rareColor"
-                    android:textSize="20dp"
-                    android:fontFamily="@font/luckiestguy"
-                    android:textColor="@color/colorYellow"
-                    android:textStyle="bold"
-                    android:text="00:00:00"/>
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="4dp"
+                        android:background="@color/rareColor"
+                        android:textSize="20dp"
+                        android:fontFamily="@font/luckiestguy"
+                        android:textColor="@color/colorYellow"
+                        android:textStyle="bold"
+                        android:text="Item Shop"/>
+                    <TextView
+                        android:id="@+id/shopTimerText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="right"
+                        android:padding="4dp"
+                        android:background="@color/rareColor"
+                        android:textSize="20dp"
+                        android:fontFamily="@font/luckiestguy"
+                        android:textColor="@color/colorYellow"
+                        android:textStyle="bold"
+                        android:text="00:00:00"/>
 
+
+                </LinearLayout>
+
+                <com.example.fraser.fndb.ExpandableHeightGridView
+                    android:id="@+id/itemShopGrid"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:horizontalSpacing="10dp"
+                    android:verticalSpacing="5dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+
+                    android:numColumns="3"
+                    android:gravity="center"
+                    >
+
+                </com.example.fraser.fndb.ExpandableHeightGridView>
 
             </LinearLayout>
 
-            <GridView
-                android:id="@+id/itemShopGrid"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:horizontalSpacing="10dp"
-                android:verticalSpacing="5dp"
-                android:layout_marginTop="10dp"
-
-                android:numColumns="3"
-                android:gravity="center"
-                >
-
-            </GridView>
 
         </LinearLayout>
 
 
-    </LinearLayout>
+    </ScrollView>
+
 
 
 

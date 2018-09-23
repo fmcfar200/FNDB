@@ -16,6 +16,7 @@ import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ExpandableListView;
 import android.widget.GridView;
 import android.widget.TextView;
 
@@ -47,7 +48,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
 
     TextView timerTextView;
 
-    GridView itemShopGrid;
+    ExpandableHeightGridView itemShopGrid;
     List<ShopItem> shopItems = new ArrayList<>();
     ShopGridAdapter adapter;
     ProgressDialog dialog;
@@ -61,6 +62,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
 
         toolbar = findViewById(R.id.toolbarID);
         setSupportActionBar(toolbar);
+        getSupportActionBar().setTitle("Home");
 
         DrawerLayout drawer = findViewById(R.id.drawerLayout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -93,6 +95,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
 
         timerTextView = findViewById(R.id.shopTimerText);
         itemShopGrid = findViewById(R.id.itemShopGrid);
+        itemShopGrid.setExpanded(true);
 
 
         //StartShopTimer();

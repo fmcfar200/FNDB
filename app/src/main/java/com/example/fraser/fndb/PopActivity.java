@@ -44,7 +44,8 @@ public class PopActivity extends Activity {
         Weapon weapon = (Weapon) extras.get("weapon");
         if (weapon!=null)
         {
-            final ImageView imageView = findViewById(R.id.popWeaponImage);
+            ImageView imageView = findViewById(R.id.popWeaponImage);
+            ImageView backgroundView = findViewById(R.id.popWeaponBackground);
             TextView nameText = findViewById(R.id.popWeaponName);
             TextView rarityText = findViewById(R.id.popWeaponRarity);
             TextView damageText = findViewById(R.id.popWeaponDamage);
@@ -55,23 +56,8 @@ public class PopActivity extends Activity {
             TextView ammoCostText = findViewById(R.id.popWeaponAmmoCost);
 
             Picasso.with(getApplicationContext()).load(weapon.getImageURL()).into(imageView);
-            Picasso.with(getApplicationContext()).load(weapon.getBacgroundURL()).into(new Target() {
-                @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
-                @Override
-                public void onBitmapLoaded(Bitmap bitmap, Picasso.LoadedFrom from) {
-                    imageView.setBackground(new BitmapDrawable(getApplicationContext().getResources(),bitmap));
-                }
+            Picasso.with(getApplicationContext()).load(weapon.getBacgroundURL()).into(backgroundView);
 
-                @Override
-                public void onBitmapFailed(Drawable errorDrawable) {
-
-                }
-
-                @Override
-                public void onPrepareLoad(Drawable placeHolderDrawable) {
-
-                }
-            });
 
             nameText.setText(weapon.getName());
             rarityText.setText(weapon.getRarity());

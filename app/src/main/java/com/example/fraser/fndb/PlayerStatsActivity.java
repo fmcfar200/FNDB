@@ -160,7 +160,7 @@ public class PlayerStatsActivity extends AppCompatActivity {
         submitButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (v == submitButton)
+                if (v == submitButton && !inputText.getText().equals("") || inputText.length() > 0)
                 {
                     GetPlayerStats();
                 }

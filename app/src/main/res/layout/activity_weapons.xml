@@ -17,24 +17,224 @@
         >
     </android.support.v7.widget.Toolbar>
 
-
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <GridView
-            android:id="@+id/weaponsGrid"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:horizontalSpacing="10dp"
-            android:verticalSpacing="10dp"
-            android:gravity="center"
-            android:numColumns="4"
-            >
+            android:layout_margin="10dp"
+            android:orientation="vertical">
 
-        </GridView>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="2.5dp"
 
-    </LinearLayout>
+                android:fontFamily="@font/luckiestguy"
+                android:textColor="@color/colorYellow"
+                android:textSize="22dp"
+                android:autoSizeTextType="uniform"
+                android:background="@color/rareColor"
+                android:text="Assault Rifles"
+                />
+            <com.example.fraser.fndb.ExpandableHeightGridView
+                android:id="@+id/assaultGrid"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:horizontalSpacing="10dp"
+                android:verticalSpacing="10dp"
+                android:gravity="center"
+                android:numColumns="4"
+                >
+            </com.example.fraser.fndb.ExpandableHeightGridView>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"
+
+                android:padding="2.5dp"
+
+                android:fontFamily="@font/luckiestguy"
+                android:textColor="@color/colorYellow"
+                android:textSize="22dp"
+                android:autoSizeTextType="uniform"
+                android:background="@color/rareColor"
+                android:text="Heavy Machine Guns"
+                />
+            <com.example.fraser.fndb.ExpandableHeightGridView
+                android:id="@+id/heavyGrid"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:horizontalSpacing="10dp"
+                android:verticalSpacing="10dp"
+                android:gravity="center"
+                android:numColumns="4"
+                >
+            </com.example.fraser.fndb.ExpandableHeightGridView>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"
+
+                android:padding="2.5dp"
+
+                android:fontFamily="@font/luckiestguy"
+                android:textColor="@color/colorYellow"
+                android:textSize="22dp"
+                android:autoSizeTextType="uniform"
+                android:background="@color/rareColor"
+                android:text="Shotguns"
+                />
+
+            <com.example.fraser.fndb.ExpandableHeightGridView
+                android:id="@+id/shotgunGrid"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:horizontalSpacing="10dp"
+                android:verticalSpacing="10dp"
+                android:gravity="center"
+                android:numColumns="4"
+                >
+            </com.example.fraser.fndb.ExpandableHeightGridView>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"
+
+                android:padding="2.5dp"
+
+                android:fontFamily="@font/luckiestguy"
+                android:textColor="@color/colorYellow"
+                android:textSize="22dp"
+                android:autoSizeTextType="uniform"
+                android:background="@color/rareColor"
+                android:text="Submachine guns"
+                />
+
+            <com.example.fraser.fndb.ExpandableHeightGridView
+                android:id="@+id/smgGrid"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:horizontalSpacing="10dp"
+                android:verticalSpacing="10dp"
+                android:gravity="center"
+                android:numColumns="4"
+                >
+            </com.example.fraser.fndb.ExpandableHeightGridView>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"
+
+                android:padding="2.5dp"
+
+                android:fontFamily="@font/luckiestguy"
+                android:textColor="@color/colorYellow"
+                android:textSize="22dp"
+                android:autoSizeTextType="uniform"
+                android:background="@color/rareColor"
+                android:text="Pistols"
+                />
+
+            <com.example.fraser.fndb.ExpandableHeightGridView
+                android:id="@+id/pistolGrid"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:horizontalSpacing="10dp"
+                android:verticalSpacing="10dp"
+                android:gravity="center"
+                android:numColumns="4"
+                >
+            </com.example.fraser.fndb.ExpandableHeightGridView>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"
+
+                android:padding="2.5dp"
+
+                android:fontFamily="@font/luckiestguy"
+                android:textColor="@color/colorYellow"
+                android:textSize="22dp"
+                android:autoSizeTextType="uniform"
+                android:background="@color/rareColor"
+                android:text="Sniper Rifles"
+                />
+
+            <com.example.fraser.fndb.ExpandableHeightGridView
+                android:id="@+id/sniperGrid"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:horizontalSpacing="10dp"
+                android:verticalSpacing="10dp"
+                android:gravity="center"
+                android:numColumns="4"
+                >
+            </com.example.fraser.fndb.ExpandableHeightGridView>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"
+                android:padding="2.5dp"
+
+                android:fontFamily="@font/luckiestguy"
+                android:textColor="@color/colorYellow"
+                android:textSize="22dp"
+                android:autoSizeTextType="uniform"
+                android:background="@color/rareColor"
+                android:text="Launchers"
+                />
+
+            <com.example.fraser.fndb.ExpandableHeightGridView
+                android:id="@+id/launcherGrid"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:horizontalSpacing="10dp"
+                android:verticalSpacing="10dp"
+                android:gravity="center"
+                android:numColumns="4"
+                >
+            </com.example.fraser.fndb.ExpandableHeightGridView>
+
+            <TextView
+                android:id="@+id/otherText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"
+                android:padding="2.5dp"
+
+                android:fontFamily="@font/luckiestguy"
+                android:textColor="@color/colorYellow"
+                android:textSize="22dp"
+                android:autoSizeTextType="uniform"
+                android:background="@color/rareColor"
+                android:text="Other Weapons"
+                />
+
+            <com.example.fraser.fndb.ExpandableHeightGridView
+                android:id="@+id/otherGrid"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:horizontalSpacing="10dp"
+                android:verticalSpacing="10dp"
+                android:gravity="center"
+                android:numColumns="4"
+                >
+            </com.example.fraser.fndb.ExpandableHeightGridView>
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
 
 
 </LinearLayout>
