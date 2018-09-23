@@ -42,6 +42,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
 
     Button skinBtn;
     Button statsButton;
+    Button newsButton;
 
     TextView timerTextView;
 
@@ -81,8 +82,11 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
 
         skinBtn = findViewById(R.id.skinButton);
         statsButton = findViewById(R.id.statsButton);
+        newsButton = findViewById(R.id.newsButton);
+
         skinBtn.setOnClickListener(this);
         statsButton.setOnClickListener(this);
+        newsButton.setOnClickListener(this);
 
         timerTextView = findViewById(R.id.shopTimerText);
         itemShopGrid = findViewById(R.id.itemShopGrid);
@@ -100,6 +104,8 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
     {
         if (v ==skinBtn) { StartActivity(SeasonSelectActivity.class); }
         if (v == statsButton) { StartActivity(PlayerStatsActivity.class); }
+        if (v == newsButton) { StartActivity(NewsActivity.class); }
+
 
     }
 
@@ -130,18 +136,21 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
 
     private void StartShopTimer()
     {
+        int endHour = 1;
+        int endMinute = 2;
+        int endSecond = 0;
         Calendar calendar = Calendar.getInstance();
         calendar.setTimeZone(TimeZone.getTimeZone("GMT+01:00"));
         Date currentDate = calendar.getTime();
         Date end = new Date();
 
-        if (calendar.get(Calendar.HOUR_OF_DAY) >= 0 && calendar.get(Calendar.HOUR_OF_DAY) < 2)
+        if (calendar.get(Calendar.HOUR_OF_DAY) >= 0 && calendar.get(Calendar.HOUR_OF_DAY) < endHour+1)
         {
-            if (calendar.get(Calendar.MINUTE) >= 0 && calendar.get(Calendar.MINUTE) < 2)
+            if (calendar.get(Calendar.MINUTE) >= 0 && calendar.get(Calendar.MINUTE) < endMinute)
             {
-                calendar.set(Calendar.HOUR_OF_DAY, 1);
-                calendar.set(Calendar.MINUTE,2);
-                calendar.set(Calendar.SECOND, 0);
+                calendar.set(Calendar.HOUR_OF_DAY, endHour);
+                calendar.set(Calendar.MINUTE,endMinute);
+                calendar.set(Calendar.SECOND, endSecond);
                 calendar.setTimeZone(TimeZone.getTimeZone("GMT+01:00"));
                 end = calendar.getTime();
 
@@ -149,9 +158,9 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
             else
             {
                 calendar.add(Calendar.DATE, 1);
-                calendar.set(Calendar.HOUR_OF_DAY, 1);
-                calendar.set(Calendar.MINUTE,2);
-                calendar.set(Calendar.SECOND, 0);
+                calendar.set(Calendar.HOUR_OF_DAY, endHour);
+                calendar.set(Calendar.MINUTE,endMinute);
+                calendar.set(Calendar.SECOND, endSecond);
                 calendar.setTimeZone(TimeZone.getTimeZone("GMT+01:00"));
                 end = calendar.getTime();
             }
@@ -159,9 +168,9 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         else
         {
             calendar.add(Calendar.DATE, 1);
-            calendar.set(Calendar.HOUR_OF_DAY, 1);
-            calendar.set(Calendar.MINUTE,2);
-            calendar.set(Calendar.SECOND, 0);
+            calendar.set(Calendar.HOUR_OF_DAY, endHour);
+            calendar.set(Calendar.MINUTE,endMinute);
+            calendar.set(Calendar.SECOND, endSecond);
             calendar.setTimeZone(TimeZone.getTimeZone("GMT+01:00"));
             end = calendar.getTime();
         }
@@ -274,41 +283,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
 
             /*
                 TEST CODE
-
-
-            try {
-                URL endpoint = new URL("https://api.fortnitetracker.com/v1/news");
-                HttpURLConnection connection = (HttpURLConnection) endpoint.openConnection();
-                connection.setRequestProperty("TRN-Api-Key", getString(R.string.TRACKER_API_KEY));
-
-                if (connection.getResponseCode() == 200)
-                {
-
-                    InputStream responseBody = connection.getInputStream();
-                    BufferedReader r = new BufferedReader(new InputStreamReader(responseBody));
-                    StringBuilder jsonString = new StringBuilder();
-                    String line;
-                    while ((line = r.readLine()) != null) {
-                        jsonString.append(line).append('\n');
-                    }
-
-                    Log.e("TEST SUCCESS", jsonString.toString());
-                }
-                else
-                {
-                    Log.e("TEST FAIL", "FAIL");
-
-                }
-            } catch (MalformedURLException e) {
-                e.printStackTrace();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-
-
-
-            TES CODE END
-             */
+            */
 
             return shopItems;
 

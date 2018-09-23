@@ -73,6 +73,36 @@
                 android:textColor="@color/colorWhite"
                 android:textSize="20dp" />
 
+            <Button
+                android:id="@+id/weaponsButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:background="@color/legendaryColor"
+                android:drawableBottom="@mipmap/ic_weapon_small_foreground"
+                android:fontFamily="@font/luckiestguy"
+                android:gravity="center|top"
+                android:paddingTop="20dp"
+                android:text="Weapons"
+                android:textColor="@color/colorWhite"
+                android:textSize="20dp" />
+
+            <Button
+                android:id="@+id/newsButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:background="@color/legendaryColor"
+                android:drawableBottom="@mipmap/ic_news_small_foreground"
+                android:fontFamily="@font/luckiestguy"
+                android:gravity="center|top"
+                android:paddingTop="20dp"
+                android:text="News"
+                android:textColor="@color/colorWhite"
+                android:textSize="20dp" />
+
 
         </GridLayout>
 

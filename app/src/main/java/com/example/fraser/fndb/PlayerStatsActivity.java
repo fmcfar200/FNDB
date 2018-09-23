@@ -359,19 +359,19 @@ public class PlayerStatsActivity extends AppCompatActivity {
                 //SOLO SCREEN
                 View soloWinBox = soloLayout.findViewById(R.id.totalWinsBox);
                 TextView soloWinsText = soloWinBox.findViewById(R.id.dataText);
-                soloWinsText.setText(String.valueOf(player.solo.getSoloStatsMap().get("Wins").toString()));
+                soloWinsText.setText(String.valueOf(player.solo.getSoloStatsMap().get("Wins")));
                 TextView soloWinsTitle = soloWinBox.findViewById(R.id.dataTitle);
                 soloWinsTitle.setText("Wins");
 
                 View soloKillbox = soloLayout.findViewById(R.id.totalKillsBox);
                 TextView soloKillsText = soloKillbox.findViewById(R.id.dataText);
-                soloKillsText.setText(String.valueOf(player.solo.getSoloStatsMap().get("Kills").toString()));
+                soloKillsText.setText(String.valueOf(player.solo.getSoloStatsMap().get("Kills")));
                 TextView soloKillsTitle = soloKillbox.findViewById(R.id.dataTitle);
                 soloKillsTitle.setText("Kills");
 
                 View soloMatchBox = soloLayout.findViewById(R.id.totalMatchesBox);
                 TextView soloMatchesText = soloMatchBox.findViewById(R.id.dataText);
-                soloMatchesText.setText(String.valueOf(player.solo.getSoloStatsMap().get("Matches").toString()));
+                soloMatchesText.setText(String.valueOf(player.solo.getSoloStatsMap().get("Matches")));
                 TextView soloMatchesTitle = soloMatchBox.findViewById(R.id.dataTitle);
                 soloMatchesTitle.setText("Matches Played");
 
@@ -382,19 +382,19 @@ public class PlayerStatsActivity extends AppCompatActivity {
                 //DUO SCREEN
                 View duoWinBox = duoLayout.findViewById(R.id.totalWinsBox);
                 TextView duoWinsText = duoWinBox.findViewById(R.id.dataText);
-                duoWinsText.setText(String.valueOf(player.duo.getDuoStatsMap().get("Wins").toString()));
+                duoWinsText.setText(String.valueOf(player.duo.getDuoStatsMap().get("Wins")));
                 TextView duoWinTitle = duoWinBox.findViewById(R.id.dataTitle);
                 duoWinTitle.setText("Wins");
 
                 View duoKillbox = duoLayout.findViewById(R.id.totalKillsBox);
                 TextView duoKillsText = duoKillbox.findViewById(R.id.dataText);
-                duoKillsText.setText(String.valueOf(player.duo.getDuoStatsMap().get("Kills").toString()));
+                duoKillsText.setText(String.valueOf(player.duo.getDuoStatsMap().get("Kills")));
                 TextView duoKillsTitle = duoKillbox.findViewById(R.id.dataTitle);
                 duoKillsTitle.setText("Kills");
 
                 View duoMatchBox = duoLayout.findViewById(R.id.totalMatchesBox);
                 TextView duoMatchesText = duoMatchBox.findViewById(R.id.dataText);
-                duoMatchesText.setText(String.valueOf(player.duo.getDuoStatsMap().get("Matches").toString()));
+                duoMatchesText.setText(String.valueOf(player.duo.getDuoStatsMap().get("Matches")));
                 TextView duoMatchesTitle = duoMatchBox.findViewById(R.id.dataTitle);
                 duoMatchesTitle.setText("Matches Played");
 
@@ -405,19 +405,19 @@ public class PlayerStatsActivity extends AppCompatActivity {
                 //Squad SCREEN
                 View squadWinBox = squadLayout.findViewById(R.id.totalWinsBox);
                 TextView squadWinsText = squadWinBox.findViewById(R.id.dataText);
-                squadWinsText.setText(String.valueOf(player.squad.getSquadStatsMap().get("Wins").toString()));
+                squadWinsText.setText(String.valueOf(player.squad.getSquadStatsMap().get("Wins")));
                 TextView squadWinTitle = squadWinBox.findViewById(R.id.dataTitle);
                 squadWinTitle.setText("Wins");
 
                 View squadKillbox = squadLayout.findViewById(R.id.totalKillsBox);
                 TextView squadKillsText = squadKillbox.findViewById(R.id.dataText);
-                squadKillsText.setText(String.valueOf(player.squad.getSquadStatsMap().get("Kills").toString()));
+                squadKillsText.setText(String.valueOf(player.squad.getSquadStatsMap().get("Kills")));
                 TextView squadKillsTitle = squadKillbox.findViewById(R.id.dataTitle);
                 squadKillsTitle.setText("Kills");
 
                 View squadMatchBox = squadLayout.findViewById(R.id.totalMatchesBox);
                 TextView squadMatchesText = squadMatchBox.findViewById(R.id.dataText);
-                squadMatchesText.setText(String.valueOf(player.squad.getSquadStatsMap().get("Matches").toString()));
+                squadMatchesText.setText(String.valueOf(player.squad.getSquadStatsMap().get("Matches")));
                 TextView squadMatchesTitle = squadMatchBox.findViewById(R.id.dataTitle);
                 squadMatchesTitle.setText("Matches Played");
 

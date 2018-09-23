@@ -19,7 +19,8 @@
         <activity android:name=".SeasonSelectActivity" />
         <activity android:name=".SkinActivity" />
         <activity android:name=".DetailActivity" />
-        <activity android:name=".PlayerStatsActivity"></activity>
+        <activity android:name=".PlayerStatsActivity" />
+        <activity android:name=".NewsActivity"></activity>
     </application>
 
 </manifest>

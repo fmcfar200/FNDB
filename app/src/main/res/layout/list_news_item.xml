@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="15dp"
+    android:background="@color/colorWhite"
+    >
+
+    <ImageView
+        android:id="@+id/newsImage"
+        android:layout_width="350dp"
+        android:layout_height="175dp"
+        android:layout_gravity="center"
+        android:layout_margin="10dp"
+        android:src="@drawable/background"/>
+
+    <TextView
+        android:id="@+id/newsTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:textSize="20dp"
+        android:autoSizeTextType="uniform"
+        android:textColor="@color/blackAlpha"
+        android:textStyle="bold"
+        android:text="THIS IS THE TITLE."/>
+
+    <TextView
+        android:id="@+id/newsBody"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:textSize="17dp"
+        android:autoSizeTextType="uniform"
+        android:textColor="@color/blackAlpha"
+        android:text="THIS IS THE BODY."/>
+
+    <TextView
+        android:id="@+id/newsTime"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:textSize="10dp"
+        android:autoSizeTextType="uniform"
+        android:textColor="@color/blackAlpha"
+        android:text="THIS IS THE TIME."/>
+
+</LinearLayout>
