@@ -43,6 +43,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
     Button skinBtn;
     Button statsButton;
     Button newsButton;
+    Button weaponButton;
 
     TextView timerTextView;
 
@@ -83,10 +84,12 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         skinBtn = findViewById(R.id.skinButton);
         statsButton = findViewById(R.id.statsButton);
         newsButton = findViewById(R.id.newsButton);
+        weaponButton = findViewById(R.id.weaponsButton);
 
         skinBtn.setOnClickListener(this);
         statsButton.setOnClickListener(this);
         newsButton.setOnClickListener(this);
+        weaponButton.setOnClickListener(this);
 
         timerTextView = findViewById(R.id.shopTimerText);
         itemShopGrid = findViewById(R.id.itemShopGrid);
@@ -105,6 +108,8 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         if (v ==skinBtn) { StartActivity(SeasonSelectActivity.class); }
         if (v == statsButton) { StartActivity(PlayerStatsActivity.class); }
         if (v == newsButton) { StartActivity(NewsActivity.class); }
+        if (v == weaponButton) { StartActivity(WeaponsActivity.class); }
+
 
 
     }

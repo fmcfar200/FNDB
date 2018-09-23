@@ -20,7 +20,8 @@
         <activity android:name=".SkinActivity" />
         <activity android:name=".DetailActivity" />
         <activity android:name=".PlayerStatsActivity" />
-        <activity android:name=".NewsActivity"></activity>
+        <activity android:name=".NewsActivity" />
+        <activity android:name=".WeaponsActivity"></activity>
     </application>
 
 </manifest>
