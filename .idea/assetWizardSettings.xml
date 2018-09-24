@@ -40,13 +40,26 @@
                                           </PersistentState>
                                         </value>
                                       </entry>
+                                      <entry key="image">
+                                        <value>
+                                          <PersistentState>
+                                            <option name="values">
+                                              <map>
+                                                <entry key="paddingPercent" value="-10" />
+                                              </map>
+                                            </option>
+                                          </PersistentState>
+                                        </value>
+                                      </entry>
                                     </map>
                                   </option>
                                   <option name="values">
                                     <map>
+                                      <entry key="assetType" value="IMAGE" />
                                       <entry key="imageAsset" value="D:\Pictures\fnapp\skin_icon.png" />
-                                      <entry key="outputName" value="ic_back_search" />
+                                      <entry key="outputName" value="ic_skin" />
                                       <entry key="theme" value="CUSTOM" />
+                                      <entry key="themeColor" value="ffffff" />
                                     </map>
                                   </option>
                                 </PersistentState>
@@ -96,7 +109,7 @@
                                           <PersistentState>
                                             <option name="values">
                                               <map>
-                                                <entry key="scalingPercent" value="75" />
+                                                <entry key="scalingPercent" value="42" />
                                               </map>
                                             </option>
                                           </PersistentState>
@@ -106,8 +119,8 @@
                                   </option>
                                   <option name="values">
                                     <map>
-                                      <entry key="foregroundImage" value="C:\Users\Fraser\AndroidStudioProjects\FNDB\app\src\main\res\drawable\ic_scar_small.png" />
-                                      <entry key="outputName" value="ic_weapon_small" />
+                                      <entry key="foregroundImage" value="C:\Users\Fraser\AndroidStudioProjects\FNDB\app\src\main\res\drawable\skin_icon.png" />
+                                      <entry key="outputName" value="ic_skin_small" />
                                     </map>
                                   </option>
                                 </PersistentState>
