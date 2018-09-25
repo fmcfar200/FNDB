@@ -3,7 +3,6 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
-    android:background="@color/colorPrimary"
     android:padding="8dp">
 
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -14,15 +13,16 @@
         <TextView
             android:id="@+id/itemHeading"
             android:layout_height="wrap_content"
-            android:layout_width="200dp"
+            android:layout_width="175dp"
             android:layout_margin="20dp"
             android:layout_gravity="left"
             android:autoSizeTextType="uniform"
 
-            android:textSize="20dp"
+            android:textSize="25dp"
             android:textColor="@color/colorWhite"
             android:fontFamily="@font/luckiestguy"
             android:text="OMEGA"
+            android:maxLines="2"
             />
 
         <LinearLayout
@@ -44,7 +44,7 @@
                 android:layout_marginTop="5dp"
                 android:fontFamily="@font/luckiestguy"
                 android:textColor="@color/colorWhite"
-                android:textSize="17dp"
+                android:textSize="20dp"
                 android:text="Free">
             </TextView>
 
@@ -57,11 +57,10 @@
 
     <ImageView
         android:id="@+id/itemIcon"
-        android:layout_width="125dp"
-        android:layout_height="125dp"
-        android:layout_marginRight="25dp"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
 
-        android:padding="15dp"
+        android:padding="10dp"
         android:layout_alignParentRight="true"
         android:src="@drawable/image_placeholder"
 
