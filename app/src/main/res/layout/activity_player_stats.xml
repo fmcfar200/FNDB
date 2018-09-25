@@ -2,20 +2,13 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:background="@color/colorPrimary"
+    android:background="@drawable/background_original_cut"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".PlayerStatsActivity"
     android:orientation="vertical">
 
-    <android.support.v7.widget.Toolbar
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/toolbarID"
-        android:background="@color/colorWhite"
-        app:titleTextColor="@color/colorPrimary"
-        >
-    </android.support.v7.widget.Toolbar>
+   <include layout="@layout/app_toolbar"></include>
 
     <RadioGroup
         android:id="@+id/modeRadioGroup"

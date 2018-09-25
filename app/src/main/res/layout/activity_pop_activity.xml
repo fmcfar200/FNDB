@@ -47,6 +47,8 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_margin="5dp"
+            android:textAlignment="center"
+            android:maxLines="1"
             android:textColor="@color/colorWhite"
             android:textSize="26dp"
             android:autoSizeTextType="uniform"
@@ -59,6 +61,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_margin="5dp"
+            android:padding="5dp"
             android:textColor="@color/colorWhite"
             android:textSize="20dp"
             android:autoSizeTextType="uniform"
@@ -74,23 +77,26 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:layout_margin="5dp"
+                android:orientation="horizontal"
+                android:background="@color/colorPrimaryDarkAlpha">
                 <TextView
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Weapon Stats"
                     android:textSize="20dp"
                     android:padding="5dp"
                     android:fontFamily="@font/luckiestguy"
-                    android:textColor="@color/colorYellow"
-                    android:background="@color/rareColor"/>
+                    android:textColor="@color/colorWhite"
+                    android:background="@color/greyishBlue"/>
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:layout_margin="5dp"
+                android:layout_margin="2.5dp"
+                android:background="@color/darkGrey"
                 >
                 <TextView
                     android:layout_width="wrap_content"
@@ -99,8 +105,8 @@
                     android:textSize="20dp"
                     android:padding="5dp"
                     android:textStyle="bold"
-                    android:textColor="@color/blackAlpha"
-                    android:background="@color/legendaryColor"/>
+                    android:textColor="@color/colorWhite"
+                    />
 
                 <TextView
                     android:id="@+id/popWeaponDamage"
@@ -112,8 +118,8 @@
                     android:textSize="15dp"
                     android:padding="5dp"
                     android:textStyle="bold"
-                    android:textColor="@color/blackAlpha"
-                    android:background="@color/legendaryColor"/>
+                    android:textColor="@color/colorWhite"
+                    />
 
             </LinearLayout>
 
@@ -121,7 +127,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:layout_margin="5dp"
+                android:layout_margin="2.5dp"
+                android:background="@color/darkGrey"
                 >
                 <TextView
                     android:layout_width="wrap_content"
@@ -130,8 +137,8 @@
                     android:textSize="20dp"
                     android:padding="5dp"
                     android:textStyle="bold"
-                    android:textColor="@color/blackAlpha"
-                    android:background="@color/legendaryColor"/>
+                    android:textColor="@color/colorWhite"
+                    />
 
                 <TextView
                     android:id="@+id/popWeaponDPS"
@@ -143,8 +150,8 @@
                     android:textSize="15dp"
                     android:padding="5dp"
                     android:textStyle="bold"
-                    android:textColor="@color/blackAlpha"
-                    android:background="@color/legendaryColor"/>
+                    android:textColor="@color/colorWhite"
+                    />
 
             </LinearLayout>
 
@@ -152,7 +159,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:layout_margin="5dp"
+                android:layout_margin="2.5dp"
+                android:background="@color/darkGrey"
                 >
                 <TextView
                     android:layout_width="wrap_content"
@@ -161,8 +169,8 @@
                     android:textSize="20dp"
                     android:padding="5dp"
                     android:textStyle="bold"
-                    android:textColor="@color/blackAlpha"
-                    android:background="@color/legendaryColor"/>
+                    android:textColor="@color/colorWhite"
+                    />
 
                 <TextView
                     android:id="@+id/popWeaponFireRate"
@@ -174,8 +182,8 @@
                     android:textSize="15dp"
                     android:padding="5dp"
                     android:textStyle="bold"
-                    android:textColor="@color/blackAlpha"
-                    android:background="@color/legendaryColor"/>
+                    android:textColor="@color/colorWhite"
+                    />
 
             </LinearLayout>
 
@@ -183,7 +191,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:layout_margin="5dp"
+                android:layout_margin="2.5dp"
+                android:background="@color/darkGrey"
                 >
                 <TextView
                     android:layout_width="wrap_content"
@@ -192,8 +201,7 @@
                     android:textSize="20dp"
                     android:padding="5dp"
                     android:textStyle="bold"
-                    android:textColor="@color/blackAlpha"
-                    android:background="@color/legendaryColor"/>
+                    android:textColor="@color/colorWhite" />
 
                 <TextView
                     android:id="@+id/popWeaponReloadTime"
@@ -205,8 +213,7 @@
                     android:textSize="15dp"
                     android:padding="5dp"
                     android:textStyle="bold"
-                    android:textColor="@color/blackAlpha"
-                    android:background="@color/legendaryColor"/>
+                    android:textColor="@color/colorWhite" />
 
             </LinearLayout>
 
@@ -214,7 +221,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:layout_margin="5dp"
+                android:layout_margin="2.5dp"
+                android:background="@color/darkGrey"
                 >
                 <TextView
                     android:layout_width="wrap_content"
@@ -223,8 +231,8 @@
                     android:textSize="20dp"
                     android:padding="5dp"
                     android:textStyle="bold"
-                    android:textColor="@color/blackAlpha"
-                    android:background="@color/legendaryColor"/>
+                    android:textColor="@color/colorWhite"
+                    />
 
                 <TextView
                     android:id="@+id/popWeaponMagSize"
@@ -236,8 +244,7 @@
                     android:textSize="15dp"
                     android:padding="5dp"
                     android:textStyle="bold"
-                    android:textColor="@color/blackAlpha"
-                    android:background="@color/legendaryColor"/>
+                    android:textColor="@color/colorWhite"/>
 
             </LinearLayout>
 
@@ -245,7 +252,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:layout_margin="5dp"
+                android:layout_margin="2.5dp"
+                android:background="@color/darkGrey"
                 >
                 <TextView
                     android:layout_width="wrap_content"
@@ -254,8 +262,7 @@
                     android:textSize="20dp"
                     android:padding="5dp"
                     android:textStyle="bold"
-                    android:textColor="@color/blackAlpha"
-                    android:background="@color/legendaryColor"/>
+                    android:textColor="@color/colorWhite"/>
 
                 <TextView
                     android:id="@+id/popWeaponAmmoCost"
@@ -267,8 +274,7 @@
                     android:textSize="15dp"
                     android:padding="5dp"
                     android:textStyle="bold"
-                    android:textColor="@color/blackAlpha"
-                    android:background="@color/legendaryColor"/>
+                    android:textColor="@color/colorWhite"/>
 
             </LinearLayout>
 

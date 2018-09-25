@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.Layout;
 import android.util.Log;
 import android.view.View;
 import android.support.v7.widget.Toolbar;
@@ -274,7 +275,7 @@ public class WeaponsActivity extends AppCompatActivity implements AdapterView.On
             }
             else if (other.isEmpty())
             {
-                TextView otherText = findViewById(R.id.otherText);
+                View otherText = findViewById(R.id.otherText);
                 otherText.setVisibility(View.INVISIBLE);
             }
 
