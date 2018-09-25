@@ -2,12 +2,13 @@
 <FrameLayout android:layout_width="100dp"
     android:layout_height="125dp"
     android:layout_margin="10dp"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@color/colorPrimaryDark">
 
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/colorOffRed"/>
+        />
 
     <TextView
         android:id="@+id/dataText"
@@ -15,11 +16,13 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center|top"
         android:layout_marginTop="20dp"
+
+        android:fontFamily="@font/luckiestguy"
         android:textStyle="bold"
         android:textColor="@color/colorWhite"
-        android:textSize="24dp"
+        android:textSize="30dp"
         android:autoSizeTextType="uniform"
-        android:text="100"/>
+        android:text="1000"/>
 
     <TextView
         android:id="@+id/dataTitle"
@@ -27,6 +30,8 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center|bottom"
         android:layout_marginBottom="20dp"
+
+        android:fontFamily="@font/luckiestguy"
         android:textAlignment="center"
         android:textColor="@color/colorWhite"
         android:textSize="18dp"

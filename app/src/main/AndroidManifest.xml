@@ -16,15 +16,18 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".SeasonSelectActivity"
-            android:parentActivityName=".HomeActivity"/>
+        <activity
+            android:name=".SeasonSelectActivity"
+            android:parentActivityName=".HomeActivity" />
         <activity android:name=".SkinActivity" />
         <activity android:name=".DetailActivity" />
         <activity android:name=".PlayerStatsActivity" />
         <activity android:name=".NewsActivity" />
         <activity android:name=".WeaponsActivity" />
-        <activity android:name=".PopActivity"
-            android:theme="@style/AppTheme.Pop"></activity>
+        <activity
+            android:name=".PopActivity"
+            android:theme="@style/AppTheme.Pop" />
+        <activity android:name=".ChallengesActivity"></activity>
     </application>
 
 </manifest>

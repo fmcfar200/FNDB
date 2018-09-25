@@ -1,6 +1,8 @@
 package com.example.fraser.fndb;
 
 import android.content.Context;
+import android.os.Build;
+import android.support.annotation.RequiresApi;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
@@ -46,6 +48,7 @@ public class StatsListAdapter extends BaseAdapter
         return position;
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.N)
     @Override
     public View getView(int position, View convertView, ViewGroup parent)
     {
@@ -53,6 +56,7 @@ public class StatsListAdapter extends BaseAdapter
         String value = getItem(position);
 
         View view = View.inflate(mContext,layoutId,null);
+
 
         TextView titleText = view.findViewById(R.id.statTitle);
         TextView dataText = view.findViewById(R.id.statData);
