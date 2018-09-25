@@ -22,6 +22,7 @@ import com.google.firebase.database.ValueEventListener;
 public class SeasonSelectActivity extends BaseActivity implements View.OnClickListener
 {
 
+    Toolbar toolbar;
 
     private Button s1Button, s2Button, s3Button, s4Button, s5Button, battlePassButton,
     itemShopButton,promoButton, holidayButton,uncommonButton, rareButton, epicButton, legendaryButton;
@@ -40,8 +41,9 @@ public class SeasonSelectActivity extends BaseActivity implements View.OnClickLi
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_season);
-        super.onCreateDrawer();
-        getSupportActionBar().setTitle("Battle Pass Skins");
+
+        toolbar = findViewById(R.id.toolbarID);
+        setSupportActionBar(toolbar);
 
         layoutFlipper = findViewById(R.id.viewFlipper);
         s1Button = findViewById(R.id.s1Skins);
@@ -79,13 +81,8 @@ public class SeasonSelectActivity extends BaseActivity implements View.OnClickLi
         if (getSupportActionBar() != null)
         {
             getSupportActionBar().setTitle("Skins");
-
-            //getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-            //getSupportActionBar().setDisplayShowHomeEnabled(true);
-
-
-            /*
-
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+            getSupportActionBar().setDisplayShowHomeEnabled(true);
 
             toolbar.setNavigationOnClickListener(new View.OnClickListener() {
                 @Override
@@ -99,7 +96,6 @@ public class SeasonSelectActivity extends BaseActivity implements View.OnClickLi
                 }
             });
 
-            */
 
         }
 
