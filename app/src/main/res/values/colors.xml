@@ -11,6 +11,9 @@
     <color name="colorOrange">#f78c00</color>
     <color name="colorPink">#f75ba4</color>
     <color name="darkGrey">#ced3e0</color>
+    <color name="lightGrey">#d1d1d1</color>
+    <color name="greyishBlue">#7e96bc</color>
+    <color name="darkBlue">#002d77</color>
     <color name="blackAlpha">#000000</color>
 
 
@@ -18,6 +21,12 @@
     <color name="rareColor">#0a59d8</color>
     <color name="epicColor">#721eb2</color>
     <color name="legendaryColor">#ffac47</color>
+
+    <color name="colorPrimaryDarkAlpha">#900069c0</color>
+
+
+
+
 
 
 

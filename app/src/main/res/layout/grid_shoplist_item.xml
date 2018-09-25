@@ -41,7 +41,8 @@
     <FrameLayout
         android:id="@+id/costLayout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:background="@color/darkBlue">
         <TextView
             android:id="@+id/costText"
             android:layout_width="wrap_content"
