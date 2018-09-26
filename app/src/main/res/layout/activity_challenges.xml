@@ -1,9 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ChallengesActivity">
+    tools:context=".ChallengesActivity"
+    android:background="@drawable/background_original_cut"
+    android:orientation="vertical">
 
-</android.support.constraint.ConstraintLayout>
+    <include layout="@layout/app_toolbar"></include>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:orientation="horizontal"
+        android:background="@color/colorPrimaryDarkAlpha"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="4dp"
+
+            android:textColor="@color/colorWhite"
+            android:background="@color/greyishBlue"
+            android:fontFamily="@font/luckiestguy"
+            android:textSize="20dp"
+            android:autoSizeTextType="uniform"
+            android:text="Current Challenges"/>
+
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/challengeListView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorPrimaryDarkAlpha"
+        android:divider="@color/greyishBlue"
+        android:dividerHeight="5dp"
+        android:layout_margin="10dp">
+
+    </ListView>
+
+</LinearLayout>

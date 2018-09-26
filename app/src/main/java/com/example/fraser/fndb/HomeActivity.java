@@ -43,6 +43,7 @@ public class HomeActivity extends BaseActivity implements View.OnClickListener{
     Button statsButton;
     Button newsButton;
     Button weaponButton;
+    Button challengeButton;
 
     TextView timerTextView;
 
@@ -66,11 +67,13 @@ public class HomeActivity extends BaseActivity implements View.OnClickListener{
         statsButton = findViewById(R.id.statsButton);
         newsButton = findViewById(R.id.newsButton);
         weaponButton = findViewById(R.id.weaponsButton);
+        challengeButton = findViewById(R.id.challengesButton);
 
         skinBtn.setOnClickListener(this);
         statsButton.setOnClickListener(this);
         newsButton.setOnClickListener(this);
         weaponButton.setOnClickListener(this);
+        challengeButton.setOnClickListener(this);
 
         timerTextView = findViewById(R.id.shopTimerText);
         itemShopGrid = findViewById(R.id.itemShopGrid);
@@ -89,6 +92,8 @@ public class HomeActivity extends BaseActivity implements View.OnClickListener{
         if (v == statsButton) { StartActivity(PlayerStatsActivity.class); }
         if (v == newsButton) { StartActivity(NewsActivity.class); }
         if (v == weaponButton) { StartActivity(WeaponsActivity.class); }
+        if (v == challengeButton) { StartActivity(ChallengesActivity.class); }
+
 
 
 
