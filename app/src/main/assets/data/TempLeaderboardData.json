@@ -1,0 +1,125 @@
+{
+  "window": "top_10_kills",
+  "entries": [
+    {
+      "uid": "4735ce9132924caf8a5b17789b40f79c",
+      "username": "Ninja",
+      "kills": "80750",
+      "wins": "4182",
+      "matches": "11251",
+      "minutes": "50091",
+      "score": "4333123",
+      "kd": "11.42",
+      "platform": "pc",
+      "rank": 1
+    },
+    {
+      "uid": "7c39ffede7ba421883380c1f53a05b16",
+      "username": "NetJ-",
+      "kills": "77682",
+      "wins": "2690",
+      "matches": "16300",
+      "minutes": "76772",
+      "score": "3949637",
+      "kd": "5.71",
+      "platform": "ps4",
+      "rank": 2
+    },
+    {
+      "uid": "fd44b3b9b46f426fa174412d126f68c3",
+      "username": "HighDistortion",
+      "kills": "77592",
+      "wins": "2845",
+      "matches": "13469",
+      "minutes": "53320",
+      "score": "3824749",
+      "kd": "7.3",
+      "platform": "pc",
+      "rank": 3
+    },
+    {
+      "uid": "38b2eeec07124f7c9c429c8ed88f392b",
+      "username": "PrO_Poseid0n",
+      "kills": "66244",
+      "wins": "2944",
+      "matches": "14141",
+      "minutes": "42437",
+      "score": "4401399",
+      "kd": "5.92",
+      "platform": "ps4",
+      "rank": 4
+    },
+    {
+      "uid": "abe9710d05694258a6e768133a290d4a",
+      "username": "difhai-",
+      "kills": "65360",
+      "wins": "2054",
+      "matches": "17378",
+      "minutes": "34856",
+      "score": "4694570",
+      "kd": "4.27",
+      "platform": "ps4",
+      "rank": 5
+    },
+    {
+      "uid": "f3a372cb00f5466585c5fca97c7a5fec",
+      "username": "PapaTrigg",
+      "kills": "65030",
+      "wins": "3515",
+      "matches": "11646",
+      "minutes": "47088",
+      "score": "4686558",
+      "kd": "8",
+      "platform": "ps4",
+      "rank": 6
+    },
+    {
+      "uid": "3900c5958e4b4553907b2b32e86e03f8",
+      "username": "Dark",
+      "kills": "65023",
+      "wins": "3302",
+      "matches": "11442",
+      "minutes": "49834",
+      "score": "3496735",
+      "kd": "7.99",
+      "platform": "pc",
+      "rank": 7
+    },
+    {
+      "uid": "5359db2570294c59b6ec8f57e816f6a7",
+      "username": "Fnatic_Ettnix",
+      "kills": "64163",
+      "wins": "3971",
+      "matches": "9257",
+      "minutes": "51742",
+      "score": "3512055",
+      "kd": "12.14",
+      "platform": "pc",
+      "rank": 8
+    },
+    {
+      "uid": "525bc37e7a814f83bd4f85799e664255",
+      "username": "KamoLRF",
+      "kills": "63418",
+      "wins": "3340",
+      "matches": "9012",
+      "minutes": "42886",
+      "score": "3867612",
+      "kd": "11.18",
+      "platform": "ps4",
+      "rank": 9
+    },
+    {
+      "uid": "e153dc866baf4cb59dddb79342b2fea9",
+      "username": "Erdem_1905Tekin",
+      "kills": "63014",
+      "wins": "2178",
+      "matches": "17099",
+      "minutes": "42212",
+      "score": "4187628",
+      "kd": "4.22",
+      "platform": "ps4",
+      "rank": 10
+    }
+  ]
+}

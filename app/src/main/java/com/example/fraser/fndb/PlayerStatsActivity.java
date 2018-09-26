@@ -3,6 +3,7 @@ package com.example.fraser.fndb;
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Environment;
@@ -189,6 +190,37 @@ public class PlayerStatsActivity extends AppCompatActivity {
 
                 }
             });
+        }
+
+        Intent intent = getIntent();
+        Bundle extras = intent.getExtras();
+
+        if (extras != null)
+        {
+            Log.e("!NULL", "LEADERBOARD ITEM !NULL");
+            if(extras.containsKey("item"))
+            {
+                LeaderboardItem leaderboardItem = (LeaderboardItem) extras.get("item");
+                Log.e("ITEM", "LEADERBOARD ITEM: " + leaderboardItem.getUsername());
+                String username = leaderboardItem.getUsername().toLowerCase();
+                String itemPlatform = leaderboardItem.getPlatform();
+
+                inputText.setText(username);
+                if (itemPlatform.equals("xb1"))
+                {
+                    platform = "xbox";
+                }
+                else if (itemPlatform.equals("ps4"))
+                {
+                    platform = "psn";
+                }
+
+
+                PlayerFetch quickFetch = new PlayerFetch();
+                quickFetch.execute();
+
+
+            }
         }
 
     }

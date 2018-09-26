@@ -22,6 +22,8 @@
     <color name="rareColor">#0a59d8</color>
     <color name="epicColor">#721eb2</color>
     <color name="legendaryColor">#ffac47</color>
+    <color name="colorRed">#70ff0000</color>
+
 
     <color name="colorPrimaryDarkAlpha">#900069c0</color>
 

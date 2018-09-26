@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.support.v4.view.MenuItemCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.View;
@@ -17,7 +16,6 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
 import java.io.IOException;
@@ -160,26 +158,4 @@ public class SkinActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public String GetJSONLocal()
-    {
-        String json = null;
-
-        try
-        {
-            InputStream stream = getAssets().open("data/FNSData.json");
-            int size = stream.available();
-            byte[] buffer = new byte[size];
-            stream.read(buffer);
-            stream.close();
-            json = new String(buffer, "UTF-8");
-        }
-        catch (IOException e)
-        {
-            e.printStackTrace();
-            return null;
-        }
-
-        return json;
-
-    }
 }
