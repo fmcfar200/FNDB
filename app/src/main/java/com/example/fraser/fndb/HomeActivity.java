@@ -20,6 +20,9 @@ import android.widget.ExpandableListView;
 import android.widget.GridView;
 import android.widget.TextView;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -55,6 +58,8 @@ public class HomeActivity extends BaseActivity implements View.OnClickListener{
 
     ShopFetch fetch;
 
+    private AdView adViewHome;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -63,6 +68,13 @@ public class HomeActivity extends BaseActivity implements View.OnClickListener{
 
         getSupportActionBar().setTitle("Home");
 
+
+        adViewHome = findViewById(R.id.adViewHome);
+        AdRequest adRequest = new AdRequest.Builder()
+                .addTestDevice(AdRequest.DEVICE_ID_EMULATOR)
+                .build();
+
+        adViewHome.loadAd(adRequest);
 
 
         skinBtn = findViewById(R.id.skinButton);

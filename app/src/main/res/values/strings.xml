@@ -1,4 +1,6 @@
 <resources>
+    <!-- Sample AdMob App ID: ca-app-pub-3940256099942544~3347511713 -->
+    <string name="ADS_ID">ca-app-pub-3940256099942544~3347511713</string>
 
     <string name="TRACKER_API_KEY">246a06d4-9ecc-443f-bd96-67e18bb94e4d</string>
     <string name="FORTNITE_API_KEY">a4587bc8429ba5f7e2be4d869fddf5ff</string>
