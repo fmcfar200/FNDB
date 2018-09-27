@@ -68,6 +68,7 @@ public class DetailActivity extends AppCompatActivity {
             });
         }
 
+        /*
         RelativeLayout layout = findViewById(R.id.rootLayout);
 
         switch (skin.rarity)
@@ -90,6 +91,7 @@ public class DetailActivity extends AppCompatActivity {
 
                 break;
         }
+        */
 
 
         nameText.setText(skin.name);
