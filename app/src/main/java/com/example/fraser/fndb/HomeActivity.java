@@ -64,6 +64,7 @@ public class HomeActivity extends BaseActivity implements View.OnClickListener{
         getSupportActionBar().setTitle("Home");
 
 
+
         skinBtn = findViewById(R.id.skinButton);
         statsButton = findViewById(R.id.statsButton);
         newsButton = findViewById(R.id.newsButton);

@@ -202,7 +202,7 @@ public class PlayerStatsActivity extends AppCompatActivity {
             {
                 LeaderboardItem leaderboardItem = (LeaderboardItem) extras.get("item");
                 Log.e("ITEM", "LEADERBOARD ITEM: " + leaderboardItem.getUsername());
-                String username = leaderboardItem.getUsername().toLowerCase();
+                String username = leaderboardItem.getUsername();
                 String itemPlatform = leaderboardItem.getPlatform();
 
                 inputText.setText(username);

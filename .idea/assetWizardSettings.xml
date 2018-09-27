@@ -45,7 +45,7 @@
                                           <PersistentState>
                                             <option name="values">
                                               <map>
-                                                <entry key="paddingPercent" value="-10" />
+                                                <entry key="paddingPercent" value="15" />
                                               </map>
                                             </option>
                                           </PersistentState>
@@ -56,10 +56,10 @@
                                   <option name="values">
                                     <map>
                                       <entry key="assetType" value="IMAGE" />
-                                      <entry key="imageAsset" value="D:\Pictures\fnapp\skin_icon.png" />
-                                      <entry key="outputName" value="ic_skin" />
-                                      <entry key="theme" value="CUSTOM" />
-                                      <entry key="themeColor" value="ffffff" />
+                                      <entry key="imageAsset" value="C:\Users\Fraser\AndroidStudioProjects\FNDB\app\src\main\res\drawable\icon_foreground.png" />
+                                      <entry key="outputName" value="ic_toolbar_logo" />
+                                      <entry key="theme" value="HOLO_DARK" />
+                                      <entry key="themeColor" value="0046ff" />
                                     </map>
                                   </option>
                                 </PersistentState>
@@ -127,6 +127,11 @@
                                 </PersistentState>
                               </value>
                             </entry>
+                          </map>
+                        </option>
+                        <option name="values">
+                          <map>
+                            <entry key="outputIconType" value="ACTIONBAR" />
                           </map>
                         </option>
                       </PersistentState>

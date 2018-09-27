@@ -105,7 +105,7 @@ public class NewsAdapter extends BaseAdapter
                 output = String.valueOf(elapsedDays) + " day ago";
             }
         }
-        else if (elapsedDays == 0 && elapsedHours < 24)
+        else if (elapsedDays == 0 && elapsedHours < 24 && elapsedHours > 0)
         {
             output = String.valueOf(elapsedHours) + " hours ago";
             if (elapsedHours == 1)
@@ -114,7 +114,7 @@ public class NewsAdapter extends BaseAdapter
             }
 
         }
-        else if (elapsedHours == 0 && elapsedMinutes < 60 && elapsedMinutes >= 1 )
+        else if (elapsedHours < 1 && elapsedMinutes <=59 && elapsedMinutes > 0 )
         {
             output = String.valueOf(elapsedMinutes) + " minutes ago";
             if (elapsedMinutes == 1)
