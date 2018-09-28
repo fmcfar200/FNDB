@@ -228,47 +228,25 @@
 
             </LinearLayout>
 
-            <RelativeLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center">
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignRight="@+id/rarityLayout"
-                    android:layout_alignLeft="@+id/rarityLayout"
-                    android:background="@color/colorPrimaryDarkAlpha">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:padding="4dp"
-                        android:background="@color/greyishBlue"
-
-                        android:text="Rarity"
-                        android:fontFamily="@font/luckiestguy"
-                        android:textColor="@color/colorWhite"
-                        android:textSize="25dp"/>
-
-                </LinearLayout>
 
                 <LinearLayout
                     android:id="@+id/rarityLayout"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="20dp"
-                    android:gravity="center"
+                    android:layout_gravity="center"
                     android:orientation="vertical"
                     android:padding="20dp"
-                    android:background="@color/colorPrimaryDarkAlpha">
+                    android:background="@color/colorPrimaryDarkAlpha"
+                    android:weightSum="4">
 
                     <Button
                         android:id="@+id/uncommonSkins"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_height="match_parent"
                         android:padding="15dp"
                         android:layout_marginBottom="20dp"
+                        android:layout_weight="1"
 
                         android:background="@color/uncommonColor"
                         android:fontFamily="@font/luckiestguy"
@@ -284,6 +262,7 @@
                         android:layout_height="wrap_content"
                         android:padding="15dp"
                         android:layout_marginBottom="20dp"
+                        android:layout_weight="1"
 
                         android:background="@color/rareColor"
                         android:fontFamily="@font/luckiestguy"
@@ -299,6 +278,7 @@
                         android:layout_height="wrap_content"
                         android:padding="15dp"
                         android:layout_marginBottom="20dp"
+                        android:layout_weight="1"
 
                         android:background="@color/epicColor"
                         android:fontFamily="@font/luckiestguy"
@@ -313,6 +293,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:padding="15dp"
+                        android:layout_weight="1"
 
                         android:background="@color/legendaryColor"
                         android:fontFamily="@font/luckiestguy"
@@ -325,11 +306,6 @@
 
 
                 </LinearLayout>
-
-
-            </RelativeLayout>
-
-
 
 
         </ViewFlipper>
