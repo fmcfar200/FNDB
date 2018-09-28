@@ -91,7 +91,7 @@
                 android:background="@color/greyishBlue"
                 android:fontFamily="@font/luckiestguy"
                 android:textColor="@color/colorWhite"
-                android:textSize="25dp"
+                android:textSize="25sp"
                 android:text="seasonal Skins  ">
             </Button>
 
@@ -255,9 +255,10 @@
 
                 <LinearLayout
                     android:id="@+id/rarityLayout"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="45dp"
+                    android:layout_margin="20dp"
+                    android:gravity="center"
                     android:orientation="vertical"
                     android:padding="20dp"
                     android:background="@color/colorPrimaryDarkAlpha">
