@@ -97,139 +97,136 @@
 
         </LinearLayout>
 
-        <RelativeLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginBottom="40dp">
 
             <LinearLayout
+                android:id="@+id/seasonGrid"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_alignLeft="@+id/seasonGrid"
-                android:layout_alignRight="@+id/seasonGrid"
+                android:orientation="vertical"
+                android:layout_gravity="center"
+                android:layout_margin="20dp"
                 android:background="@color/colorPrimaryDarkAlpha">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:padding="4dp"
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:weightSum="2">
 
-                    android:background="@color/greyishBlue"
-                    android:fontFamily="@font/luckiestguy"
-                    android:textColor="@color/colorWhite"
-                    android:textSize="20dp"
-                    android:text="Seasons"/>
+                    <Button
+                        android:id="@+id/s1Skins"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:padding="15dp"
+                        android:layout_weight="1"
 
+                        android:background="@color/greyishBlue"
+                        android:fontFamily="@font/luckiestguy"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="75sp"
+                        android:text="#1">
+
+                    </Button>
+
+                    <Button
+                        android:id="@+id/s2Skins"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:padding="15dp"
+                        android:layout_weight="1"
+
+                        android:background="@color/greyishBlue"
+                        android:fontFamily="@font/luckiestguy"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="75sp"
+                        android:text="#2">
+
+                    </Button>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:weightSum="2">
+
+                    <Button
+                        android:id="@+id/s3Skins"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:padding="15dp"
+                        android:layout_weight="1"
+
+                        android:background="@color/greyishBlue"
+                        android:fontFamily="@font/luckiestguy"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="75sp"
+                        android:text="#3">
+
+                    </Button>
+
+                    <Button
+                        android:id="@+id/s4Skins"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:padding="15dp"
+                        android:layout_weight="1"
+
+                        android:background="@color/greyishBlue"
+                        android:fontFamily="@font/luckiestguy"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="75sp"
+                        android:text="#4">
+
+                    </Button>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:weightSum="2">
+
+                    <Button
+                        android:id="@+id/s5Skins"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:padding="15dp"
+                        android:layout_weight="1"
+
+                        android:background="@color/greyishBlue"
+                        android:fontFamily="@font/luckiestguy"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="75sp"
+                        android:text="#5">
+
+                    </Button>
+
+                    <Button
+                        android:id="@+id/s6Skins"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:padding="15dp"
+                        android:layout_weight="1"
+
+                        android:background="@color/greyishBlue"
+                        android:fontFamily="@font/luckiestguy"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="75sp"
+                        android:text="#6">
+
+                    </Button>
+
+                </LinearLayout>
 
             </LinearLayout>
-
-            <GridLayout
-                android:id="@+id/seasonGrid"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_gravity="center"
-                android:layout_marginTop="40dp"
-                android:background="@color/colorPrimaryDarkAlpha"
-                android:columnCount="2">
-
-                <Button
-                    android:id="@+id/s1Skins"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="10dp"
-                    android:padding="15dp"
-
-                    android:background="@color/greyishBlue"
-                    android:fontFamily="@font/luckiestguy"
-                    android:textColor="@color/colorWhite"
-                    android:textSize="75dp"
-                    android:text="#1">
-
-                </Button>
-
-                <Button
-                    android:id="@+id/s2Skins"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="10dp"
-                    android:padding="15dp"
-
-                    android:background="@color/greyishBlue"
-                    android:fontFamily="@font/luckiestguy"
-                    android:textColor="@color/colorWhite"
-                    android:textSize="75dp"
-                    android:text="#2">
-
-                </Button>
-
-                <Button
-                    android:id="@+id/s3Skins"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="10dp"
-                    android:padding="15dp"
-
-                    android:background="@color/greyishBlue"
-                    android:fontFamily="@font/luckiestguy"
-                    android:textColor="@color/colorWhite"
-                    android:textSize="75dp"
-                    android:text="#3">
-
-                </Button>
-
-                <Button
-                    android:id="@+id/s4Skins"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="10dp"
-                    android:padding="15dp"
-
-                    android:background="@color/greyishBlue"
-                    android:fontFamily="@font/luckiestguy"
-                    android:textColor="@color/colorWhite"
-                    android:textSize="75dp"
-                    android:text="#4">
-
-                </Button>
-
-                <Button
-                    android:id="@+id/s5Skins"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="10dp"
-                    android:padding="15dp"
-
-                    android:background="@color/greyishBlue"
-                    android:fontFamily="@font/luckiestguy"
-                    android:textColor="@color/colorWhite"
-                    android:textSize="75dp"
-                    android:text="#5">
-
-                </Button>
-
-                <Button
-                    android:id="@+id/s6Skins"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="10dp"
-                    android:padding="15dp"
-
-                    android:background="@color/greyishBlue"
-                    android:fontFamily="@font/luckiestguy"
-                    android:textColor="@color/colorWhite"
-                    android:textSize="75dp"
-                    android:text="#6">
-
-                </Button>
-
-
-            </GridLayout>
-
-
-
-        </RelativeLayout>
 
             <RelativeLayout
                 android:layout_width="wrap_content"
