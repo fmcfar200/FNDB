@@ -14,7 +14,8 @@
     <color name="lightGrey">#d1d1d1</color>
     <color name="greyishBlue">#7e96bc</color>
     <color name="darkBlue">#002d77</color>
-    <color name="blackAlpha">#000000</color>
+    <color name="black">#000000</color>
+    <color name="blackA">#70000000</color>
     <color name="gold">#FFD700</color>
 
 

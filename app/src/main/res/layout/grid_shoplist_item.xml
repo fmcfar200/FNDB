@@ -23,7 +23,7 @@
             />
         <TextView
             android:id="@+id/sItemName"
-            android:layout_width="125dp"
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_gravity="bottom|center"
             android:maxLines="2"
@@ -31,39 +31,44 @@
             android:fontFamily="@font/luckiestguy"
             android:textColor="@color/colorWhite"
             android:text="HEllO WORLD"
-            android:textSize="20dp"
+            android:textSize="20sp"
             android:autoSizeTextType="uniform"
             android:textAlignment="center"
+            android:background="@color/blackA"
             />
 
     </FrameLayout>
 
-    <FrameLayout
+    <LinearLayout
         android:id="@+id/costLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/darkBlue">
+        android:background="@color/darkBlue"
+        android:weightSum="3">
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="10dp"
+            android:src="@mipmap/ic_vbucks_foreground"
+            android:layout_weight="1"/>
+
         <TextView
             android:id="@+id/costText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginLeft="5dp"
             android:fontFamily="@font/luckiestguy"
             android:textColor="@color/colorWhite"
             android:text="1000"
             android:textSize="17.5dp"
             android:autoSizeTextType="uniform"
-            android:textAlignment="center"
+            android:layout_weight="2"
             />
 
-        <ImageView
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_gravity="left|center"
-            android:layout_marginLeft="10dp"
-            android:src="@mipmap/ic_vbucks_foreground"/>
-    </FrameLayout>
+
+    </LinearLayout>
 
 
 </LinearLayout>

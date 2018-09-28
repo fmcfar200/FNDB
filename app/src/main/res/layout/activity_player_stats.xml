@@ -175,7 +175,7 @@
                 android:singleLine="true"
 
                 android:textColor="@color/colorWhite"
-                android:background="@color/blackAlpha"
+                android:background="@color/black"
                 android:textColorHint="@color/colorWhite"
                 android:hint="Enter Epic Username..."
 

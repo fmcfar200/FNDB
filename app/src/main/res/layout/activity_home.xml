@@ -22,7 +22,7 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         >
 
         <ScrollView
@@ -38,7 +38,7 @@
                 <include layout="@layout/app_toolbar"></include>
 
 
-                <GridLayout
+                <LinearLayout
                     android:id="@+id/homeButtonLayout"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -48,123 +48,167 @@
                     android:layout_gravity="center"
                     android:padding="5dp"
                     android:columnCount="2"
-                    android:orientation="horizontal"
+                    android:orientation="vertical"
                     android:background="@color/colorPrimaryDarkAlpha"
-
+                    android:weightSum="3"
 
 
                     >
 
-                    <Button
-                        android:id="@+id/skinButton"
-                        android:layout_width="150dp"
-                        android:layout_height="50dp"
-                        android:layout_gravity="center"
-                        android:padding="5dp"
-                        android:layout_columnSpan="1"
-                        android:layout_marginLeft="10dp"
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal"
+                        android:layout_weight="1"
+                        android:weightSum="2">
+
+                        <Button
+                            android:id="@+id/skinButton"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:padding="5dp"
+                            android:layout_marginLeft="10dp"
+                            android:layout_weight="1"
 
 
-                        android:background="@color/greyishBlue"
-                        android:drawableLeft="@drawable/skin_icon_small"
-                        android:fontFamily="@font/luckiestguy"
-                        android:gravity="center"
-                        android:text="Skins"
-                        android:textColor="@color/colorWhite"
-                        android:autoSizeTextType="uniform"
-                        android:maxLines="1"/>
+                            android:background="@color/greyishBlue"
+                            android:drawableLeft="@drawable/skin_icon_small"
+                            android:fontFamily="@font/luckiestguy"
+                            android:gravity="center"
+                            android:text="Skins"
+                            android:textColor="@color/colorWhite"
+                            android:autoSizeTextType="uniform"
+                            android:maxLines="1"
 
-                    <Button
-                        android:id="@+id/statsButton"
-                        android:layout_width="150dp"
-                        android:layout_height="50dp"
-                        android:layout_gravity="center"
-                        android:padding="5dp"
-                        android:layout_marginLeft="10dp"
+                            android:layout_marginStart="10dp"
+                            android:drawableStart="@drawable/skin_icon_small" />
 
-                        android:drawableLeft="@drawable/ic_stats_50dp"
-                        android:background="@color/greyishBlue"
-                        android:fontFamily="@font/luckiestguy"
-                        android:gravity="center"
-                        android:text="Stats"
-                        android:textColor="@color/colorWhite"
-                        android:autoSizeTextType="uniform"
-                        android:maxLines="1"/>
+                        <Button
+                            android:id="@+id/statsButton"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:padding="5dp"
+                            android:layout_marginLeft="10dp"
+                            android:layout_weight="1"
 
-                    <Button
-                        android:id="@+id/weaponsButton"
-                        android:layout_width="150dp"
-                        android:layout_height="50dp"
-                        android:layout_gravity="center"
-                        android:padding="5dp"
-                        android:layout_marginTop="10dp"
-                        android:layout_marginLeft="10dp"
+                            android:drawableLeft="@drawable/ic_stats_50dp"
+                            android:background="@color/greyishBlue"
+                            android:fontFamily="@font/luckiestguy"
+                            android:gravity="center"
+                            android:text="Stats"
+                            android:textColor="@color/colorWhite"
+                            android:autoSizeTextType="uniform"
+                            android:maxLines="1"
 
-                        android:drawableLeft="@drawable/ic_scar_50dp"
-                        android:background="@color/greyishBlue"
-                        android:fontFamily="@font/luckiestguy"
-                        android:gravity="center"
-                        android:text="Weapons"
-                        android:textColor="@color/colorWhite"
-                        android:autoSizeTextType="uniform"
-                        android:maxLines="1"/>
+                            android:layout_marginStart="10dp"
+                            android:drawableStart="@drawable/ic_stats_50dp" />
 
-                    <Button
-                        android:id="@+id/leaderboardButton"
-                        android:layout_width="150dp"
-                        android:layout_height="50dp"
-                        android:layout_gravity="center"
-                        android:padding="5dp"
-                        android:layout_marginTop="10dp"
-                        android:layout_marginLeft="10dp"
+                    </LinearLayout>
 
-                        android:background="@color/greyishBlue"
-                        android:drawableLeft="@drawable/ic_leaderboard_50dp"
-                        android:fontFamily="@font/luckiestguy"
-                        android:gravity="center"
-                        android:text="leaderboard"
-                        android:textColor="@color/colorWhite"
-                        android:autoSizeTextType="uniform"
-                        android:maxLines="1"/>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal"
+                        android:layout_weight="1"
+                        android:weightSum="2">
 
-                    <Button
-                        android:id="@+id/challengesButton"
-                        android:layout_width="150dp"
-                        android:layout_height="50dp"
-                        android:layout_gravity="center"
-                        android:padding="5dp"
-                        android:layout_marginTop="10dp"
-                        android:layout_marginLeft="10dp"
+                        <Button
+                            android:id="@+id/weaponsButton"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:padding="5dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginLeft="10dp"
+                            android:layout_weight="1"
 
-                        android:background="@color/greyishBlue"
-                        android:drawableLeft="@drawable/battlestar_white_50dp"
-                        android:fontFamily="@font/luckiestguy"
-                        android:gravity="center"
-                        android:text="Challenges"
-                        android:textColor="@color/colorWhite"
-                        android:autoSizeTextType="uniform"
-                        android:maxLines="1"/>
+                            android:drawableLeft="@drawable/ic_scar_50dp"
+                            android:background="@color/greyishBlue"
+                            android:fontFamily="@font/luckiestguy"
+                            android:gravity="center"
+                            android:text="Weapons"
+                            android:textColor="@color/colorWhite"
+                            android:autoSizeTextType="uniform"
+                            android:maxLines="1"
 
-                    <Button
-                        android:id="@+id/newsButton"
-                        android:layout_width="150dp"
-                        android:layout_height="50dp"
-                        android:layout_gravity="center"
-                        android:padding="5dp"
-                        android:layout_marginTop="10dp"
-                        android:layout_marginLeft="10dp"
+                            android:layout_marginStart="10dp"
+                            android:drawableStart="@drawable/ic_scar_50dp" />
 
-                        android:background="@color/greyishBlue"
-                        android:drawableLeft="@drawable/ic_news_50dp"
-                        android:fontFamily="@font/luckiestguy"
-                        android:gravity="center"
-                        android:text="News"
-                        android:textColor="@color/colorWhite"
-                        android:autoSizeTextType="uniform"
-                        android:maxLines="1"/>
+                        <Button
+                            android:id="@+id/leaderboardButton"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:padding="5dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginLeft="10dp"
+                            android:layout_weight="1"
+
+                            android:background="@color/greyishBlue"
+                            android:drawableLeft="@drawable/ic_leaderboard_50dp"
+                            android:fontFamily="@font/luckiestguy"
+                            android:gravity="center"
+                            android:text="leaderboard"
+                            android:textColor="@color/colorWhite"
+                            android:autoSizeTextType="uniform"
+                            android:maxLines="1"/>
+
+                    </LinearLayout>
 
 
-                </GridLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal"
+                        android:layout_weight="1"
+                        android:weightSum="2">
+
+                        <Button
+                            android:id="@+id/challengesButton"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:padding="5dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginLeft="10dp"
+                            android:layout_weight="1"
+
+                            android:background="@color/greyishBlue"
+                            android:drawableLeft="@drawable/battlestar_white_50dp"
+                            android:fontFamily="@font/luckiestguy"
+                            android:gravity="center"
+                            android:text="Challenges"
+                            android:textColor="@color/colorWhite"
+                            android:autoSizeTextType="uniform"
+                            android:maxLines="1"/>
+
+                        <Button
+                            android:id="@+id/newsButton"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:padding="5dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginLeft="10dp"
+                            android:layout_weight="1"
+
+                            android:background="@color/greyishBlue"
+                            android:drawableLeft="@drawable/ic_news_50dp"
+                            android:fontFamily="@font/luckiestguy"
+                            android:gravity="center"
+                            android:text="News"
+                            android:textColor="@color/colorWhite"
+                            android:autoSizeTextType="uniform"
+                            android:maxLines="1"/>
+
+
+                    </LinearLayout>
+
+
+
+                </LinearLayout>
 
 
                 <LinearLayout
@@ -188,7 +232,7 @@
                             android:padding="4dp"
 
                             android:background="@color/greyishBlue"
-                            android:textSize="20dp"
+                            android:textSize="20sp"
                             android:fontFamily="@font/luckiestguy"
                             android:textColor="@color/colorWhite"
                             android:text="Item Shop" />
@@ -199,7 +243,7 @@
                             android:layout_height="wrap_content"
                             android:gravity="right"
                             android:padding="4dp"
-                            android:textSize="20dp"
+                            android:textSize="20sp"
                             android:fontFamily="@font/luckiestguy"
                             android:textColor="@color/colorWhite"
                             android:text="00:00:00"/>
