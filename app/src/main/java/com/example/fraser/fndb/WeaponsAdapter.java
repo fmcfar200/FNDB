@@ -50,9 +50,7 @@ public class WeaponsAdapter extends BaseAdapter
     {
         View view = View.inflate(mContext,layoutId,null);
         ImageView imageView = view.findViewById(R.id.weaponImage);
-        ImageView backgroundView = view.findViewById(R.id.weaponBackground);
-        Picasso.with(mContext).load(data.get(position).getBacgroundURL()).into(backgroundView);
-        Picasso.with(mContext).load(data.get(position).getImageURL()).into(imageView);
+        Picasso.with(mContext).load(data.get(position).getBacgroundURL()).into(imageView);
 
         view.setTag(data.get(position));
         return view;

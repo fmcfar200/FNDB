@@ -15,26 +15,30 @@
             android:id="@+id/statTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="left|center"
+            android:layout_gravity="start|center"
             android:layout_weight="1"
 
             android:layout_margin="10dp"
             android:textColor="@color/lightGrey"
             android:textStyle="bold"
-            android:textSize="20dp"
+            android:textSize="20sp"
+            android:autoSizeTextType="uniform"
+            android:maxLines="1"
             android:text="Wins"/>
 
         <TextView
             android:id="@+id/statData"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="right"
+            android:gravity="end"
             android:layout_weight="1"
 
             android:layout_margin="10dp"
             android:textColor="@color/colorWhite"
             android:textStyle="bold"
             android:textSize="20sp"
+            android:autoSizeTextType="uniform"
+            android:maxLines="1"
             android:text="Wins"/>
 
 

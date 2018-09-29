@@ -35,6 +35,8 @@
 
             android:fontFamily="@font/luckiestguy"
             android:textColor="@drawable/radio_button_textcolor"
+            android:textSize="20sp"
+            android:autoSizeTextType="uniform"
             android:text="Kills"/>
 
         <RadioButton
@@ -48,9 +50,11 @@
             android:gravity="center"
             android:padding="5dp"
             android:background="@drawable/radio_button_background"
+
             android:textColor="@drawable/radio_button_textcolor"
             android:fontFamily="@font/luckiestguy"
-
+            android:textSize="20sp"
+            android:autoSizeTextType="uniform"
             android:text="wins"/>
 
         <RadioButton
@@ -68,6 +72,8 @@
 
             android:fontFamily="@font/luckiestguy"
             android:textColor="@drawable/radio_button_textcolor"
+            android:textSize="20sp"
+            android:autoSizeTextType="uniform"
             android:text="Score"/>
 
         <RadioButton
@@ -85,6 +91,8 @@
 
             android:fontFamily="@font/luckiestguy"
             android:textColor="@drawable/radio_button_textcolor"
+            android:textSize="20sp"
+            android:autoSizeTextType="uniform"
             android:text="Minutes"/>
 
     </RadioGroup>
@@ -115,7 +123,7 @@
     <ListView
         android:id="@+id/top10ListView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:background="@color/colorPrimaryDarkAlpha"
         android:divider="@color/greyishBlue"
         android:dividerHeight="5dp"

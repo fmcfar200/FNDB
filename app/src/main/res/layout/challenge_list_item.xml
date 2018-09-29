@@ -3,9 +3,10 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="horizontal"
-    android:weightSum="2"
+    android:weightSum="3"
     android:background="@color/colorPrimaryDarkAlpha"
     android:padding="15dp"
+
     >
 
     <LinearLayout
@@ -13,17 +14,18 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="5dp"
         android:orientation="vertical"
-        android:layout_weight="1">
+        android:layout_weight="2"
+        android:layout_marginStart="5dp">
 
         <TextView
             android:id="@+id/challengeText"
-            android:layout_width="200dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
 
 
             android:textColor="@color/lightGrey"
             android:textStyle="bold"
-            android:textSize="20dp"
+            android:textSize="20sp"
             android:maxLines="2"
             android:autoSizeTextType="uniform"
             android:text="Deal Damage to Opponents" />
@@ -32,44 +34,44 @@
             android:id="@+id/challengeAmountText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="right"
+            android:layout_gravity="end"
             android:textColor="@color/colorWhite"
             android:textStyle="bold"
-            android:textSize="20dp"
+            android:textSize="20sp"
             android:text="0/5"/>
 
 
     </LinearLayout>
 
    <LinearLayout
-       android:layout_width="100dp"
+       android:layout_width="0dp"
        android:layout_height="match_parent"
-       android:layout_marginLeft="60dp"
-       android:layout_gravity="right"
+       android:layout_marginLeft="30dp"
+       android:layout_gravity="end"
        android:orientation="horizontal"
-       android:gravity="right"
+       android:gravity="end"
        android:layout_weight="1"
        android:weightSum="2"
-       >
+       android:layout_marginStart="30dp">
 
        <ImageView
            android:id="@+id/battleStarIcon"
-           android:layout_width="30dp"
-           android:layout_height="30dp"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
            android:layout_gravity="center"
            android:src="@drawable/battlestar_white_50dp"
            android:layout_weight="1"/>
 
        <TextView
            android:id="@+id/rewardText"
-           android:layout_width="wrap_content"
+           android:layout_width="match_parent"
            android:layout_height="wrap_content"
            android:layout_gravity="center"
 
            android:textStyle="bold"
             android:textColor="@color/gold"
            android:text="10"
-           android:textSize="20dp"
+           android:textSize="20sp"
            android:layout_weight="1"
 
 

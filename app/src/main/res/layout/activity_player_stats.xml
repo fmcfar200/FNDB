@@ -23,8 +23,8 @@
 
         <RadioButton
             android:id="@+id/lifetimeButton"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_margin="2.5dp"
             android:button="@null"
             android:layout_weight="1"
@@ -35,12 +35,14 @@
 
             android:fontFamily="@font/luckiestguy"
             android:textColor="@drawable/radio_button_textcolor"
+            android:textSize="20sp"
+            android:autoSizeTextType="uniform"
             android:text="Lifetime"/>
 
         <RadioButton
             android:id="@+id/soloButton"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_margin="2.5dp"
 
             android:button="@null"
@@ -50,13 +52,14 @@
             android:background="@drawable/radio_button_background"
             android:textColor="@drawable/radio_button_textcolor"
             android:fontFamily="@font/luckiestguy"
-
+            android:textSize="20sp"
+            android:autoSizeTextType="uniform"
             android:text="solo"/>
 
         <RadioButton
             android:id="@+id/duoButton"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_margin="2.5dp"
 
             android:button="@null"
@@ -68,12 +71,14 @@
 
             android:fontFamily="@font/luckiestguy"
             android:textColor="@drawable/radio_button_textcolor"
+            android:textSize="20sp"
+            android:autoSizeTextType="uniform"
             android:text="duo"/>
 
         <RadioButton
             android:id="@+id/squadButton"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_margin="2.5dp"
 
             android:button="@null"
@@ -85,6 +90,8 @@
 
             android:fontFamily="@font/luckiestguy"
             android:textColor="@drawable/radio_button_textcolor"
+            android:textSize="20sp"
+            android:autoSizeTextType="uniform"
             android:text="squad"/>
 
     </RadioGroup>
@@ -97,7 +104,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="vertical"
             >
 
@@ -114,8 +121,8 @@
 
                 <RadioButton
                     android:id="@+id/pcPlatformButton"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:layout_margin="2.5dp"
                     android:button="@null"
                     android:layout_weight="1"
@@ -125,14 +132,14 @@
                     android:drawableBottom="@drawable/pc_icon"
                     android:background="@drawable/radio_button_background"
                     android:fontFamily="@font/luckiestguy"
-                    android:textSize="20dp"
+                    android:textSize="20sp"
                     android:textColor="@drawable/radio_button_textcolor"
                     android:text="PC"/>
 
                 <RadioButton
                     android:id="@+id/xboxPlatformButton"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:layout_margin="2.5dp"
 
                     android:button="@null"
@@ -141,15 +148,15 @@
                     android:padding="5dp"
                     android:drawableBottom="@drawable/xbox_icon"
                     android:background="@drawable/radio_button_background"
-                    android:textSize="20dp"
+                    android:textSize="20sp"
                     android:fontFamily="@font/luckiestguy"
                     android:textColor="@drawable/radio_button_textcolor"
-                    android:text="xbox"/>
+                    android:text="Xbox"/>
 
                 <RadioButton
                     android:id="@+id/psnPlatformButton"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:layout_margin="2.5dp"
                     android:button="@null"
                     android:layout_weight="1"
@@ -158,9 +165,9 @@
                     android:drawableBottom="@drawable/playstation_icon"
                     android:background="@drawable/radio_button_background"
                     android:fontFamily="@font/luckiestguy"
-                    android:textSize="20dp"
+                    android:textSize="20sp"
                     android:textColor="@drawable/radio_button_textcolor"
-                    android:text="Psn"/>
+                    android:text="PSN"/>
 
             </RadioGroup>
 
@@ -192,7 +199,7 @@
                 android:padding="4dp"
 
                 android:textAlignment="center"
-                android:textSize="10dp"
+                android:textSize="10sp"
                 android:autoSizeTextType="uniform"
                 android:fontFamily="@font/luckiestguy"
                 android:text="Submit"/>
