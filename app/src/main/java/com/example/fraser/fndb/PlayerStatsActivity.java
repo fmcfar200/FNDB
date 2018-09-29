@@ -5,6 +5,7 @@ import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.os.AsyncTask;
 import android.os.Environment;
 import android.preference.PreferenceManager;
@@ -150,7 +151,7 @@ public class PlayerStatsActivity extends AppCompatActivity {
             {
                 if (actionId == EditorInfo.IME_ACTION_DONE)
                 {
-                    GetPlayerStats();
+                    SubmitSearch();
                     return true;
                 }
                 return false;
@@ -161,9 +162,9 @@ public class PlayerStatsActivity extends AppCompatActivity {
         submitButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (v == submitButton && !inputText.getText().equals("") || inputText.length() > 0)
+                if (v == submitButton)
                 {
-                    GetPlayerStats();
+                    SubmitSearch();
                 }
             }
         });
@@ -223,6 +224,18 @@ public class PlayerStatsActivity extends AppCompatActivity {
             }
         }
 
+    }
+
+    private void SubmitSearch()
+    {
+        if(inputText.getText().length() > 0)
+        {
+            GetPlayerStats();
+        }
+        else
+        {
+            inputText.setHintTextColor(Color.RED);
+        }
     }
 
     private void GetPlayerStats()
@@ -467,7 +480,9 @@ public class PlayerStatsActivity extends AppCompatActivity {
             else
             {
                 dialog.dismiss();
-                Toast.makeText(getApplicationContext(),"No Player Found", Toast.LENGTH_SHORT).show();
+                inputText.setText(null);
+                inputText.setHint("Username Not Found.");
+                inputText.setHintTextColor(Color.RED);
             }
 
 
