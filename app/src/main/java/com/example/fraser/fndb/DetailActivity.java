@@ -41,6 +41,9 @@ public class DetailActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail);
 
+        AdManager adManager = new AdManager(this);
+        adManager.CreateAndLoadBanner();
+
         imageView = findViewById(R.id.itemImage);
         currencyIcon = findViewById(R.id.currencyIcon);
         nameText = findViewById(R.id.itemName);

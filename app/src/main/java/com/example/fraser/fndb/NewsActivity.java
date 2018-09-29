@@ -34,6 +34,9 @@ public class NewsActivity extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_news);
 
+        AdManager adManager = new AdManager(this);
+        adManager.CreateAndLoadBanner();
+
         toolbar = findViewById(R.id.toolbarID);
         setSupportActionBar(toolbar);
         if (getSupportActionBar() != null)

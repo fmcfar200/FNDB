@@ -12,6 +12,8 @@ import android.support.v7.widget.Toolbar;
 import android.widget.AdapterView;
 import android.widget.TextView;
 
+import com.google.android.gms.ads.AdView;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -38,6 +40,17 @@ public class WeaponsActivity extends AppCompatActivity implements AdapterView.On
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_weapons);
+
+        List<AdView> adsList = new ArrayList<>();
+        AdView adView = findViewById(R.id.adView);
+        AdView adView1 = findViewById(R.id.adView1);
+        AdView adView2 = findViewById(R.id.adView2);
+        adsList.add(adView);
+        adsList.add(adView1);
+        adsList.add(adView2);
+
+        AdManager adManager = new AdManager(this);
+        adManager.CreateAndLoadBannerMultiple(adsList);
 
         toolbar = findViewById(R.id.toolbarID);
         setSupportActionBar(toolbar);

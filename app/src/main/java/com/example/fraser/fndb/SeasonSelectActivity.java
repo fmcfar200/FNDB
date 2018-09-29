@@ -42,6 +42,9 @@ public class SeasonSelectActivity extends BaseActivity implements View.OnClickLi
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_season);
 
+        AdManager adManager = new AdManager(this);
+        adManager.CreateAndLoadBanner();
+
         toolbar = findViewById(R.id.toolbarID);
         setSupportActionBar(toolbar);
 

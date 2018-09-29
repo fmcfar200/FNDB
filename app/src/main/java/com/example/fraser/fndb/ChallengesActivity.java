@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 
+import com.google.android.gms.ads.AdView;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 
@@ -38,6 +39,9 @@ public class ChallengesActivity extends AppCompatActivity {
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_challenges);
+
+        AdManager adManager = new AdManager(this);
+        adManager.CreateAndLoadBanner();
 
         toolbar = findViewById(R.id.toolbarID);
         setSupportActionBar(toolbar);

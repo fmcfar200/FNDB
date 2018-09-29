@@ -58,7 +58,6 @@ public class HomeActivity extends BaseActivity implements View.OnClickListener{
 
     ShopFetch fetch;
 
-    private AdView adViewHome;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,12 +68,8 @@ public class HomeActivity extends BaseActivity implements View.OnClickListener{
         getSupportActionBar().setTitle("Home");
 
 
-        adViewHome = findViewById(R.id.adViewHome);
-        AdRequest adRequest = new AdRequest.Builder()
-                .addTestDevice(AdRequest.DEVICE_ID_EMULATOR)
-                .build();
-
-        adViewHome.loadAd(adRequest);
+        AdManager adManager = new AdManager(this);
+        adManager.CreateAndLoadBanner();
 
 
         skinBtn = findViewById(R.id.skinButton);

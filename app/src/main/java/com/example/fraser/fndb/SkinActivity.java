@@ -39,6 +39,9 @@ public class SkinActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_skin);
 
+        AdManager adManager = new AdManager(this);
+        adManager.CreateAndLoadBanner();
+
         listView = findViewById(R.id.listView);
         skins = new ArrayList<Skin>();
 

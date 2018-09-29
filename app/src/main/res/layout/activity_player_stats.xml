@@ -1,260 +1,277 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:background="@drawable/background_original_cut"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".PlayerStatsActivity"
-    android:orientation="vertical">
+    >
 
-   <include layout="@layout/app_toolbar"></include>
-
-    <RadioGroup
-        android:id="@+id/modeRadioGroup"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:gravity="center"
-        android:orientation="horizontal"
-        android:checkedButton="@id/pcPlatformButton"
-        android:weightSum="4"
-        >
-
-        <RadioButton
-            android:id="@+id/lifetimeButton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="2.5dp"
-            android:button="@null"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:padding="5dp"
-            android:background="@drawable/radio_button_background"
-            android:checked="true"
-
-            android:fontFamily="@font/luckiestguy"
-            android:textColor="@drawable/radio_button_textcolor"
-            android:textSize="20sp"
-            android:autoSizeTextType="uniform"
-            android:maxLines="1"
-            android:text="Lifetime"/>
-
-        <RadioButton
-            android:id="@+id/soloButton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="2.5dp"
-
-            android:button="@null"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:padding="5dp"
-            android:background="@drawable/radio_button_background"
-            android:textColor="@drawable/radio_button_textcolor"
-            android:fontFamily="@font/luckiestguy"
-            android:textSize="20sp"
-            android:autoSizeTextType="uniform"
-            android:maxLines="1"
-            android:text="solo"/>
-
-        <RadioButton
-            android:id="@+id/duoButton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="2.5dp"
-
-            android:button="@null"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:padding="5dp"
-            android:background="@drawable/radio_button_background"
-
-
-            android:fontFamily="@font/luckiestguy"
-            android:textColor="@drawable/radio_button_textcolor"
-            android:textSize="20sp"
-            android:autoSizeTextType="uniform"
-            android:maxLines="1"
-            android:text="duo"/>
-
-        <RadioButton
-            android:id="@+id/squadButton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="2.5dp"
-
-            android:button="@null"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:padding="5dp"
-            android:background="@drawable/radio_button_background"
-
-
-            android:fontFamily="@font/luckiestguy"
-            android:textColor="@drawable/radio_button_textcolor"
-            android:textSize="20sp"
-            android:autoSizeTextType="uniform"
-            android:maxLines="1"
-            android:text="squad"/>
-
-    </RadioGroup>
-
-    <ViewFlipper
-        android:id="@+id/statsFlipper"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        >
+        tools:context=".PlayerStatsActivity"
+        android:orientation="vertical">
 
-        <LinearLayout
+        <include layout="@layout/app_toolbar"></include>
+
+        <RadioGroup
+            android:id="@+id/modeRadioGroup"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:checkedButton="@id/pcPlatformButton"
+            android:weightSum="4"
             >
 
-            <RadioGroup
-                android:id="@+id/radioGroup"
+            <RadioButton
+                android:id="@+id/lifetimeButton"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
+                android:layout_margin="2.5dp"
+                android:button="@null"
+                android:layout_weight="1"
                 android:gravity="center"
-                android:orientation="horizontal"
-                android:checkedButton="@id/pcPlatformButton"
-                android:weightSum="3"
-                >
+                android:padding="5dp"
+                android:background="@drawable/radio_button_background"
+                android:checked="true"
 
-                <RadioButton
-                    android:id="@+id/pcPlatformButton"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="2.5dp"
-                    android:button="@null"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:padding="5dp"
-
-                    android:drawableBottom="@drawable/pc_icon"
-                    android:background="@drawable/radio_button_background"
-                    android:fontFamily="@font/luckiestguy"
-                    android:textSize="20sp"
-                    android:maxLines="1"
-                    android:textColor="@drawable/radio_button_textcolor"
-                    android:text="PC"/>
-
-                <RadioButton
-                    android:id="@+id/xboxPlatformButton"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="2.5dp"
-
-                    android:button="@null"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:padding="5dp"
-                    android:drawableBottom="@drawable/xbox_icon"
-                    android:background="@drawable/radio_button_background"
-                    android:textSize="20sp"
-                    android:fontFamily="@font/luckiestguy"
-                    android:maxLines="1"
-                    android:textColor="@drawable/radio_button_textcolor"
-                    android:text="Xbox"/>
-
-                <RadioButton
-                    android:id="@+id/psnPlatformButton"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="2.5dp"
-                    android:button="@null"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:padding="5dp"
-                    android:drawableBottom="@drawable/playstation_icon"
-                    android:background="@drawable/radio_button_background"
-                    android:fontFamily="@font/luckiestguy"
-                    android:textSize="20sp"
-                    android:maxLines="1"
-                    android:textColor="@drawable/radio_button_textcolor"
-                    android:text="PSN"/>
-
-            </RadioGroup>
-
-
-
-            <EditText
-                android:id="@+id/usernameEdit"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="15dp"
-                android:padding= "7.5dp"
-                android:singleLine="true"
-
-                android:textColor="@color/colorWhite"
-                android:background="@color/black"
-                android:textColorHint="@color/colorWhite"
-                android:hint="Enter Epic Username..."
-
-                />
-
-            <Button
-                android:id="@+id/submitButton"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="30dp"
-                android:layout_marginRight="30dp"
-                android:background="@color/greyishBlue"
-                android:textColor="@color/colorWhite"
-                android:padding="4dp"
-
-                android:textAlignment="center"
-                android:textSize="10sp"
-                android:autoSizeTextType="uniform"
                 android:fontFamily="@font/luckiestguy"
-                android:text="Submit"/>
+                android:textColor="@drawable/radio_button_textcolor"
+                android:textSize="20sp"
+                android:autoSizeTextType="uniform"
+                android:maxLines="1"
+                android:text="Lifetime"/>
+
+            <RadioButton
+                android:id="@+id/soloButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="2.5dp"
+
+                android:button="@null"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:padding="5dp"
+                android:background="@drawable/radio_button_background"
+                android:textColor="@drawable/radio_button_textcolor"
+                android:fontFamily="@font/luckiestguy"
+                android:textSize="20sp"
+                android:autoSizeTextType="uniform"
+                android:maxLines="1"
+                android:text="solo"/>
+
+            <RadioButton
+                android:id="@+id/duoButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="2.5dp"
+
+                android:button="@null"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:padding="5dp"
+                android:background="@drawable/radio_button_background"
 
 
+                android:fontFamily="@font/luckiestguy"
+                android:textColor="@drawable/radio_button_textcolor"
+                android:textSize="20sp"
+                android:autoSizeTextType="uniform"
+                android:maxLines="1"
+                android:text="duo"/>
 
-        </LinearLayout>
+            <RadioButton
+                android:id="@+id/squadButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="2.5dp"
+
+                android:button="@null"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:padding="5dp"
+                android:background="@drawable/radio_button_background"
+
+
+                android:fontFamily="@font/luckiestguy"
+                android:textColor="@drawable/radio_button_textcolor"
+                android:textSize="20sp"
+                android:autoSizeTextType="uniform"
+                android:maxLines="1"
+                android:text="squad"/>
+
+        </RadioGroup>
 
         <ViewFlipper
+            android:id="@+id/statsFlipper"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/modeFlipper">
-
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
-                <include layout="@layout/stats_view_layout" android:id="@+id/lifetimeLayout"></include>
-            </LinearLayout>
+            android:layout_height="match_parent"
+            >
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
-                <include layout="@layout/stats_view_layout" android:id="@+id/soloLayout"></include>
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                >
+
+                <RadioGroup
+                    android:id="@+id/radioGroup"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:checkedButton="@id/pcPlatformButton"
+                    android:weightSum="3"
+                    >
+
+                    <RadioButton
+                        android:id="@+id/pcPlatformButton"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="2.5dp"
+                        android:button="@null"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:padding="5dp"
+
+                        android:drawableBottom="@drawable/pc_icon"
+                        android:background="@drawable/radio_button_background"
+                        android:fontFamily="@font/luckiestguy"
+                        android:textSize="20sp"
+                        android:maxLines="1"
+                        android:textColor="@drawable/radio_button_textcolor"
+                        android:text="PC"/>
+
+                    <RadioButton
+                        android:id="@+id/xboxPlatformButton"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="2.5dp"
+
+                        android:button="@null"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:padding="5dp"
+                        android:drawableBottom="@drawable/xbox_icon"
+                        android:background="@drawable/radio_button_background"
+                        android:textSize="20sp"
+                        android:fontFamily="@font/luckiestguy"
+                        android:maxLines="1"
+                        android:textColor="@drawable/radio_button_textcolor"
+                        android:text="Xbox"/>
+
+                    <RadioButton
+                        android:id="@+id/psnPlatformButton"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="2.5dp"
+                        android:button="@null"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:padding="5dp"
+                        android:drawableBottom="@drawable/playstation_icon"
+                        android:background="@drawable/radio_button_background"
+                        android:fontFamily="@font/luckiestguy"
+                        android:textSize="20sp"
+                        android:maxLines="1"
+                        android:textColor="@drawable/radio_button_textcolor"
+                        android:text="PSN"/>
+
+                </RadioGroup>
+
+
+
+                <EditText
+                    android:id="@+id/usernameEdit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="15dp"
+                    android:padding= "7.5dp"
+                    android:singleLine="true"
+
+                    android:textColor="@color/colorWhite"
+                    android:background="@color/black"
+                    android:textColorHint="@color/colorWhite"
+                    android:hint="Enter Epic Username..."
+
+                    />
+
+                <Button
+                    android:id="@+id/submitButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginRight="30dp"
+                    android:background="@color/greyishBlue"
+                    android:textColor="@color/colorWhite"
+                    android:padding="4dp"
+
+                    android:textAlignment="center"
+                    android:textSize="10sp"
+                    android:autoSizeTextType="uniform"
+                    android:fontFamily="@font/luckiestguy"
+                    android:text="Submit"/>
+
+
+
             </LinearLayout>
 
-            <LinearLayout
+            <ViewFlipper
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
-                <include layout="@layout/stats_view_layout" android:id="@+id/duoLayout"></include>
-            </LinearLayout>
+                android:layout_height="wrap_content"
+                android:id="@+id/modeFlipper">
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
-                <include layout="@layout/stats_view_layout" android:id="@+id/squadLayout"></include>
-            </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+                    <include layout="@layout/stats_view_layout" android:id="@+id/lifetimeLayout"></include>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+                    <include layout="@layout/stats_view_layout" android:id="@+id/soloLayout"></include>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+                    <include layout="@layout/stats_view_layout" android:id="@+id/duoLayout"></include>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+                    <include layout="@layout/stats_view_layout" android:id="@+id/squadLayout"></include>
+                </LinearLayout>
+
+            </ViewFlipper>
+
+
 
         </ViewFlipper>
 
 
+    </LinearLayout>
 
-    </ViewFlipper>
+    <com.google.android.gms.ads.AdView
+        xmlns:ads="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/adView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        ads:adSize="LARGE_BANNER"
+        ads:adUnitId="ca-app-pub-3940256099942544/6300978111">
+    </com.google.android.gms.ads.AdView>
 
-
-
-</LinearLayout>
+</RelativeLayout>

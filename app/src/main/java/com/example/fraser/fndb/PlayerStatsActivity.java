@@ -51,6 +51,8 @@ import java.util.List;
 
 public class PlayerStatsActivity extends AppCompatActivity {
 
+    private AdManager adManager;
+
     ViewFlipper vFlipper;
     ViewFlipper modeFlipper;
     Toolbar toolbar;
@@ -81,6 +83,8 @@ public class PlayerStatsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_player_stats);
 
+        adManager = new AdManager(this);
+        adManager.CreateAndLoadBanner();
 
         toolbar = findViewById(R.id.toolbarID);
         setSupportActionBar(toolbar);
@@ -89,6 +93,7 @@ public class PlayerStatsActivity extends AppCompatActivity {
         vFlipper.setDisplayedChild(0);
         modeFlipper = findViewById(R.id.modeFlipper);
         modeFlipper.setDisplayedChild(0);
+
 
         lifetimeLayout = findViewById(R.id.lifetimeLayout);
         lifetimeStatsList = lifetimeLayout.findViewById(R.id.statsListView);
@@ -121,6 +126,7 @@ public class PlayerStatsActivity extends AppCompatActivity {
             }
         });
 
+
         modeGroup = findViewById(R.id.modeRadioGroup);
         modeGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
@@ -133,6 +139,7 @@ public class PlayerStatsActivity extends AppCompatActivity {
                         break;
                     case R.id.soloButton:
                         modeFlipper.setDisplayedChild(1);
+
                         break;
                     case R.id.duoButton:
                         modeFlipper.setDisplayedChild(2);
@@ -470,7 +477,7 @@ public class PlayerStatsActivity extends AppCompatActivity {
                 squadStatsAdapter = new StatsListAdapter(getApplicationContext(),R.layout.stats_list_item, player.squad.getSquadStatsMap());
                 squadStatsList.setAdapter(squadStatsAdapter);
 
-
+                adManager.RemoveAd();
                 vFlipper.setDisplayedChild(1);
                 dialog.dismiss();
 
