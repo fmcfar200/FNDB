@@ -1,11 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <group android:checkableBehavior="single">
-        <item  android:id="@+id/drHome" android:title="Home"></item>
-        <item android:id="@+id/drSkins" android:title="Skins"></item>
-        <item  android:id="@+id/drWeapons" android:title="Weapons"></item>
-        <item android:id="@+id/drStats" android:title="Statistics"></item>
-        <item android:id="@+id/drCollection" android:title="My Collection"></item>
+        <item  android:id="@+id/drHome" android:title="Home" android:icon="@drawable/ic_home_50dp"></item>
+        <item android:id="@+id/drSkins" android:title="Skins" android:icon="@drawable/skin_icon_small"></item>
+        <item  android:id="@+id/drWeapons" android:title="Weapons" android:icon="@drawable/ic_scar_50dp"></item>
+        <item android:id="@+id/drStats" android:title="Player Stats" android:icon="@drawable/ic_stats_50dp"></item>
+        <item android:id="@+id/drLeaderboards" android:title="Leaderboards" android:icon="@drawable/ic_leaderboard_50dp"></item>
+        <item android:id="@+id/drNews" android:title="News" android:icon="@drawable/ic_news_50dp"></item>
+        <item android:id="@+id/drAbout" android:title="About" android:icon="@drawable/ic_info_50dp"></item>
+        <item android:id="@+id/drRemoveAds" android:title="Remove" android:icon="@drawable/ic_remove_50dp"></item>
+
     </group>
 
 

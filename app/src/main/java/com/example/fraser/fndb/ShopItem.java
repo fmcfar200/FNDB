@@ -1,3 +1,6 @@
+/*
+    © 2018 Fraser McFarlane
+ */
 package com.example.fraser.fndb;
 
 

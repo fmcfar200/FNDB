@@ -1,3 +1,7 @@
+/*
+    © 2018 Fraser McFarlane
+ */
+
 package com.example.fraser.fndb;
 
 import android.app.Activity;
@@ -209,6 +213,7 @@ public class PlayerStatsActivity extends AppCompatActivity {
             if(extras.containsKey("item"))
             {
                 LeaderboardItem leaderboardItem = (LeaderboardItem) extras.get("item");
+                assert leaderboardItem != null;
                 Log.e("ITEM", "LEADERBOARD ITEM: " + leaderboardItem.getUsername());
                 String username = leaderboardItem.getUsername();
                 String itemPlatform = leaderboardItem.getPlatform();

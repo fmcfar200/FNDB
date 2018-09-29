@@ -1,3 +1,7 @@
+/*
+    © 2018 Fraser McFarlane
+ */
+
 package com.example.fraser.fndb;
 
 import java.io.Serializable;

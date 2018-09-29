@@ -1,3 +1,8 @@
+
+/*
+    © 2018 Fraser McFarlane
+ */
+
 package com.example.fraser.fndb;
 
 import android.annotation.SuppressLint;

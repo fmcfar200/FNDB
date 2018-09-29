@@ -1,3 +1,7 @@
+
+/*
+    © 2018 Fraser McFarlane
+ */
 package com.example.fraser.fndb;
 
 import android.app.Activity;
@@ -9,6 +13,7 @@ import android.view.ViewGroup;
 
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.InterstitialAd;
 
 import java.util.List;
 
@@ -49,4 +54,6 @@ public class AdManager extends Activity
         ((ViewGroup)adView.getParent()).removeView(adView);
 
     }
+
+
 }

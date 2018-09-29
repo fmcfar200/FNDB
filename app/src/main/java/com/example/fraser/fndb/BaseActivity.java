@@ -1,3 +1,7 @@
+
+/*
+    © 2018 Fraser McFarlane
+ */
 package com.example.fraser.fndb;
 
 import android.app.Activity;
@@ -56,6 +60,32 @@ public class BaseActivity extends AppCompatActivity implements NavigationView.On
         {
             StartActivity(SeasonSelectActivity.class);
         }
+        else if (id == R.id.drWeapons)
+        {
+            StartActivity(WeaponsActivity.class);
+        }
+        else if (id == R.id.drStats)
+        {
+            StartActivity(PlayerStatsActivity.class);
+        }
+        else if (id == R.id.drLeaderboards)
+        {
+            StartActivity(LeaderboardActivity.class);
+        }
+        else if (id == R.id.drNews)
+        {
+            StartActivity(NewsActivity.class);
+        }
+        else if (id == R.id.drAbout)
+        {
+            StartActivity(AboutActivity.class);
+        }
+        else if (id == R.id.drRemoveAds)
+        {
+
+        }
+
+
 
         DrawerLayout drawer = findViewById(R.id.drawerLayout);
         drawer.closeDrawer(GravityCompat.START);
