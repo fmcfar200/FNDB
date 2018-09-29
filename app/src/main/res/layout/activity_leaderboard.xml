@@ -37,6 +37,7 @@
             android:textColor="@drawable/radio_button_textcolor"
             android:textSize="20sp"
             android:autoSizeTextType="uniform"
+            android:maxLines="1"
             android:text="Kills"/>
 
         <RadioButton
@@ -55,6 +56,7 @@
             android:fontFamily="@font/luckiestguy"
             android:textSize="20sp"
             android:autoSizeTextType="uniform"
+            android:maxLines="1"
             android:text="wins"/>
 
         <RadioButton
@@ -74,6 +76,7 @@
             android:textColor="@drawable/radio_button_textcolor"
             android:textSize="20sp"
             android:autoSizeTextType="uniform"
+            android:maxLines="1"
             android:text="Score"/>
 
         <RadioButton
@@ -93,6 +96,7 @@
             android:textColor="@drawable/radio_button_textcolor"
             android:textSize="20sp"
             android:autoSizeTextType="uniform"
+            android:maxLines="1"
             android:text="Minutes"/>
 
     </RadioGroup>

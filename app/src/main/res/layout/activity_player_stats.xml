@@ -37,6 +37,7 @@
             android:textColor="@drawable/radio_button_textcolor"
             android:textSize="20sp"
             android:autoSizeTextType="uniform"
+            android:maxLines="1"
             android:text="Lifetime"/>
 
         <RadioButton
@@ -54,6 +55,7 @@
             android:fontFamily="@font/luckiestguy"
             android:textSize="20sp"
             android:autoSizeTextType="uniform"
+            android:maxLines="1"
             android:text="solo"/>
 
         <RadioButton
@@ -73,6 +75,7 @@
             android:textColor="@drawable/radio_button_textcolor"
             android:textSize="20sp"
             android:autoSizeTextType="uniform"
+            android:maxLines="1"
             android:text="duo"/>
 
         <RadioButton
@@ -92,6 +95,7 @@
             android:textColor="@drawable/radio_button_textcolor"
             android:textSize="20sp"
             android:autoSizeTextType="uniform"
+            android:maxLines="1"
             android:text="squad"/>
 
     </RadioGroup>
@@ -133,6 +137,7 @@
                     android:background="@drawable/radio_button_background"
                     android:fontFamily="@font/luckiestguy"
                     android:textSize="20sp"
+                    android:maxLines="1"
                     android:textColor="@drawable/radio_button_textcolor"
                     android:text="PC"/>
 
@@ -150,6 +155,7 @@
                     android:background="@drawable/radio_button_background"
                     android:textSize="20sp"
                     android:fontFamily="@font/luckiestguy"
+                    android:maxLines="1"
                     android:textColor="@drawable/radio_button_textcolor"
                     android:text="Xbox"/>
 
@@ -166,6 +172,7 @@
                     android:background="@drawable/radio_button_background"
                     android:fontFamily="@font/luckiestguy"
                     android:textSize="20sp"
+                    android:maxLines="1"
                     android:textColor="@drawable/radio_button_textcolor"
                     android:text="PSN"/>
 

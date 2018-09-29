@@ -10,223 +10,244 @@
 
         <include layout="@layout/app_toolbar"></include>
 
-
-        <ViewFlipper
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/viewFlipper">
-
-        <LinearLayout
+        <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_gravity="center"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:background="@color/colorPrimaryDarkAlpha"
-            android:weightSum="4"
-            >
+            android:layout_height="match_parent">
 
-            <Button
-                android:id="@+id/battlePassButton"
+            <ViewFlipper
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="25dp"
-                android:padding="15dp"
-                android:layout_weight="1"
-
-                android:background="@color/greyishBlue"
-                android:drawableRight="@drawable/battlestar_white_50dp"
-                android:fontFamily="@font/luckiestguy"
-                android:textColor="@color/colorWhite"
-                android:textSize="30sp"
-                android:text="Battle Pass  ">
-            </Button>
-
-            <Button
-                android:id="@+id/shopSkins"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="25dp"
-                android:layout_marginRight="25dp"
-                android:layout_marginBottom="25dp"
-                android:padding="15dp"
-                android:layout_weight="1"
-
-                android:background="@color/greyishBlue"
-                android:fontFamily="@font/luckiestguy"
-                android:textColor="@color/colorWhite"
-                android:textSize="30sp"
-                android:drawableRight="@drawable/vbucks_white_outline"
-                android:text="Item Shop  ">
-            </Button>
-            <Button
-                android:id="@+id/promoSkins"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="25dp"
-                android:layout_marginRight="25dp"
-                android:layout_marginBottom="25dp"
-                android:padding="15dp"
-                android:layout_weight="1"
-
-                android:drawableRight="@drawable/twitch_outline"
-                android:background="@color/greyishBlue"
-                android:fontFamily="@font/luckiestguy"
-                android:textColor="@color/colorWhite"
-                android:textSize="30sp"
-                android:text="Promo Skins  ">
-            </Button>
-            <Button
-                android:id="@+id/holidaySkins"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="25dp"
-                android:layout_marginRight="25dp"
-                android:layout_marginBottom="25dp"
-                android:padding="15dp"
-                android:layout_weight="1"
-
-                android:drawableRight="@drawable/ic_date_50dp"
-                android:background="@color/greyishBlue"
-                android:fontFamily="@font/luckiestguy"
-                android:textColor="@color/colorWhite"
-                android:textSize="25sp"
-                android:text="seasonal Skins  ">
-            </Button>
-
-        </LinearLayout>
-
-
-            <LinearLayout
-                android:id="@+id/seasonGrid"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
                 android:layout_gravity="center"
-                android:layout_margin="20dp"
-                android:background="@color/colorPrimaryDarkAlpha">
+                android:id="@+id/viewFlipper">
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="horizontal"
-                    android:weightSum="2">
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_gravity="center"
+                    android:layout_margin="20dp"
+                    android:background="@color/colorPrimaryDarkAlpha"
+                    android:weightSum="4"
+                    >
 
                     <Button
-                        android:id="@+id/s1Skins"
-                        android:layout_width="wrap_content"
+                        android:id="@+id/battlePassButton"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_margin="10dp"
+                        android:layout_margin="25dp"
                         android:padding="15dp"
                         android:layout_weight="1"
 
                         android:background="@color/greyishBlue"
+                        android:drawableRight="@drawable/battlestar_white_50dp"
                         android:fontFamily="@font/luckiestguy"
                         android:textColor="@color/colorWhite"
-                        android:textSize="75sp"
-                        android:text="#1">
-
+                        android:textSize="30sp"
+                        android:autoSizeTextType="uniform"
+                        android:text="Battle Pass  ">
                     </Button>
 
                     <Button
-                        android:id="@+id/s2Skins"
-                        android:layout_width="wrap_content"
+                        android:id="@+id/shopSkins"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_margin="10dp"
+                        android:layout_marginLeft="25dp"
+                        android:layout_marginRight="25dp"
+                        android:layout_marginBottom="25dp"
                         android:padding="15dp"
                         android:layout_weight="1"
 
                         android:background="@color/greyishBlue"
                         android:fontFamily="@font/luckiestguy"
                         android:textColor="@color/colorWhite"
-                        android:textSize="75sp"
-                        android:text="#2">
+                        android:textSize="30sp"
+                        android:autoSizeTextType="uniform"
+                        android:drawableRight="@drawable/vbucks_white_outline"
+                        android:text="Item Shop  ">
+                    </Button>
+                    <Button
+                        android:id="@+id/promoSkins"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="25dp"
+                        android:layout_marginRight="25dp"
+                        android:layout_marginBottom="25dp"
+                        android:padding="15dp"
+                        android:layout_weight="1"
 
+                        android:drawableRight="@drawable/twitch_outline"
+                        android:background="@color/greyishBlue"
+                        android:fontFamily="@font/luckiestguy"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="30sp"
+                        android:autoSizeTextType="uniform"
+                        android:text="Promo Skins  ">
+                    </Button>
+                    <Button
+                        android:id="@+id/holidaySkins"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="25dp"
+                        android:layout_marginRight="25dp"
+                        android:layout_marginBottom="25dp"
+                        android:padding="15dp"
+                        android:layout_weight="1"
+
+                        android:drawableRight="@drawable/ic_date_50dp"
+                        android:background="@color/greyishBlue"
+                        android:fontFamily="@font/luckiestguy"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="25sp"
+                        android:autoSizeTextType="uniform"
+                        android:text="seasonal Skins  ">
                     </Button>
 
                 </LinearLayout>
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="horizontal"
-                    android:weightSum="2">
-
-                    <Button
-                        android:id="@+id/s3Skins"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="10dp"
-                        android:padding="15dp"
-                        android:layout_weight="1"
-
-                        android:background="@color/greyishBlue"
-                        android:fontFamily="@font/luckiestguy"
-                        android:textColor="@color/colorWhite"
-                        android:textSize="75sp"
-                        android:text="#3">
-
-                    </Button>
-
-                    <Button
-                        android:id="@+id/s4Skins"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="10dp"
-                        android:padding="15dp"
-                        android:layout_weight="1"
-
-                        android:background="@color/greyishBlue"
-                        android:fontFamily="@font/luckiestguy"
-                        android:textColor="@color/colorWhite"
-                        android:textSize="75sp"
-                        android:text="#4">
-
-                    </Button>
-                </LinearLayout>
 
                 <LinearLayout
+                    android:id="@+id/seasonGrid"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="horizontal"
-                    android:weightSum="2">
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:layout_margin="20dp"
+                    android:layout_marginTop="80dp"
+                    android:background="@color/colorPrimaryDarkAlpha">
 
-                    <Button
-                        android:id="@+id/s5Skins"
-                        android:layout_width="wrap_content"
+                    <LinearLayout
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_margin="10dp"
-                        android:padding="15dp"
-                        android:layout_weight="1"
+                        android:orientation="horizontal"
+                        android:weightSum="2">
 
-                        android:background="@color/greyishBlue"
-                        android:fontFamily="@font/luckiestguy"
-                        android:textColor="@color/colorWhite"
-                        android:textSize="75sp"
-                        android:text="#5">
+                        <Button
+                            android:id="@+id/s1Skins"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="10dp"
+                            android:padding="15dp"
+                            android:layout_weight="1"
 
-                    </Button>
+                            android:background="@color/greyishBlue"
+                            android:fontFamily="@font/luckiestguy"
+                            android:textColor="@color/colorWhite"
+                            android:textSize="75sp"
+                            android:autoSizeTextType="uniform"
+                            android:maxLines="1"
+                            android:text="#1">
 
-                    <Button
-                        android:id="@+id/s6Skins"
-                        android:layout_width="wrap_content"
+                        </Button>
+
+                        <Button
+                            android:id="@+id/s2Skins"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="10dp"
+                            android:padding="15dp"
+                            android:layout_weight="1"
+
+                            android:background="@color/greyishBlue"
+                            android:fontFamily="@font/luckiestguy"
+                            android:textColor="@color/colorWhite"
+                            android:textSize="75sp"
+                            android:autoSizeTextType="uniform"
+                            android:maxLines="1"
+                            android:text="#2">
+
+                        </Button>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_margin="10dp"
-                        android:padding="15dp"
-                        android:layout_weight="1"
+                        android:orientation="horizontal"
+                        android:weightSum="2">
 
-                        android:background="@color/greyishBlue"
-                        android:fontFamily="@font/luckiestguy"
-                        android:textColor="@color/colorWhite"
-                        android:textSize="75sp"
-                        android:text="#6">
+                        <Button
+                            android:id="@+id/s3Skins"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="10dp"
+                            android:padding="15dp"
+                            android:layout_weight="1"
 
-                    </Button>
+                            android:background="@color/greyishBlue"
+                            android:fontFamily="@font/luckiestguy"
+                            android:textColor="@color/colorWhite"
+                            android:textSize="75sp"
+                            android:autoSizeTextType="uniform"
+                            android:maxLines="1"
+                            android:text="#3">
+
+                        </Button>
+
+                        <Button
+                            android:id="@+id/s4Skins"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="10dp"
+                            android:padding="15dp"
+                            android:layout_weight="1"
+
+                            android:background="@color/greyishBlue"
+                            android:fontFamily="@font/luckiestguy"
+                            android:textColor="@color/colorWhite"
+                            android:textSize="75sp"
+                            android:autoSizeTextType="uniform"
+                            android:maxLines="1"
+                            android:text="#4">
+
+                        </Button>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:weightSum="2">
+
+                        <Button
+                            android:id="@+id/s5Skins"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="10dp"
+                            android:padding="15dp"
+                            android:layout_weight="1"
+
+                            android:background="@color/greyishBlue"
+                            android:fontFamily="@font/luckiestguy"
+                            android:textColor="@color/colorWhite"
+                            android:textSize="75sp"
+                            android:autoSizeTextType="uniform"
+                            android:maxLines="1"
+                            android:text="#5">
+
+                        </Button>
+
+                        <Button
+                            android:id="@+id/s6Skins"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="10dp"
+                            android:padding="15dp"
+                            android:layout_weight="1"
+
+                            android:background="@color/greyishBlue"
+                            android:fontFamily="@font/luckiestguy"
+                            android:textColor="@color/colorWhite"
+                            android:textSize="75sp"
+                            android:autoSizeTextType="uniform"
+                            android:maxLines="1"
+                            android:text="#6">
+
+                        </Button>
+
+                    </LinearLayout>
 
                 </LinearLayout>
-
-            </LinearLayout>
 
 
                 <LinearLayout
@@ -234,7 +255,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="20dp"
+                    android:layout_marginTop="60dp"
                     android:layout_gravity="center"
+                    android:gravity="center"
                     android:orientation="vertical"
                     android:padding="20dp"
                     android:background="@color/colorPrimaryDarkAlpha"
@@ -243,14 +266,16 @@
                     <Button
                         android:id="@+id/uncommonSkins"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
+                        android:layout_height="wrap_content"
                         android:padding="15dp"
                         android:layout_marginBottom="20dp"
                         android:layout_weight="1"
 
                         android:background="@color/uncommonColor"
                         android:fontFamily="@font/luckiestguy"
-                        android:textSize="40dp"
+                        android:textSize="40sp"
+                        android:autoSizeTextType="uniform"
+                        android:maxLines="1"
                         android:textColor="@color/colorWhite"
                         android:text="Uncommon">
 
@@ -266,7 +291,9 @@
 
                         android:background="@color/rareColor"
                         android:fontFamily="@font/luckiestguy"
-                        android:textSize="40dp"
+                        android:textSize="40sp"
+                        android:autoSizeTextType="uniform"
+                        android:maxLines="1"
                         android:textColor="@color/colorWhite"
                         android:text="Rare">
 
@@ -282,8 +309,10 @@
 
                         android:background="@color/epicColor"
                         android:fontFamily="@font/luckiestguy"
-                        android:textSize="40dp"
+                        android:textSize="40sp"
+                        android:autoSizeTextType="uniform"
                         android:textColor="@color/colorWhite"
+                        android:maxLines="1"
                         android:text="epic">
 
                     </Button>
@@ -297,7 +326,9 @@
 
                         android:background="@color/legendaryColor"
                         android:fontFamily="@font/luckiestguy"
-                        android:textSize="40dp"
+                        android:textSize="40sp"
+                        android:autoSizeTextType="uniform"
+                        android:maxLines="1"
                         android:textColor="@color/colorWhite"
                         android:text="legendary">
 
@@ -308,7 +339,9 @@
                 </LinearLayout>
 
 
-        </ViewFlipper>
+            </ViewFlipper>
+
+        </ScrollView>
 
     </RelativeLayout>
 
