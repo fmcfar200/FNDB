@@ -49,7 +49,6 @@ public class PopActivity extends Activity {
         if (weapon!=null)
         {
             ImageView imageView = findViewById(R.id.popWeaponImage);
-            ImageView backgroundView = findViewById(R.id.popWeaponBackground);
             TextView nameText = findViewById(R.id.popWeaponName);
             TextView rarityText = findViewById(R.id.popWeaponRarity);
             TextView damageText = findViewById(R.id.popWeaponDamage);
@@ -59,8 +58,7 @@ public class PopActivity extends Activity {
             TextView magSizeText = findViewById(R.id.popWeaponMagSize);
             TextView ammoCostText = findViewById(R.id.popWeaponAmmoCost);
 
-            Picasso.with(getApplicationContext()).load(weapon.getImageURL()).into(imageView);
-            Picasso.with(getApplicationContext()).load(weapon.getBacgroundURL()).into(backgroundView);
+            Picasso.with(getApplicationContext()).load(weapon.getBacgroundURL()).into(imageView);
 
 
             nameText.setText(weapon.getName());

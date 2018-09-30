@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ChallengesActivity"
+    android:background="@drawable/background_original_cut"
+    android:orientation="vertical">
+
+    <include layout="@layout/app_toolbar"></include>
+
+    <RadioGroup
+        android:id="@+id/leaderboardRadioGroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:checkedButton="@id/pcPlatformButton"
+        android:weightSum="4"
+        >
+
+        <RadioButton
+            android:id="@+id/leaderboardKillsButton"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_margin="2.5dp"
+            android:button="@null"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:padding="5dp"
+            android:background="@drawable/radio_button_background"
+            android:checked="true"
+
+            android:fontFamily="@font/luckiestguy"
+            android:textColor="@drawable/radio_button_textcolor"
+            android:textSize="25dp"
+            android:autoSizeTextType="uniform"
+            android:maxLines="1"
+            android:text="Kills"/>
+
+        <RadioButton
+            android:id="@+id/leaderboardWinsButton"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_margin="2.5dp"
+
+            android:button="@null"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:padding="5dp"
+            android:background="@drawable/radio_button_background"
+
+            android:textColor="@drawable/radio_button_textcolor"
+            android:fontFamily="@font/luckiestguy"
+            android:textSize="25sp"
+            android:autoSizeTextType="uniform"
+            android:maxLines="1"
+            android:text="wins"/>
+
+        <RadioButton
+            android:id="@+id/leaderboardScoreButton"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_margin="2.5dp"
+
+            android:button="@null"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:padding="5dp"
+            android:background="@drawable/radio_button_background"
+
+
+            android:fontFamily="@font/luckiestguy"
+            android:textColor="@drawable/radio_button_textcolor"
+            android:textSize="25sp"
+            android:autoSizeTextType="uniform"
+            android:maxLines="1"
+            android:text="Score"/>
+
+        <RadioButton
+            android:id="@+id/leaderboardHoursButton"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_margin="2.5dp"
+
+            android:button="@null"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:padding="5dp"
+            android:background="@drawable/radio_button_background"
+
+
+            android:fontFamily="@font/luckiestguy"
+            android:textColor="@drawable/radio_button_textcolor"
+            android:textSize="25sp"
+            android:autoSizeTextType="uniform"
+            android:maxLines="1"
+            android:text="Minutes"/>
+
+    </RadioGroup>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:orientation="horizontal"
+        android:background="@color/colorPrimaryDarkAlpha"
+        >
+
+        <TextView
+            android:id="@+id/leaderboardHeading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="4dp"
+
+            android:textColor="@color/colorWhite"
+            android:background="@color/greyishBlue"
+            android:fontFamily="@font/luckiestguy"
+            android:textSize="30dp"
+            android:autoSizeTextType="uniform"
+            android:text="Highest Kills"/>
+
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/top10ListView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimaryDarkAlpha"
+        android:divider="@color/greyishBlue"
+        android:dividerHeight="5dp"
+        android:layout_margin="10dp">
+
+    </ListView>
+
+</LinearLayout>

@@ -14,7 +14,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:paddingBottom="50dp"
+        android:paddingBottom="90dp"
         android:clipToPadding="true"
 
 
@@ -40,7 +40,7 @@
                 android:textColor="@color/colorWhite"
                 android:background="@color/greyishBlue"
                 android:fontFamily="@font/luckiestguy"
-                android:textSize="20dp"
+                android:textSize="30sp"
                 android:autoSizeTextType="uniform"
                 android:text="Current Challenges"/>
 
@@ -69,7 +69,7 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_alignParentBottom="true"
-        ads:adSize="BANNER"
+        ads:adSize="LEADERBOARD"
         ads:adUnitId="ca-app-pub-3940256099942544/6300978111">
     </com.google.android.gms.ads.AdView>
 
