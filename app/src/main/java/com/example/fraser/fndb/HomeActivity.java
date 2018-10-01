@@ -127,16 +127,16 @@ public class HomeActivity extends BaseActivity implements View.OnClickListener{
     private void StartShopTimer()
     {
         int endHour = 1;
-        int endMinute = 2;
+        int endMinute = 4;
         int endSecond = 0;
         Calendar calendar = Calendar.getInstance();
         calendar.setTimeZone(TimeZone.getTimeZone("GMT+01:00"));
         Date currentDate = calendar.getTime();
         Date end = new Date();
 
-        if (calendar.get(Calendar.HOUR_OF_DAY) >= 0 && calendar.get(Calendar.HOUR_OF_DAY) < endHour+1)
+        if (calendar.get(Calendar.HOUR_OF_DAY) >= 0 && calendar.get(Calendar.HOUR_OF_DAY) < endHour + 1)
         {
-            if (calendar.get(Calendar.MINUTE) >= 0 && calendar.get(Calendar.MINUTE) < endMinute)
+            if ( calendar.get(Calendar.HOUR_OF_DAY) == 1 && calendar.get(Calendar.MINUTE) >= 0 && calendar.get(Calendar.MINUTE) < endMinute)
             {
                 calendar.set(Calendar.HOUR_OF_DAY, endHour);
                 calendar.set(Calendar.MINUTE,endMinute);

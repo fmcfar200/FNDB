@@ -26,13 +26,14 @@
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
 
-            android:text="The Ultimate Fortnite Companion App is not affiliated with Epic Games, Inc and hold no claim to the 'Fortnite' Intellectual Property or its assets."
+            android:text="The Ultimate Fortnite Companion App is not affiliated with Epic Games, Inc or the 'Fortnite' brand. This is a fan-made application."
             android:textSize="17.5sp"
             android:textAlignment="center"
             android:textColor="@color/colorWhite"
             android:textStyle="bold"/>
 
         <Button
+            android:id="@+id/removeAdsButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
@@ -50,6 +51,7 @@
             android:drawableRight="@drawable/ic_remove_50dp" />
 
         <Button
+            android:id="@+id/rateUsButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
@@ -67,6 +69,7 @@
             android:drawableRight="@drawable/ic_star_50dp" />
 
         <Button
+            android:id="@+id/supportButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
