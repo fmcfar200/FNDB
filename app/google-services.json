@@ -10,7 +10,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:916515070198:android:a3ff0c825ffe550a",
         "android_client_info": {
-          "package_name": "com.example.fraser.fndb"
+          "package_name": "com.mcfarlane.fraser.fndb"
         }
       },
       "oauth_client": [
@@ -18,7 +18,7 @@
           "client_id": "916515070198-7rnkv8kono18hn8rk879qqduitso20k9.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.example.fraser.fndb",
+            "package_name": "com.mcfarlane.fraser.fndb",
             "certificate_hash": "93e8f978b166f3e515e8de939680fb0f27a169d8"
           }
         },

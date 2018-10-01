@@ -10,4 +10,8 @@
     <string name="nav_open">Open Nav Drawer</string>
     <string name="nav_closed">Close Nav Drawer</string>
     <string name="battle_pass">Battle Pass Skin</string>
+    
+    
+    <string name="BASE64KEY">MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAx399wZJntKC0BWSPJx1MA5iKDoi275TymRBqpbAbe7rDMMAgUhi9jFS6sxZgaL4ohHbtLBbUXwMOTCvgOcbrAVTCcrp2/w6d0djT04fVMXpLEyhHcujCcspyA1WsCrp/wMP4mqEsojW9mhPzqyxtUXzwaKyhYqKYe5IViT+IYXs8JgqZtGJiCEhUWhymonYXN5b1Ktflu4MaCv1Ju27MUGFsybEEMJ6etuAM8SEtCaawTAfEmtfygdQveATI58O4GdhI1WXPsR350lxqx/4Xy6V/gA6IcYKijoG13mr/FjwTwymawGAO+Yhp+/g2PaZVC+uTsTGiogl7yXdze66FQwIDAQAB
+    </string>
 </resources>

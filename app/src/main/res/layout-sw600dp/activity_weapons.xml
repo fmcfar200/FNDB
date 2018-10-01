@@ -41,7 +41,7 @@
 
             </LinearLayout>
 
-            <com.example.fraser.fndb.ExpandableHeightGridView
+            <com.mcfarlane.fraser.fndb.ExpandableHeightGridView
                 android:id="@+id/assaultGrid"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
@@ -51,7 +51,7 @@
                 android:numColumns="4"
                 android:layout_marginBottom="20dp"
                 >
-            </com.example.fraser.fndb.ExpandableHeightGridView>
+            </com.mcfarlane.fraser.fndb.ExpandableHeightGridView>
 
             <com.google.android.gms.ads.AdView xmlns:ads="http://schemas.android.com/apk/res-auto"
                 android:id="@+id/adView"
@@ -84,7 +84,7 @@
 
 
             </LinearLayout>
-            <com.example.fraser.fndb.ExpandableHeightGridView
+            <com.mcfarlane.fraser.fndb.ExpandableHeightGridView
                 android:id="@+id/heavyGrid"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
@@ -93,7 +93,7 @@
                 android:gravity="center"
                 android:numColumns="4"
                 >
-            </com.example.fraser.fndb.ExpandableHeightGridView>
+            </com.mcfarlane.fraser.fndb.ExpandableHeightGridView>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -117,7 +117,7 @@
 
             </LinearLayout>
 
-            <com.example.fraser.fndb.ExpandableHeightGridView
+            <com.mcfarlane.fraser.fndb.ExpandableHeightGridView
                 android:id="@+id/shotgunGrid"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
@@ -126,7 +126,7 @@
                 android:gravity="center"
                 android:numColumns="4"
                 >
-            </com.example.fraser.fndb.ExpandableHeightGridView>
+            </com.mcfarlane.fraser.fndb.ExpandableHeightGridView>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -150,7 +150,7 @@
 
             </LinearLayout>
 
-            <com.example.fraser.fndb.ExpandableHeightGridView
+            <com.mcfarlane.fraser.fndb.ExpandableHeightGridView
                 android:id="@+id/smgGrid"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
@@ -160,7 +160,7 @@
                 android:numColumns="4"
                 android:layout_marginBottom="20dp"
                 >
-            </com.example.fraser.fndb.ExpandableHeightGridView>
+            </com.mcfarlane.fraser.fndb.ExpandableHeightGridView>
 
             <com.google.android.gms.ads.AdView xmlns:ads="http://schemas.android.com/apk/res-auto"
                 android:id="@+id/adView1"
@@ -194,7 +194,7 @@
 
             </LinearLayout>
 
-            <com.example.fraser.fndb.ExpandableHeightGridView
+            <com.mcfarlane.fraser.fndb.ExpandableHeightGridView
                 android:id="@+id/pistolGrid"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
@@ -203,7 +203,7 @@
                 android:gravity="center"
                 android:numColumns="4"
                 >
-            </com.example.fraser.fndb.ExpandableHeightGridView>
+            </com.mcfarlane.fraser.fndb.ExpandableHeightGridView>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -227,7 +227,7 @@
 
             </LinearLayout>
 
-            <com.example.fraser.fndb.ExpandableHeightGridView
+            <com.mcfarlane.fraser.fndb.ExpandableHeightGridView
                 android:id="@+id/sniperGrid"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
@@ -236,7 +236,7 @@
                 android:gravity="center"
                 android:numColumns="4"
                 >
-            </com.example.fraser.fndb.ExpandableHeightGridView>
+            </com.mcfarlane.fraser.fndb.ExpandableHeightGridView>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -260,7 +260,7 @@
 
             </LinearLayout>
 
-            <com.example.fraser.fndb.ExpandableHeightGridView
+            <com.mcfarlane.fraser.fndb.ExpandableHeightGridView
                 android:id="@+id/launcherGrid"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
@@ -270,7 +270,7 @@
                 android:numColumns="4"
                 android:layout_marginBottom="20dp"
                 >
-            </com.example.fraser.fndb.ExpandableHeightGridView>
+            </com.mcfarlane.fraser.fndb.ExpandableHeightGridView>
 
             <com.google.android.gms.ads.AdView xmlns:ads="http://schemas.android.com/apk/res-auto"
                 android:id="@+id/adView2"
@@ -305,7 +305,7 @@
 
             </LinearLayout>
 
-            <com.example.fraser.fndb.ExpandableHeightGridView
+            <com.mcfarlane.fraser.fndb.ExpandableHeightGridView
                 android:id="@+id/otherGrid"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
@@ -314,7 +314,7 @@
                 android:gravity="center"
                 android:numColumns="4"
                 >
-            </com.example.fraser.fndb.ExpandableHeightGridView>
+            </com.mcfarlane.fraser.fndb.ExpandableHeightGridView>
 
 
         </LinearLayout>
