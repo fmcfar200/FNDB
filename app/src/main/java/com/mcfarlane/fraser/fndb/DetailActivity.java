@@ -6,7 +6,9 @@
 package com.mcfarlane.fraser.fndb;
 
 import android.annotation.SuppressLint;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Build;
@@ -46,7 +48,12 @@ public class DetailActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail);
 
-        AdManager adManager = new AdManager(this);
+        boolean adsBool;
+        Context context = getApplicationContext();
+        SharedPreferences sharedPreferences = context.getSharedPreferences(getString(R.string.LOCAL),Context.MODE_PRIVATE);
+        adsBool = sharedPreferences.getBoolean(getString(R.string.SP_ADS),true);
+
+        AdManager adManager = new AdManager(this, adsBool);
         adManager.CreateAndLoadBanner();
 
         imageView = findViewById(R.id.itemImage);

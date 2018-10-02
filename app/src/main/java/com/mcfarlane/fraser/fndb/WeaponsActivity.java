@@ -4,7 +4,9 @@
 package com.mcfarlane.fraser.fndb;
 
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -52,7 +54,11 @@ public class WeaponsActivity extends AppCompatActivity implements AdapterView.On
         adsList.add(adView1);
         adsList.add(adView2);
 
-        AdManager adManager = new AdManager(this);
+        boolean adsBool;
+        Context context = getApplicationContext();
+        SharedPreferences sharedPreferences = context.getSharedPreferences(getString(R.string.LOCAL),Context.MODE_PRIVATE);
+        adsBool = sharedPreferences.getBoolean(getString(R.string.SP_ADS),true);
+        AdManager adManager = new AdManager(this, adsBool);
         adManager.CreateAndLoadBannerMultiple(adsList);
 
         toolbar = findViewById(R.id.toolbarID);

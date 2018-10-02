@@ -3,7 +3,9 @@
  */
 package com.mcfarlane.fraser.fndb;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v4.view.MenuItemCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -42,7 +44,11 @@ public class SkinActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_skin);
 
-        AdManager adManager = new AdManager(this);
+        boolean adsBool;
+        Context context = getApplicationContext();
+        SharedPreferences sharedPreferences = context.getSharedPreferences(getString(R.string.LOCAL),Context.MODE_PRIVATE);
+        adsBool = sharedPreferences.getBoolean(getString(R.string.SP_ADS),true);
+        AdManager adManager = new AdManager(this, adsBool);
         adManager.CreateAndLoadBanner();
 
         listView = findViewById(R.id.listView);

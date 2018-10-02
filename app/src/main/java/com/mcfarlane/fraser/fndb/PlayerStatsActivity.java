@@ -87,7 +87,11 @@ public class PlayerStatsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_player_stats);
 
-        adManager = new AdManager(this);
+        boolean adsBool;
+        Context context = getApplicationContext();
+        SharedPreferences sharedPreferences = context.getSharedPreferences(getString(R.string.LOCAL),Context.MODE_PRIVATE);
+        adsBool = sharedPreferences.getBoolean(getString(R.string.SP_ADS),true);
+        AdManager adManager = new AdManager(this, adsBool);
         adManager.CreateAndLoadBanner();
 
         toolbar = findViewById(R.id.toolbarID);

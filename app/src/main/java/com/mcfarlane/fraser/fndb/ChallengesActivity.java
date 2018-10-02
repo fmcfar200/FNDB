@@ -5,6 +5,8 @@
 package com.mcfarlane.fraser.fndb;
 
 import android.app.ProgressDialog;
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -44,8 +46,13 @@ public class ChallengesActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_challenges);
 
-        AdManager adManager = new AdManager(this);
+        boolean adsBool;
+        Context context = getApplicationContext();
+        SharedPreferences sharedPreferences = context.getSharedPreferences(getString(R.string.LOCAL),Context.MODE_PRIVATE);
+        adsBool = sharedPreferences.getBoolean(getString(R.string.SP_ADS),true);
+        AdManager adManager = new AdManager(this, adsBool);
         adManager.CreateAndLoadBanner();
+
 
         toolbar = findViewById(R.id.toolbarID);
         setSupportActionBar(toolbar);

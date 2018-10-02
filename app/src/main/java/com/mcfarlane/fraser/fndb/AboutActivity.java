@@ -5,25 +5,32 @@
 
 package com.mcfarlane.fraser.fndb;
 
+import android.app.AlarmManager;
+import android.app.PendingIntent;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
-import com.mcfarlane.fraser.fndb.util.IabHelper;
-import com.mcfarlane.fraser.fndb.util.IabResult;
+import com.anjlab.android.iab.v3.BillingProcessor;
+import com.anjlab.android.iab.v3.PurchaseInfo;
+import com.anjlab.android.iab.v3.TransactionDetails;
 
 
 
-public class AboutActivity extends AppCompatActivity implements View.OnClickListener {
+public class AboutActivity extends AppCompatActivity implements View.OnClickListener, BillingProcessor.IBillingHandler {
 
     Toolbar toolbar;
     Button supportButton, removeAdsButton, rateButton;
 
-    IabHelper iabHelper;
+    BillingProcessor bp;
+
 
 
     @Override
@@ -38,6 +45,14 @@ public class AboutActivity extends AppCompatActivity implements View.OnClickList
             getSupportActionBar().setTitle("About");
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
             getSupportActionBar().setDisplayShowHomeEnabled(true);
+
+            toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    bp.consumePurchase("android.test.purchased");
+                    finish();
+                }
+            });
         }
 
 
@@ -48,21 +63,31 @@ public class AboutActivity extends AppCompatActivity implements View.OnClickList
         removeAdsButton.setOnClickListener(this);
         rateButton.setOnClickListener(this);
 
+        bp = new BillingProcessor(this, getString(R.string.BASE64KEY), this);
+        bp.initialize();
 
-        iabHelper = new IabHelper(this,getString(R.string.BASE64KEY));
-        iabHelper.startSetup(new IabHelper.OnIabSetupFinishedListener() {
-            public void onIabSetupFinished(IabResult result) {
-                if(!result.isSuccess())
-                {
-                    Log.e("TAG", "Problem with billing");
-                }
-                else
-                {
-                    Log.e("TAG", "SETUP DONE");
-                }
+        PurchaseInfo purchaseInfo = null;
+        boolean loadedPurchases = bp.loadOwnedPurchasesFromGoogle();
+        TransactionDetails details = bp.getPurchaseTransactionDetails("android.test.purchased");
 
-            }
-        });
+        if (details != null)
+        {
+            Log.e("TransDetails", "onCreate: " + details.toString());
+
+        }
+        else
+        {
+            Log.e("TransDetails", "onCreate: " + "No Details");
+
+        }
+
+
+
+
+
+
+
+
 
 
     }
@@ -85,6 +110,9 @@ public class AboutActivity extends AppCompatActivity implements View.OnClickList
 
     private void StartRemoveAds()
     {
+        Log.e("Ads", "StartRemoveAds: " + "Start Ads Remove" );
+        bp.purchase(this,"android.test.purchased");
+
     }
 
     private void StartSupportIntent()
@@ -99,17 +127,47 @@ public class AboutActivity extends AppCompatActivity implements View.OnClickList
 
     @Override
     protected void onDestroy() {
-        super.onDestroy();
-        if(iabHelper != null)
-        {
-            try {
-                iabHelper.dispose();
-            } catch (IabHelper.IabAsyncInProgressException e) {
-                e.printStackTrace();
-            }
+        if (bp != null) {
+            bp.release();
         }
-        iabHelper = null;
+        super.onDestroy();
     }
 
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if(!bp.handleActivityResult(requestCode,resultCode,data))
+            super.onActivityResult(requestCode, resultCode, data);
+    }
 
+    @Override
+    public void onProductPurchased(@NonNull String productId, @Nullable TransactionDetails details)
+    {
+
+        Intent mStartActivity = new Intent(getApplicationContext(), SplashActivity.class);
+        int mPendingIntentId = 123456;
+        PendingIntent mPendingIntent = PendingIntent.getActivity(getApplicationContext(), mPendingIntentId,    mStartActivity, PendingIntent.FLAG_CANCEL_CURRENT);
+        AlarmManager mgr = (AlarmManager)getApplicationContext().getSystemService(Context.ALARM_SERVICE);
+        mgr.set(AlarmManager.RTC, System.currentTimeMillis() + 100, mPendingIntent);
+        System.exit(0);
+
+    }
+
+    @Override
+    public void onPurchaseHistoryRestored() {
+
+    }
+
+    @Override
+    public void onBillingError(int errorCode, @Nullable Throwable error)
+    {
+        Log.e("HELLO", "onBillingError(): " + "ERROR: " + errorCode + ":" + error.toString() );
+
+    }
+
+    @Override
+    public void onBillingInitialized()
+    {
+        Log.e("HELLO", "onBillingInitialized: " + "INITIALISED" );
+
+    }
 }
