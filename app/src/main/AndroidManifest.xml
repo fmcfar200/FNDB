@@ -12,35 +12,41 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
+
         >
         <activity
             android:name=".SplashActivity"
-            android:theme="@style/SplashTheme">
+            android:theme="@style/SplashTheme"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".HomeActivity" />
+        <activity android:name=".HomeActivity" android:screenOrientation="portrait" />
         <activity
             android:name=".SeasonSelectActivity"
             android:parentActivityName=".HomeActivity"
-            android:windowSoftInputMode="adjustPan" />
+            android:windowSoftInputMode="adjustPan"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".SkinActivity"
-            android:windowSoftInputMode="adjustPan" />
-        <activity android:name=".DetailActivity" />
+            android:windowSoftInputMode="adjustPan"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".DetailActivity" android:screenOrientation="portrait" />
         <activity
             android:name=".PlayerStatsActivity"
-            android:windowSoftInputMode="adjustPan" />
-        <activity android:name=".NewsActivity" />
-        <activity android:name=".WeaponsActivity" />
+            android:windowSoftInputMode="adjustPan"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".NewsActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".WeaponsActivity" android:screenOrientation="portrait"/>
         <activity
             android:name=".PopActivity"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.Pop" />
-        <activity android:name=".ChallengesActivity" />
-        <activity android:name=".LeaderboardActivity" />
+        <activity android:name=".ChallengesActivity" android:screenOrientation="portrait" />
+        <activity android:name=".LeaderboardActivity" android:screenOrientation="portrait" />
 
         <service android:name=".MyFirebaseMessagingService">
             <intent-filter>
@@ -67,7 +73,7 @@
             android:name="com.google.android.gms.ads.APPLICATION_ID"
             android:value="ca-app-pub-3940256099942544~3347511713" />
 
-        <activity android:name=".AboutActivity"></activity>
+        <activity android:name=".AboutActivity" android:screenOrientation="portrait"></activity>
     </application>
 
 </manifest>

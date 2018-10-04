@@ -15,4 +15,7 @@
     </string>
     <string name="SP_ADS">ads</string>
     <string name="LOCAL">LocalPrefs</string>
+
+    <string name="adsProductID">remove_ads</string>
+    <string name="testProductID">android.test.purchased</string>
 </resources>

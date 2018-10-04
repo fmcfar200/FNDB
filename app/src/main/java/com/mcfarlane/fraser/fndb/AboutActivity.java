@@ -49,7 +49,7 @@ public class AboutActivity extends AppCompatActivity implements View.OnClickList
             toolbar.setNavigationOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    bp.consumePurchase("android.test.purchased");
+                    //bp.consumePurchase(getString(R.string.testProductID));
                     finish();
                 }
             });
@@ -68,7 +68,7 @@ public class AboutActivity extends AppCompatActivity implements View.OnClickList
 
         PurchaseInfo purchaseInfo = null;
         boolean loadedPurchases = bp.loadOwnedPurchasesFromGoogle();
-        TransactionDetails details = bp.getPurchaseTransactionDetails("android.test.purchased");
+        TransactionDetails details = bp.getPurchaseTransactionDetails(getString(R.string.testProductID));
 
         if (details != null)
         {
@@ -80,15 +80,6 @@ public class AboutActivity extends AppCompatActivity implements View.OnClickList
             Log.e("TransDetails", "onCreate: " + "No Details");
 
         }
-
-
-
-
-
-
-
-
-
 
     }
 

@@ -36,7 +36,7 @@ public class SplashActivity extends AppCompatActivity implements BillingProcesso
 
         PurchaseInfo purchaseInfo = null;
         boolean loadedPurchases = bp.loadOwnedPurchasesFromGoogle();
-        TransactionDetails details = bp.getPurchaseTransactionDetails("android.test.purchased");
+        TransactionDetails details = bp.getPurchaseTransactionDetails(getString(R.string.testProductID));
 
         if (details != null)
         {

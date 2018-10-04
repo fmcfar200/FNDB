@@ -142,7 +142,7 @@ public class HomeActivity extends BaseActivity implements View.OnClickListener{
 
         if (calendar.get(Calendar.HOUR_OF_DAY) >= 0 && calendar.get(Calendar.HOUR_OF_DAY) < endHour + 1)
         {
-            if ( calendar.get(Calendar.HOUR_OF_DAY) == 1 && calendar.get(Calendar.MINUTE) >= 0 && calendar.get(Calendar.MINUTE) < endMinute)
+            if ( calendar.get(Calendar.HOUR_OF_DAY) == endHour && calendar.get(Calendar.MINUTE) >= 0 && calendar.get(Calendar.MINUTE) < endMinute)
             {
                 calendar.set(Calendar.HOUR_OF_DAY, endHour);
                 calendar.set(Calendar.MINUTE,endMinute);
@@ -160,6 +160,15 @@ public class HomeActivity extends BaseActivity implements View.OnClickListener{
                 calendar.setTimeZone(TimeZone.getTimeZone("GMT+01:00"));
                 end = calendar.getTime();
             }
+        }
+        else if (calendar.get(Calendar.HOUR_OF_DAY) == endHour && calendar.get(Calendar.MINUTE) == endMinute && calendar.get(Calendar.SECOND) >= endSecond)
+        {
+            calendar.add(Calendar.DATE, 1);
+            calendar.set(Calendar.HOUR_OF_DAY, endHour);
+            calendar.set(Calendar.MINUTE,endMinute);
+            calendar.set(Calendar.SECOND, endSecond);
+            calendar.setTimeZone(TimeZone.getTimeZone("GMT+01:00"));
+            end = calendar.getTime();
         }
         else
         {
