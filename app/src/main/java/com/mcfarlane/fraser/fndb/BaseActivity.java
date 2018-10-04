@@ -82,7 +82,9 @@ public class BaseActivity extends AppCompatActivity implements NavigationView.On
         }
         else if (id == R.id.drRemoveAds)
         {
-
+            Intent i = new Intent(getApplicationContext(),AboutActivity.class);
+            i.putExtra("ads",true);
+            StartActivityWithExtras(AboutActivity.class,i);
         }
 
 
@@ -95,6 +97,10 @@ public class BaseActivity extends AppCompatActivity implements NavigationView.On
     void StartActivity(Class theclass)
     {
         Intent i = new Intent(getApplicationContext(), theclass);
+        startActivity(i);
+    }
+    void StartActivityWithExtras(Class theclass, Intent i)
+    {
         startActivity(i);
     }
 }

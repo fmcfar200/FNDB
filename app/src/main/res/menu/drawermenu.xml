@@ -8,7 +8,7 @@
         <item android:id="@+id/drLeaderboards" android:title="Leaderboards" android:icon="@drawable/ic_leaderboard_50dp"></item>
         <item android:id="@+id/drNews" android:title="News" android:icon="@drawable/ic_news_50dp"></item>
         <item android:id="@+id/drAbout" android:title="About" android:icon="@drawable/ic_info_50dp"></item>
-        <item android:id="@+id/drRemoveAds" android:title="Remove" android:icon="@drawable/ic_remove_50dp"></item>
+        <item android:id="@+id/drRemoveAds" android:title="Remove Ads" android:icon="@drawable/ic_remove_50dp"></item>
 
     </group>
 

@@ -1,6 +1,11 @@
 <resources>
     <!-- Sample AdMob App ID: ca-app-pub-3940256099942544~3347511713 -->
+    <!-- REAL ID ca-app-pub-5483417401365103~3248055342 -->
     <string name="ADS_ID">ca-app-pub-3940256099942544~3347511713</string>
+
+    <!-- CHANGE WHEN IN BETA AND RELEASE - remove_ads, WHEN IN TESTING - 'android.test.purchased' -->
+    <string name="adsProductID"></string>
+    <string name="testProductID">android.test.purchased</string>
 
     <string name="TRACKER_API_KEY">246a06d4-9ecc-443f-bd96-67e18bb94e4d</string>
     <string name="FORTNITE_API_KEY">a4587bc8429ba5f7e2be4d869fddf5ff</string>
@@ -16,6 +21,5 @@
     <string name="SP_ADS">ads</string>
     <string name="LOCAL">LocalPrefs</string>
 
-    <string name="adsProductID">remove_ads</string>
-    <string name="testProductID">android.test.purchased</string>
+
 </resources>

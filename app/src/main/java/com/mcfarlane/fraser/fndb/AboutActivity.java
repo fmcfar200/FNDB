@@ -6,9 +6,12 @@
 package com.mcfarlane.fraser.fndb;
 
 import android.app.AlarmManager;
+import android.app.AlertDialog;
 import android.app.PendingIntent;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -31,12 +34,20 @@ public class AboutActivity extends AppCompatActivity implements View.OnClickList
 
     BillingProcessor bp;
 
+    boolean adsExtra;
+
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_about);
+
+        Bundle extras = getIntent().getExtras();
+        if(extras!=null)
+        {
+            adsExtra = extras.getBoolean("ads");
+        }
 
         toolbar = findViewById(R.id.toolbarID);
         setSupportActionBar(toolbar);
@@ -66,6 +77,8 @@ public class AboutActivity extends AppCompatActivity implements View.OnClickList
         bp = new BillingProcessor(this, getString(R.string.BASE64KEY), this);
         bp.initialize();
 
+
+
         PurchaseInfo purchaseInfo = null;
         boolean loadedPurchases = bp.loadOwnedPurchasesFromGoogle();
         TransactionDetails details = bp.getPurchaseTransactionDetails(getString(R.string.testProductID));
@@ -81,13 +94,19 @@ public class AboutActivity extends AppCompatActivity implements View.OnClickList
 
         }
 
+
+        if (adsExtra)
+        {
+            StartRemoveAds();
+        }
     }
 
     @Override
     public void onClick(View v)
     {
         if (v == supportButton){StartSupportIntent();}
-        if(v == removeAdsButton){
+        if(v == removeAdsButton)
+        {
             StartRemoveAds();
         }
         if(v == rateButton){StartRateIntent();}
