@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <include layout="@layout/app_toolbar"></include>
+
+    <LinearLayout
+        android:id="@+id/rarityLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="10dp"
+        android:background="@color/colorPrimaryDarkAlpha"
+        android:weightSum="4">
+
+        <Button
+            android:id="@+id/uncommonSkins"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="15dp"
+            android:layout_marginBottom="20dp"
+            android:layout_weight="1"
+
+            android:background="@color/uncommonColor"
+            android:fontFamily="@font/luckiestguy"
+            android:textSize="25sp"
+            android:autoSizeTextType="uniform"
+            android:maxLines="1"
+            android:textColor="@color/colorWhite"
+            android:text="Uncommon">
+
+        </Button>
+
+        <Button
+            android:id="@+id/rareSkins"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="15dp"
+            android:layout_marginBottom="20dp"
+            android:layout_weight="1"
+
+            android:background="@color/rareColor"
+            android:fontFamily="@font/luckiestguy"
+            android:textSize="25sp"
+            android:autoSizeTextType="uniform"
+            android:maxLines="1"
+            android:textColor="@color/colorWhite"
+            android:text="Rare">
+
+        </Button>
+
+        <Button
+            android:id="@+id/epicSkins"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="15dp"
+            android:layout_marginBottom="20dp"
+            android:layout_weight="1"
+
+            android:background="@color/epicColor"
+            android:fontFamily="@font/luckiestguy"
+            android:textSize="25sp"
+            android:autoSizeTextType="uniform"
+            android:textColor="@color/colorWhite"
+            android:maxLines="1"
+            android:text="epic">
+
+        </Button>
+
+        <Button
+            android:id="@+id/legendarySkins"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="15dp"
+            android:layout_weight="1"
+
+            android:background="@color/legendaryColor"
+            android:fontFamily="@font/luckiestguy"
+            android:textSize="25sp"
+            android:autoSizeTextType="uniform"
+            android:maxLines="1"
+            android:textColor="@color/colorWhite"
+            android:text="legendary">
+
+        </Button>
+
+
+
+    </LinearLayout>
+
+
+</LinearLayout>

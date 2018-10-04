@@ -80,6 +80,9 @@ public class PlayerStatsActivity extends AppCompatActivity {
     HashMap<String,String> dueStatsMap = new HashMap<>();
     HashMap<String,String> squadStatsMap = new HashMap<>();
 
+    boolean adsBool;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -87,11 +90,10 @@ public class PlayerStatsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_player_stats);
 
-        boolean adsBool;
         Context context = getApplicationContext();
         SharedPreferences sharedPreferences = context.getSharedPreferences(getString(R.string.LOCAL),Context.MODE_PRIVATE);
         adsBool = sharedPreferences.getBoolean(getString(R.string.SP_ADS),true);
-        AdManager adManager = new AdManager(this, adsBool);
+        adManager = new AdManager(this, adsBool);
         adManager.CreateAndLoadBanner();
 
         toolbar = findViewById(R.id.toolbarID);
@@ -486,7 +488,12 @@ public class PlayerStatsActivity extends AppCompatActivity {
                 squadStatsAdapter = new StatsListAdapter(getApplicationContext(),R.layout.stats_list_item, player.squad.getSquadStatsMap());
                 squadStatsList.setAdapter(squadStatsAdapter);
 
-                adManager.RemoveAd();
+                if (adsBool)
+                {
+                    adManager.RemoveAd();
+                }
+
+
                 vFlipper.setDisplayedChild(1);
                 dialog.dismiss();
 

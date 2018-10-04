@@ -68,7 +68,12 @@ public class AdManager extends Activity
     public void RemoveAd()
     {
         AdView adView = activity.findViewById(R.id.adView);
-        ((ViewGroup)adView.getParent()).removeView(adView);
+
+        if (adView!= null)
+        {
+            ((ViewGroup)adView.getParent()).removeView(adView);
+
+        }
 
     }
 

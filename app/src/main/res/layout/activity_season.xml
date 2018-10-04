@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 
     <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -8,9 +9,11 @@
         android:background="@drawable/background_original_cut"
         >
 
-        <include layout="@layout/app_toolbar"></include>
+    <include layout="@layout/app_toolbar"></include>
 
-        <ScrollView
+
+
+    <ScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             >
@@ -27,7 +30,9 @@
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
                     android:layout_gravity="center"
-                    android:layout_margin="20dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
                     android:background="@color/colorPrimaryDarkAlpha"
                     android:weightSum="4"
                     >
@@ -36,7 +41,7 @@
                         android:id="@+id/battlePassButton"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_margin="25dp"
+                        android:layout_margin="15dp"
                         android:padding="15dp"
                         android:layout_weight="1"
 
@@ -44,36 +49,38 @@
                         android:drawableRight="@drawable/battlestar_white_50dp"
                         android:fontFamily="@font/luckiestguy"
                         android:textColor="@color/colorWhite"
-                        android:textSize="30sp"
+                        android:textSize="20sp"
                         android:autoSizeTextType="uniform"
-                        android:text="Battle Pass  ">
+                        android:text="Battle Pass"
+                        android:maxLines="1">
                     </Button>
 
                     <Button
                         android:id="@+id/shopSkins"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="25dp"
-                        android:layout_marginRight="25dp"
-                        android:layout_marginBottom="25dp"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginRight="15dp"
+                        android:layout_marginBottom="15dp"
                         android:padding="15dp"
                         android:layout_weight="1"
 
                         android:background="@color/greyishBlue"
                         android:fontFamily="@font/luckiestguy"
                         android:textColor="@color/colorWhite"
-                        android:textSize="30sp"
+                        android:textSize="20sp"
                         android:autoSizeTextType="uniform"
                         android:drawableRight="@drawable/vbucks_white_outline"
-                        android:text="Item Shop  ">
+                        android:text="Item Shop"
+                        android:maxLines="1">
                     </Button>
                     <Button
                         android:id="@+id/promoSkins"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="25dp"
-                        android:layout_marginRight="25dp"
-                        android:layout_marginBottom="25dp"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginRight="15dp"
+                        android:layout_marginBottom="15dp"
                         android:padding="15dp"
                         android:layout_weight="1"
 
@@ -81,17 +88,18 @@
                         android:background="@color/greyishBlue"
                         android:fontFamily="@font/luckiestguy"
                         android:textColor="@color/colorWhite"
-                        android:textSize="30sp"
+                        android:textSize="15sp"
                         android:autoSizeTextType="uniform"
-                        android:text="Promo Skins  ">
+                        android:text="Promo Skins"
+                        android:maxLines="1">
                     </Button>
                     <Button
                         android:id="@+id/holidaySkins"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="25dp"
-                        android:layout_marginRight="25dp"
-                        android:layout_marginBottom="25dp"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginRight="15dp"
+                        android:layout_marginBottom="15dp"
                         android:padding="15dp"
                         android:layout_weight="1"
 
@@ -101,7 +109,8 @@
                         android:textColor="@color/colorWhite"
                         android:textSize="25sp"
                         android:autoSizeTextType="uniform"
-                        android:text="seasonal Skins  ">
+                        android:text="seasonal Skins"
+                        android:maxLines="1">
                     </Button>
 
                 </LinearLayout>
@@ -114,8 +123,9 @@
                     android:orientation="vertical"
                     android:gravity="center"
                     android:layout_gravity="center"
-                    android:layout_margin="20dp"
-                    android:layout_marginTop="80dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
                     android:background="@color/colorPrimaryDarkAlpha">
 
                     <LinearLayout
@@ -135,7 +145,7 @@
                             android:background="@color/greyishBlue"
                             android:fontFamily="@font/luckiestguy"
                             android:textColor="@color/colorWhite"
-                            android:textSize="75sp"
+                            android:textSize="50sp"
                             android:autoSizeTextType="uniform"
                             android:maxLines="1"
                             android:text="#1">
@@ -153,7 +163,7 @@
                             android:background="@color/greyishBlue"
                             android:fontFamily="@font/luckiestguy"
                             android:textColor="@color/colorWhite"
-                            android:textSize="75sp"
+                            android:textSize="50sp"
                             android:autoSizeTextType="uniform"
                             android:maxLines="1"
                             android:text="#2">
@@ -179,7 +189,7 @@
                             android:background="@color/greyishBlue"
                             android:fontFamily="@font/luckiestguy"
                             android:textColor="@color/colorWhite"
-                            android:textSize="75sp"
+                            android:textSize="50sp"
                             android:autoSizeTextType="uniform"
                             android:maxLines="1"
                             android:text="#3">
@@ -197,7 +207,7 @@
                             android:background="@color/greyishBlue"
                             android:fontFamily="@font/luckiestguy"
                             android:textColor="@color/colorWhite"
-                            android:textSize="75sp"
+                            android:textSize="50sp"
                             android:autoSizeTextType="uniform"
                             android:maxLines="1"
                             android:text="#4">
@@ -222,7 +232,7 @@
                             android:background="@color/greyishBlue"
                             android:fontFamily="@font/luckiestguy"
                             android:textColor="@color/colorWhite"
-                            android:textSize="75sp"
+                            android:textSize="50sp"
                             android:autoSizeTextType="uniform"
                             android:maxLines="1"
                             android:text="#5">
@@ -240,7 +250,7 @@
                             android:background="@color/greyishBlue"
                             android:fontFamily="@font/luckiestguy"
                             android:textColor="@color/colorWhite"
-                            android:textSize="75sp"
+                            android:textSize="50sp"
                             android:autoSizeTextType="uniform"
                             android:maxLines="1"
                             android:text="#6">
@@ -256,12 +266,14 @@
                     android:id="@+id/rarityLayout"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="20dp"
-                    android:layout_marginTop="60dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginLeft="20dp"
+
                     android:layout_gravity="center"
                     android:gravity="center"
                     android:orientation="vertical"
-                    android:padding="20dp"
+                    android:padding="10dp"
                     android:background="@color/colorPrimaryDarkAlpha"
                     android:weightSum="4">
 
@@ -275,7 +287,7 @@
 
                         android:background="@color/uncommonColor"
                         android:fontFamily="@font/luckiestguy"
-                        android:textSize="40sp"
+                        android:textSize="25sp"
                         android:autoSizeTextType="uniform"
                         android:maxLines="1"
                         android:textColor="@color/colorWhite"
@@ -293,7 +305,7 @@
 
                         android:background="@color/rareColor"
                         android:fontFamily="@font/luckiestguy"
-                        android:textSize="40sp"
+                        android:textSize="25sp"
                         android:autoSizeTextType="uniform"
                         android:maxLines="1"
                         android:textColor="@color/colorWhite"
@@ -311,7 +323,7 @@
 
                         android:background="@color/epicColor"
                         android:fontFamily="@font/luckiestguy"
-                        android:textSize="40sp"
+                        android:textSize="25sp"
                         android:autoSizeTextType="uniform"
                         android:textColor="@color/colorWhite"
                         android:maxLines="1"
@@ -328,7 +340,7 @@
 
                         android:background="@color/legendaryColor"
                         android:fontFamily="@font/luckiestguy"
-                        android:textSize="40sp"
+                        android:textSize="25sp"
                         android:autoSizeTextType="uniform"
                         android:maxLines="1"
                         android:textColor="@color/colorWhite"
@@ -352,7 +364,7 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_alignParentBottom="true"
-        ads:adSize="LARGE_BANNER"
+        ads:adSize="BANNER"
         ads:adUnitId="ca-app-pub-3940256099942544/6300978111">
     </com.google.android.gms.ads.AdView>
 
