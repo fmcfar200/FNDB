@@ -60,7 +60,7 @@ public class AboutActivity extends AppCompatActivity implements View.OnClickList
             toolbar.setNavigationOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    //bp.consumePurchase(getString(R.string.testProductID));
+                    bp.consumePurchase(getString(R.string.testProductID));
                     finish();
                 }
             });
@@ -121,7 +121,7 @@ public class AboutActivity extends AppCompatActivity implements View.OnClickList
     private void StartRemoveAds()
     {
         Log.e("Ads", "StartRemoveAds: " + "Start Ads Remove" );
-        bp.purchase(this,"android.test.purchased");
+        bp.purchase(this,getString(R.string.testProductID));
 
     }
 
@@ -170,7 +170,7 @@ public class AboutActivity extends AppCompatActivity implements View.OnClickList
     @Override
     public void onBillingError(int errorCode, @Nullable Throwable error)
     {
-        Log.e("HELLO", "onBillingError(): " + "ERROR: " + errorCode + ":" + error.toString() );
+        finish();
 
     }
 
@@ -180,4 +180,6 @@ public class AboutActivity extends AppCompatActivity implements View.OnClickList
         Log.e("HELLO", "onBillingInitialized: " + "INITIALISED" );
 
     }
+
+
 }

@@ -1,11 +1,24 @@
 <resources>
     <!-- Sample AdMob App ID: ca-app-pub-3940256099942544~3347511713 -->
     <!-- REAL ID ca-app-pub-5483417401365103~3248055342 -->
-    <string name="ADS_ID">ca-app-pub-3940256099942544~3347511713</string>
+    <string name="ADS_APP_ID">ca-app-pub-3940256099942544~3347511713</string>
+    
+    <string name="CHALLENGE_UNIT_ID">ca-app-pub-5483417401365103/7186041177</string>
+    <string name="DETAIL_UNIT_ID">ca-app-pub-5483417401365103/2125286186</string>
+    <string name="LEADERBOARD_UNIT_ID">ca-app-pub-5483417401365103/6547746925</string>
+    <string name="NEWS_UNIT_ID">ca-app-pub-5483417401365103/7018520210</string>
+    <string name="SELECTSCREEN_UNIT_ID">ca-app-pub-5483417401365103/7159380195</string>
+    <string name="SKIN_UNIT_ID">ca-app-pub-5483417401365103/2080397618</string>
+    <string name="STATS_UNIT_ID">ca-app-pub-5483417401365103/2262276734</string>
+    <string name="WEAPON1_UNIT_ID">ca-app-pub-5483417401365103/4687870342</string>
+    <string name="WEAPON2_UNIT_ID">ca-app-pub-5483417401365103/9748625334</string>
+    <string name="WEAPON3_UNIT_ID">ca-app-pub-5483417401365103/4496298651</string>
+
+
+
 
     <!-- CHANGE WHEN IN BETA AND RELEASE - remove_ads, WHEN IN TESTING - 'android.test.purchased' -->
-    <string name="adsProductID"></string>
-    <string name="testProductID">android.test.purchased</string>
+    <string name="testProductID">remove_ads</string>
 
     <string name="TRACKER_API_KEY">246a06d4-9ecc-443f-bd96-67e18bb94e4d</string>
     <string name="FORTNITE_API_KEY">a4587bc8429ba5f7e2be4d869fddf5ff</string>
@@ -18,6 +31,7 @@
 
     <string name="BASE64KEY">MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAx399wZJntKC0BWSPJx1MA5iKDoi275TymRBqpbAbe7rDMMAgUhi9jFS6sxZgaL4ohHbtLBbUXwMOTCvgOcbrAVTCcrp2/w6d0djT04fVMXpLEyhHcujCcspyA1WsCrp/wMP4mqEsojW9mhPzqyxtUXzwaKyhYqKYe5IViT+IYXs8JgqZtGJiCEhUWhymonYXN5b1Ktflu4MaCv1Ju27MUGFsybEEMJ6etuAM8SEtCaawTAfEmtfygdQveATI58O4GdhI1WXPsR350lxqx/4Xy6V/gA6IcYKijoG13mr/FjwTwymawGAO+Yhp+/g2PaZVC+uTsTGiogl7yXdze66FQwIDAQAB
     </string>
+
     <string name="SP_ADS">ads</string>
     <string name="LOCAL">LocalPrefs</string>
 

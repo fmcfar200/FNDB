@@ -33,6 +33,7 @@ public class SplashActivity extends AppCompatActivity implements BillingProcesso
 
         bp = new BillingProcessor(this, getString(R.string.BASE64KEY), this);
         bp.initialize();
+        bp.consumePurchase("android.test.purchased");
 
         PurchaseInfo purchaseInfo = null;
         boolean loadedPurchases = bp.loadOwnedPurchasesFromGoogle();
@@ -45,7 +46,8 @@ public class SplashActivity extends AppCompatActivity implements BillingProcesso
             editor.commit();
         }
 
-        MobileAds.initialize(this,getString(R.string.ADS_ID));
+        MobileAds.initialize(this,getString(R.string.ADS_APP_ID));
+
         Intent i = new Intent(this,HomeActivity.class);
         startActivity(i);
         finish();
