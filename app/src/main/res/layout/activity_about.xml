@@ -7,85 +7,93 @@
     android:layout_width="match_parent"
     android:background="@drawable/background_original_cut">
 
-    <LinearLayout
-        android:orientation="vertical"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
 
-        <include layout="@layout/app_toolbar"></include>
-
-        <ImageView
-            android:layout_width="150dp"
-            android:layout_height="150dp"
-            android:src="@mipmap/ic_launcher"
-            android:layout_gravity="center"
-            android:layout_margin="10dp"/>
-
-        <TextView
+        <LinearLayout
+            android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
+            android:layout_height="match_parent">
 
-            android:text="The Ultimate Fortnite Companion App is not affiliated with Epic Games, Inc or the 'Fortnite' brand. This is a fan-made application."
-            android:textSize="17.5sp"
-            android:textAlignment="center"
-            android:textColor="@color/colorWhite"
-            android:textStyle="bold"/>
+            <include layout="@layout/app_toolbar"></include>
 
-        <Button
-            android:id="@+id/removeAdsButton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:layout_marginRight="80dp"
-            android:layout_marginLeft="80dp"
-            android:layout_gravity="center"
-            android:padding="10dp"
-            android:background="@color/greyishBlue"
+            <ImageView
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:src="@mipmap/ic_launcher"
+                android:layout_gravity="center"
+                android:layout_margin="10dp"/>
 
-            android:text="Remove Ads"
-            android:textSize="20sp"
-            android:autoSizeTextType="uniform"
-            android:textColor="@color/colorWhite"
-            android:drawableEnd="@drawable/ic_remove_50dp"
-            android:drawableRight="@drawable/ic_remove_50dp" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
 
-        <Button
-            android:id="@+id/rateUsButton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:layout_marginRight="80dp"
-            android:layout_marginLeft="80dp"
-            android:layout_gravity="center"
-            android:padding="10dp"
-            android:background="@color/greyishBlue"
+                android:text="The Ultimate Fortnite Companion App is not affiliated with Epic Games, Inc or the 'Fortnite' brand. This is a fan-made application."
+                android:textSize="17.5sp"
+                android:textAlignment="center"
+                android:textColor="@color/colorWhite"
+                android:textStyle="bold"/>
 
-            android:text="Rate Us"
-            android:textSize="20sp"
-            android:autoSizeTextType="uniform"
-            android:textColor="@color/colorWhite"
-            android:drawableEnd="@drawable/ic_star_50dp"
-            android:drawableRight="@drawable/ic_star_50dp" />
+            <Button
+                android:id="@+id/removeAdsButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="80dp"
+                android:layout_marginLeft="80dp"
+                android:layout_gravity="center"
+                android:padding="10dp"
+                android:background="@color/greyishBlue"
 
-        <Button
-            android:id="@+id/supportButton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:layout_marginRight="80dp"
-            android:layout_marginLeft="80dp"
-            android:layout_gravity="center"
-            android:padding="10dp"
-            android:background="@color/greyishBlue"
+                android:text="Remove Ads"
+                android:textSize="20sp"
+                android:autoSizeTextType="uniform"
+                android:textColor="@color/colorWhite"
+                android:drawableEnd="@drawable/ic_remove_50dp"
+                android:drawableRight="@drawable/ic_remove_50dp" />
 
-            android:text="Support"
-            android:textSize="20sp"
-            android:autoSizeTextType="uniform"
-            android:textColor="@color/colorWhite"
-            android:drawableEnd="@drawable/ic_help_50dp"
-            android:drawableRight="@drawable/ic_help_50dp" />
-    </LinearLayout>
+            <Button
+                android:id="@+id/rateUsButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="80dp"
+                android:layout_marginLeft="80dp"
+                android:layout_gravity="center"
+                android:padding="10dp"
+                android:background="@color/greyishBlue"
+
+                android:text="Rate Us"
+                android:textSize="20sp"
+                android:autoSizeTextType="uniform"
+                android:textColor="@color/colorWhite"
+                android:drawableEnd="@drawable/ic_star_50dp"
+                android:drawableRight="@drawable/ic_star_50dp" />
+
+            <Button
+                android:id="@+id/supportButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="80dp"
+                android:layout_marginLeft="80dp"
+                android:layout_gravity="center"
+                android:padding="10dp"
+                android:background="@color/greyishBlue"
+
+                android:text="Support"
+                android:textSize="20sp"
+                android:autoSizeTextType="uniform"
+                android:textColor="@color/colorWhite"
+                android:drawableEnd="@drawable/ic_help_50dp"
+                android:drawableRight="@drawable/ic_help_50dp" />
+        </LinearLayout>
+
+
+    </ScrollView>
+
 
 </RelativeLayout>
 

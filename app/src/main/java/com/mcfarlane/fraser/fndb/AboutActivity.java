@@ -6,12 +6,11 @@
 package com.mcfarlane.fraser.fndb;
 
 import android.app.AlarmManager;
-import android.app.AlertDialog;
 import android.app.PendingIntent;
+import android.content.ActivityNotFoundException;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
-import android.os.Build;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -60,7 +59,6 @@ public class AboutActivity extends AppCompatActivity implements View.OnClickList
             toolbar.setNavigationOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    bp.consumePurchase(getString(R.string.testProductID));
                     finish();
                 }
             });
@@ -115,7 +113,19 @@ public class AboutActivity extends AppCompatActivity implements View.OnClickList
 
     private void StartRateIntent()
     {
-
+        Uri uri = Uri.parse("market://details?id=" + getApplicationContext().getPackageName());
+        Intent goToMarket = new Intent(Intent.ACTION_VIEW, uri);
+        // To count with Play market backstack, After pressing back button,
+        // to taken back to our application, we need to add following flags to intent.
+        goToMarket.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY |
+                Intent.FLAG_ACTIVITY_NEW_DOCUMENT |
+                Intent.FLAG_ACTIVITY_MULTIPLE_TASK);
+        try {
+            startActivity(goToMarket);
+        } catch (ActivityNotFoundException e) {
+            startActivity(new Intent(Intent.ACTION_VIEW,
+                    Uri.parse("http://play.google.com/store/apps/details?id=" + getApplicationContext().getPackageName())));
+        }
     }
 
     private void StartRemoveAds()

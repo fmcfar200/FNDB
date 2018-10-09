@@ -150,7 +150,7 @@
                             android:drawableLeft="@drawable/ic_leaderboard_50dp"
                             android:fontFamily="@font/luckiestguy"
                             android:gravity="center"
-                            android:text="leaderboard"
+                            android:text="Top 10"
                             android:textColor="@color/colorWhite"
                             android:autoSizeTextType="uniform"
                             android:maxLines="1"/>
