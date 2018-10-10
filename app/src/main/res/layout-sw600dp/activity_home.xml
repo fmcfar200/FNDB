@@ -179,10 +179,12 @@
                             android:drawableLeft="@drawable/battlestar_white_50dp"
                             android:fontFamily="@font/luckiestguy"
                             android:gravity="center"
-                            android:text="Challenges"
+                            android:text=" Challenges "
                             android:textColor="@color/colorWhite"
                             android:autoSizeTextType="uniform"
-                            android:maxLines="1"/>
+                            android:maxLines="1"
+
+                            android:layout_marginStart="10dp" />
 
                         <Button
                             android:id="@+id/newsButton"

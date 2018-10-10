@@ -98,7 +98,7 @@
                     android:textColor="@color/colorWhite"
                     android:textSize="50sp"
                     android:autoSizeTextType="uniform"
-                    android:text="seasonal Skins  ">
+                    android:text="seasonal">
                 </Button>
 
             </LinearLayout>
