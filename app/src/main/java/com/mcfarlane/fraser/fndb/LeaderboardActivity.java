@@ -66,8 +66,8 @@ public class LeaderboardActivity extends AppCompatActivity {
         final InterstitialAd mInterstitialAd = new InterstitialAd(this);
         if (adsBool)
         {
-            mInterstitialAd.setAdUnitId("ca-app-pub-3940256099942544/1033173712");
-            mInterstitialAd.loadAd(new AdRequest.Builder().addTestDevice(AdRequest.DEVICE_ID_EMULATOR).build());
+            mInterstitialAd.setAdUnitId(getString(R.string.LEADERBOARD_UNIT_ID));
+            mInterstitialAd.loadAd(new AdRequest.Builder().build());
         }
 
 

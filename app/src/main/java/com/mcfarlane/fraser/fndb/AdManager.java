@@ -37,7 +37,6 @@ public class AdManager extends Activity
         {
             AdView adView = activity.findViewById(R.id.adView);
             AdRequest adRequest = new AdRequest.Builder()
-                    .addTestDevice(AdRequest.DEVICE_ID_EMULATOR)
                     .build();
 
             adView.loadAd(adRequest);
@@ -56,7 +55,6 @@ public class AdManager extends Activity
             for (AdView adView: adsList)
             {
                 AdRequest adRequest = new AdRequest.Builder()
-                        .addTestDevice(AdRequest.DEVICE_ID_EMULATOR)
                         .build();
 
                 adView.loadAd(adRequest);

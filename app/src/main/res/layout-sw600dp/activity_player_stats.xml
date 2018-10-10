@@ -273,7 +273,7 @@
         android:layout_centerHorizontal="true"
         android:layout_alignParentBottom="true"
         ads:adSize="LEADERBOARD"
-        ads:adUnitId="ca-app-pub-3940256099942544/6300978111">
+        ads:adUnitId="@string/STATS_UNIT_ID">
     </com.google.android.gms.ads.AdView>
 
 </RelativeLayout>

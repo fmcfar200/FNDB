@@ -1,8 +1,9 @@
 <resources>
     <!-- Sample AdMob App ID: ca-app-pub-3940256099942544~3347511713 -->
     <!-- REAL ID ca-app-pub-5483417401365103~3248055342 -->
-    <string name="ADS_APP_ID">ca-app-pub-3940256099942544~3347511713</string>
-    
+    <string name="ADS_APP_ID">ca-app-pub-5483417401365103~3248055342</string>
+
+    <string name="HOME_UNIT_ID">ca-app-pub-5483417401365103/6421013596</string>
     <string name="CHALLENGE_UNIT_ID">ca-app-pub-5483417401365103/7186041177</string>
     <string name="DETAIL_UNIT_ID">ca-app-pub-5483417401365103/2125286186</string>
     <string name="LEADERBOARD_UNIT_ID">ca-app-pub-5483417401365103/6547746925</string>

@@ -59,7 +59,7 @@
                 android:layout_height="match_parent"
                 android:layout_gravity="center"
                 ads:adSize="LEADERBOARD"
-                ads:adUnitId="ca-app-pub-3940256099942544/6300978111"
+                ads:adUnitId="@string/WEAPON1_UNIT_ID"
 
                 />
 
@@ -168,7 +168,7 @@
                 android:layout_height="match_parent"
                 android:layout_gravity="center"
                 ads:adSize="LEADERBOARD"
-                ads:adUnitId="ca-app-pub-3940256099942544/6300978111"
+                ads:adUnitId="@string/WEAPON2_UNIT_ID"
 
                 />
 
@@ -278,7 +278,7 @@
                 android:layout_height="match_parent"
                 android:layout_gravity="center"
                 ads:adSize="LEADERBOARD"
-                ads:adUnitId="ca-app-pub-3940256099942544/6300978111"
+                ads:adUnitId="@string/WEAPON3_UNIT_ID"
 
                 />
 
