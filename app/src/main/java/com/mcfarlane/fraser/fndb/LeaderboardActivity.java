@@ -73,6 +73,7 @@ public class LeaderboardActivity extends AppCompatActivity {
 
         toolbar = findViewById(R.id.toolbarID);
         setSupportActionBar(toolbar);
+        getSupportActionBar().setTitle("Top 10s");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {

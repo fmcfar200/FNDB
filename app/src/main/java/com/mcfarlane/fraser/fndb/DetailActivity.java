@@ -26,6 +26,7 @@ import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.storage.FileDownloadTask;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
+import com.squareup.picasso.Picasso;
 
 import java.io.File;
 import java.io.IOException;
@@ -123,34 +124,22 @@ public class DetailActivity extends AppCompatActivity {
 
         }
 
-        StorageReference imageStore = FirebaseStorage.getInstance().getReference();
-        final StorageReference imageRef;
-        if (searchType == SeasonSelectActivity.SearchType.BP)
+        Picasso.with(context).load(skin.getImageLinkSmall()).into(imageView);
+        switch(skin.rarity)
         {
-            imageRef = imageStore.child("s" + seasonNo + "_images");
+            case "Epic":
+                imageView.setBackgroundResource(R.color.epicColor);
+                break;
+            case "Legendary":
+                imageView.setBackgroundResource(R.color.legendaryColor);
+                break;
+            case "Rare":
+                imageView.setBackgroundResource(R.color.rareColor);
+                break;
+            case "Uncommon":
+                imageView.setBackgroundResource(R.color.uncommonColor);
+                break;
         }
-        else
-        {
-            imageRef = imageStore.child(searchType.toString().toLowerCase() + "_images");
-        }
 
-        try {
-            final StorageReference fileRef = imageRef.child(skin.imageId + ".JPG");
-            final File localFile = File.createTempFile(skin.imageId.toString(), ".jpg");
-
-            fileRef.getFile(localFile).addOnSuccessListener(new OnSuccessListener<FileDownloadTask.TaskSnapshot>() {
-                @Override
-                public void onSuccess(FileDownloadTask.TaskSnapshot taskSnapshot) {
-                    Bitmap bmp = BitmapFactory.decodeFile(localFile.getAbsolutePath());
-                    imageView.setImageBitmap(null);
-                    imageView.setImageBitmap(bmp);
-
-                }
-            });
-
-
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
     }
 }

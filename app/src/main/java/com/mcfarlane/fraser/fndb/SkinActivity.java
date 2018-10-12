@@ -23,8 +23,6 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-import java.io.IOException;
-import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -68,6 +66,21 @@ public class SkinActivity extends AppCompatActivity {
                 getSupportActionBar().setTitle("Battle Pass S" + seasonNo);
 
             }
+            else if (searchType == SeasonSelectActivity.SearchType.HOLIDAY)
+            {
+                getSupportActionBar().setTitle("Seasonal Skins");
+
+            }
+            else if (searchType == SeasonSelectActivity.SearchType.PROMOTIONAL)
+            {
+                getSupportActionBar().setTitle("Promo Skins");
+
+            }
+            else
+            {
+                getSupportActionBar().setTitle(searchType.toString().toUpperCase() + " Skins");
+
+            }
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
             getSupportActionBar().setDisplayShowHomeEnabled(true);
 
@@ -105,8 +118,12 @@ public class SkinActivity extends AppCompatActivity {
                     String rarity = String.valueOf(item.child("rarity").getValue());
                     String imageID = String.valueOf(item.child("imageId").getValue());
                     String desc = String.valueOf(item.child("dsc").getValue());
+                    String imageLinkSmall = String.valueOf(item.child("imageLinkSmall").getValue());
+
                     //int iImageID = Integer.parseInt(imageID);
                     Skin theSkin = new Skin(id,name,rarity,imageID, desc);
+                    theSkin.setImageLinkSmall(imageLinkSmall);
+
                     skins.add(theSkin);
                 }
 

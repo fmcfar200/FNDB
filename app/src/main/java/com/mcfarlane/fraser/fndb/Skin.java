@@ -3,13 +3,6 @@
  */
 package com.mcfarlane.fraser.fndb;
 
-import android.content.Context;
-import android.graphics.Bitmap;
-import android.graphics.drawable.Icon;
-import android.media.Image;
-import android.support.annotation.NonNull;
-import android.widget.ArrayAdapter;
-
 import java.io.Serializable;
 
 public class Skin implements Serializable
@@ -20,6 +13,7 @@ public class Skin implements Serializable
     public String desc;
     public String imageId;
     public String cost;
+    public String imageLinkSmall;
 
     public Skin(String theId, String theName, String theRarity, String theImageId, String theDesc)
     {
@@ -48,5 +42,12 @@ public class Skin implements Serializable
         }
     }
 
+    public void setImageLinkSmall(String imageLinkSmall) {
+        this.imageLinkSmall = imageLinkSmall;
+    }
+
+    public String getImageLinkSmall() {
+        return imageLinkSmall;
+    }
 }
 

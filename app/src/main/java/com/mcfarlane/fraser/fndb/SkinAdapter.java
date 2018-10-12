@@ -6,13 +6,8 @@ package com.mcfarlane.fraser.fndb;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.graphics.Typeface;
-import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
 import android.widget.Filter;
 import android.widget.Filterable;
@@ -23,6 +18,7 @@ import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.storage.FileDownloadTask;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
+import com.squareup.picasso.Picasso;
 
 import java.io.File;
 import java.io.IOException;
@@ -68,21 +64,6 @@ public class SkinAdapter extends BaseAdapter implements Filterable{
 
     @Override
     public View getView(final int position, View convertView, ViewGroup parent) {
-
-        StorageReference imageStore = FirebaseStorage.getInstance().getReference();
-        final StorageReference imageRef;
-
-        if (type == SeasonSelectActivity.SearchType.BP)
-        {
-            imageRef = imageStore.child("s"+seasonNo+"_images");
-        }
-        else
-        {
-            imageRef = imageStore.child(type.toString().toLowerCase()+"_images");
-
-        }
-
-
         View view = View.inflate(context,layoutId,null);
 
         TextView nameText = view.findViewById(R.id.itemHeading);
@@ -104,20 +85,23 @@ public class SkinAdapter extends BaseAdapter implements Filterable{
         }
 
 
-        try {
-            StorageReference fileRef = imageRef.child(data.get(position).imageId + ".JPG");
-            final File localFile = File.createTempFile(data.get(position).imageId,".jpg");
-            fileRef.getFile(localFile).addOnSuccessListener(new OnSuccessListener<FileDownloadTask.TaskSnapshot>() {
-                @Override
-                public void onSuccess(FileDownloadTask.TaskSnapshot taskSnapshot) {
-                    Bitmap bmp = BitmapFactory.decodeFile(localFile.getAbsolutePath());
-                    icon.setImageBitmap(bmp);
-                    return; }});
-            }
-            catch (IOException e)
-            {
-                e.printStackTrace();
-            }
+        Picasso.with(context).load(data.get(position).getImageLinkSmall()).into(icon);
+
+        switch(data.get(position).rarity)
+        {
+            case "Epic":
+                icon.setBackgroundResource(R.color.epicColor);
+                break;
+            case "Legendary":
+                icon.setBackgroundResource(R.color.legendaryColor);
+                break;
+            case "Rare":
+                icon.setBackgroundResource(R.color.rareColor);
+                break;
+            case "Uncommon":
+                icon.setBackgroundResource(R.color.uncommonColor);
+                break;
+        }
 
 
 
