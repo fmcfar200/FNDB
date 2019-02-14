@@ -2,14 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.mcfarlane.fraser.fndb">
 
-    <uses-permission android:name="android.permission.INTERNET" ></uses-permission>
-    <uses-permission android:name="android.vending.BILLING"></uses-permission>
-
-    <supports-screens android:smallScreens="true"
-        android:normalScreens="true"
-        android:largeScreens="true"
-        android:xlargeScreens="false"
-        android:anyDensity="true" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.vending.BILLING" />
 
     <application
         android:allowBackup="true"
@@ -50,7 +44,6 @@
         <activity android:name=".WeaponsActivity" android:screenOrientation="portrait"/>
         <activity
             android:name=".PopActivity"
-            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.Pop" />
         <activity android:name=".ChallengesActivity" android:screenOrientation="portrait" />
         <activity android:name=".LeaderboardActivity" android:screenOrientation="portrait" />

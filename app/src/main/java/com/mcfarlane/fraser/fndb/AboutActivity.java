@@ -10,6 +10,8 @@ import android.app.PendingIntent;
 import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -19,6 +21,7 @@ import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 import com.anjlab.android.iab.v3.BillingProcessor;
 import com.anjlab.android.iab.v3.PurchaseInfo;
@@ -29,7 +32,8 @@ import com.anjlab.android.iab.v3.TransactionDetails;
 public class AboutActivity extends AppCompatActivity implements View.OnClickListener, BillingProcessor.IBillingHandler {
 
     Toolbar toolbar;
-    Button supportButton, removeAdsButton, rateButton;
+    TextView versionText;
+    Button supportButton, removeAdsButton, rateButton, privacyButton;
 
     BillingProcessor bp;
 
@@ -64,13 +68,15 @@ public class AboutActivity extends AppCompatActivity implements View.OnClickList
             });
         }
 
-
+        versionText = findViewById(R.id.versionText);
         supportButton = findViewById(R.id.supportButton);
         removeAdsButton = findViewById(R.id.removeAdsButton);
+        privacyButton = findViewById(R.id.privacyPolicyButton);
         rateButton = findViewById(R.id.rateUsButton);
         supportButton.setOnClickListener(this);
         removeAdsButton.setOnClickListener(this);
         rateButton.setOnClickListener(this);
+        privacyButton.setOnClickListener(this);
 
         bp = new BillingProcessor(this, getString(R.string.BASE64KEY), this);
         bp.initialize();
@@ -97,18 +103,32 @@ public class AboutActivity extends AppCompatActivity implements View.OnClickList
         {
             StartRemoveAds();
         }
+
+        try {
+            PackageInfo pInfo = getApplicationContext().getPackageManager().getPackageInfo(getPackageName(), 0);
+            String version = pInfo.versionName;
+            int versionCode = pInfo.versionCode;
+            versionText.setText("Version: " + version + "(" + versionCode + ")");
+        } catch (PackageManager.NameNotFoundException e) {
+            e.printStackTrace();
+        }
     }
 
     @Override
     public void onClick(View v)
     {
         if (v == supportButton){StartSupportIntent();}
-        if(v == removeAdsButton)
-        {
-            StartRemoveAds();
-        }
+        if(v == removeAdsButton){ StartRemoveAds(); }
         if(v == rateButton){StartRateIntent();}
+        if (v == privacyButton){OpenPrivacyPolicy();}
 
+    }
+
+    private void OpenPrivacyPolicy()
+    {
+        Uri uri = Uri.parse("https://sites.google.com/view/ultimate-fortnite-companion/privacy-policy");
+        Intent goToURL = new Intent(Intent.ACTION_VIEW, uri);
+        startActivity(goToURL);
     }
 
     private void StartRateIntent()

@@ -1,0 +1,326 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".WeaponsActivity"
+    android:background="@drawable/background_original_cut"
+    android:orientation="vertical">
+
+    <include layout="@layout/app_toolbar"></include>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="10dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorPrimaryDarkAlpha">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="4dp"
+
+                    android:fontFamily="@font/luckiestguy"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="22dp"
+                    android:autoSizeTextType="uniform"
+                    android:background="@color/greyishBlue"
+                    android:text="Assault Rifles"
+                    />
+
+
+            </LinearLayout>
+
+            <com.mcfarlane.fraser.fndb.ExpandableHeightGridView
+                android:id="@+id/assaultGrid"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:horizontalSpacing="10dp"
+                android:verticalSpacing="10dp"
+                android:gravity="center"
+                android:numColumns="4"
+                android:layout_marginBottom="20dp"
+                >
+            </com.mcfarlane.fraser.fndb.ExpandableHeightGridView>
+
+            <com.google.android.gms.ads.AdView xmlns:ads="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/adView"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                ads:adSize="BANNER"
+                ads:adUnitId="@string/WEAPON1_UNIT_ID"
+
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"
+                android:background="@color/colorPrimaryDarkAlpha">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="4dp"
+
+                    android:fontFamily="@font/luckiestguy"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="22dp"
+                    android:autoSizeTextType="uniform"
+                    android:background="@color/greyishBlue"
+                    android:text="Heavy Machine Guns"
+                    />
+
+
+            </LinearLayout>
+            <com.mcfarlane.fraser.fndb.ExpandableHeightGridView
+                android:id="@+id/heavyGrid"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:horizontalSpacing="10dp"
+                android:verticalSpacing="10dp"
+                android:gravity="center"
+                android:numColumns="4"
+                >
+            </com.mcfarlane.fraser.fndb.ExpandableHeightGridView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"
+                android:background="@color/colorPrimaryDarkAlpha">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="4dp"
+
+                    android:fontFamily="@font/luckiestguy"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="22dp"
+                    android:autoSizeTextType="uniform"
+                    android:background="@color/greyishBlue"
+                    android:text="Shotguns"
+                    />
+
+
+            </LinearLayout>
+
+            <com.mcfarlane.fraser.fndb.ExpandableHeightGridView
+                android:id="@+id/shotgunGrid"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:horizontalSpacing="10dp"
+                android:verticalSpacing="10dp"
+                android:gravity="center"
+                android:numColumns="4"
+                >
+            </com.mcfarlane.fraser.fndb.ExpandableHeightGridView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"
+                android:background="@color/colorPrimaryDarkAlpha">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="4dp"
+
+                    android:fontFamily="@font/luckiestguy"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="22dp"
+                    android:autoSizeTextType="uniform"
+                    android:background="@color/greyishBlue"
+                    android:text="SMG"
+                    />
+
+
+            </LinearLayout>
+
+            <com.mcfarlane.fraser.fndb.ExpandableHeightGridView
+                android:id="@+id/smgGrid"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:horizontalSpacing="10dp"
+                android:verticalSpacing="10dp"
+                android:gravity="center"
+                android:numColumns="4"
+                android:layout_marginBottom="20dp"
+                >
+            </com.mcfarlane.fraser.fndb.ExpandableHeightGridView>
+
+            <com.google.android.gms.ads.AdView xmlns:ads="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/adView1"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                ads:adSize="BANNER"
+                ads:adUnitId="@string/WEAPON2_UNIT_ID"
+
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"
+                android:background="@color/colorPrimaryDarkAlpha">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="4dp"
+
+                    android:fontFamily="@font/luckiestguy"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="22dp"
+                    android:autoSizeTextType="uniform"
+                    android:background="@color/greyishBlue"
+                    android:text="Pistols &amp; Revolvers"
+                    />
+
+
+            </LinearLayout>
+
+            <com.mcfarlane.fraser.fndb.ExpandableHeightGridView
+                android:id="@+id/pistolGrid"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:horizontalSpacing="10dp"
+                android:verticalSpacing="10dp"
+                android:gravity="center"
+                android:numColumns="4"
+                >
+            </com.mcfarlane.fraser.fndb.ExpandableHeightGridView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"
+                android:background="@color/colorPrimaryDarkAlpha">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="4dp"
+
+                    android:fontFamily="@font/luckiestguy"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="22dp"
+                    android:autoSizeTextType="uniform"
+                    android:background="@color/greyishBlue"
+                    android:text="Sniper Rifles"
+                    />
+
+
+            </LinearLayout>
+
+            <com.mcfarlane.fraser.fndb.ExpandableHeightGridView
+                android:id="@+id/sniperGrid"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:horizontalSpacing="10dp"
+                android:verticalSpacing="10dp"
+                android:gravity="center"
+                android:numColumns="4"
+                >
+            </com.mcfarlane.fraser.fndb.ExpandableHeightGridView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"
+                android:background="@color/colorPrimaryDarkAlpha">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="4dp"
+
+                    android:fontFamily="@font/luckiestguy"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="22dp"
+                    android:autoSizeTextType="uniform"
+                    android:background="@color/greyishBlue"
+                    android:text="Launchers"
+                    />
+
+
+            </LinearLayout>
+
+            <com.mcfarlane.fraser.fndb.ExpandableHeightGridView
+                android:id="@+id/launcherGrid"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:horizontalSpacing="10dp"
+                android:verticalSpacing="10dp"
+                android:gravity="center"
+                android:numColumns="4"
+                android:layout_marginBottom="20dp"
+                >
+            </com.mcfarlane.fraser.fndb.ExpandableHeightGridView>
+
+            <com.google.android.gms.ads.AdView xmlns:ads="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/adView2"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                ads:adSize="BANNER"
+                ads:adUnitId="@string/WEAPON3_UNIT_ID"
+
+                />
+
+            <LinearLayout
+                android:id="@+id/otherText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"
+                android:background="@color/colorPrimaryDarkAlpha">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="4dp"
+
+                    android:fontFamily="@font/luckiestguy"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="22dp"
+                    android:autoSizeTextType="uniform"
+                    android:background="@color/greyishBlue"
+                    android:text="Other Weapons"
+                    />
+
+
+            </LinearLayout>
+
+            <com.mcfarlane.fraser.fndb.ExpandableHeightGridView
+                android:id="@+id/otherGrid"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:horizontalSpacing="10dp"
+                android:verticalSpacing="10dp"
+                android:gravity="center"
+                android:numColumns="4"
+                >
+            </com.mcfarlane.fraser.fndb.ExpandableHeightGridView>
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+
+</LinearLayout>
