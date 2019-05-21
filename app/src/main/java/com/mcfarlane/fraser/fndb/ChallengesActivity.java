@@ -29,6 +29,8 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
@@ -85,12 +87,16 @@ public class ChallengesActivity extends AppCompatActivity {
 
         @Override
         protected List<Challenge> doInBackground(Void... voids) {
-            List<Challenge> challenges = new ArrayList<>();
+            List<Challenge> challengeArrayList = new ArrayList<>();
 
             try {
-                URL endpoint = new URL("https://api.fortnitetracker.com/v1/challenges");
+                String urlString = "https://fortnite-public-api.theapinetwork.com/prod09/challenges/get?season=current";
+                URL url = new URL(urlString);
+                URI uri = new URI(url.getProtocol(), url.getUserInfo(), url.getHost(), url.getPort(), url.getPath(), url.getQuery(), url.getRef());
+                URL endpoint = uri.toURL();
+
+
                 HttpURLConnection connection = (HttpURLConnection) endpoint.openConnection();
-                connection.setRequestProperty("TRN-Api-Key", getString(R.string.TRACKER_API_KEY));
 
                 if (connection.getResponseCode() == 200)
                 {
@@ -104,39 +110,27 @@ public class ChallengesActivity extends AppCompatActivity {
                     }
 
                     JSONObject object = new JSONObject(jsonString.toString());
-                    JSONArray itemsArray = object.getJSONArray("items");
+                    int currentWeek = object.getInt("currentweek");
+                    String rewardPictureURL = object.getString("star");
+
+                    JSONObject challenges = object.getJSONObject("challenges");
+                    JSONArray itemsArray = challenges.getJSONArray("week"+String.valueOf(currentWeek));
+                    Log.d("Week OBJECT", " " + itemsArray.toString());
+
                     for(int i = 0; i < itemsArray.length();i++)
                     {
-                        JSONObject itemObject = itemsArray.getJSONObject(i);
-                        JSONArray metadataArray = itemObject.getJSONArray("metadata");
-                        String name = null, questTotal = null, rewardAmount = null, rewardPictureURL = null;
-                        for (int j = 0; j < metadataArray.length(); j++)
-                        {
-                            JSONObject KVObject = metadataArray.getJSONObject(j);
-                            String key = KVObject.get("key").toString();
-                            if(key.equals("name"))
-                            {
-                                name = KVObject.getString("value");
-                            }
-                            if(key.equals("questsTotal"))
-                            {
-                                questTotal = KVObject.getString("value");
-                            }
-                            if(key.equals("rewardPictureUrl"))
-                            {
-                                rewardPictureURL = KVObject.getString("value");
-                            }
-                            if(key.equals("rewardName"))
-                            {
-                                rewardAmount = KVObject.getString("value");
-                            }
-                        }
+                        String name = null, questTotal = null, rewardAmount = null;
+                        JSONObject theChallenge = itemsArray.getJSONObject(i);
+                        name = theChallenge.getString("challenge");
+                        questTotal = String.valueOf(theChallenge.getInt("total"));
+                        rewardAmount = String.valueOf(theChallenge.getInt("stars"));
+
 
                         Challenge challenge = new Challenge(name,questTotal,rewardAmount);
                         challenge.setRewardImageURL(rewardPictureURL);
                         Log.e("TAG", "onPostExecute: " + challenge.getRewardAmount());
 
-                        challenges.add(challenge);
+                        challengeArrayList.add(challenge);
                     }
                 }
                 else
@@ -148,9 +142,11 @@ public class ChallengesActivity extends AppCompatActivity {
                 e.printStackTrace();
             } catch (JSONException e) {
                 e.printStackTrace();
+            } catch (URISyntaxException e) {
+                e.printStackTrace();
             }
 
-            return challenges;
+            return challengeArrayList;
         }
 
         @Override

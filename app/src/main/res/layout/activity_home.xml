@@ -134,7 +134,9 @@
                             android:maxLines="1"
 
                             android:layout_marginStart="10dp"
-                            android:drawableStart="@drawable/ic_scar_50dp" />
+                            android:drawableStart="@drawable/ic_scar_50dp"
+
+                            />
 
                         <Button
                             android:id="@+id/leaderboardButton"

@@ -22,6 +22,8 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
@@ -85,10 +87,12 @@ public class NewsActivity extends AppCompatActivity{
         {
             List<News> theNewsList = new ArrayList<>();
             try {
-                URL endpoint = new URL("https://fortnite-public-api.theapinetwork.com/prod09/br_motd/get");
+                String urlString = "https://fortnite-public-api.theapinetwork.com/prod09/br_motd/get?language=en";
+                URL url = new URL(urlString);
+                URI uri = new URI(url.getProtocol(), url.getUserInfo(), url.getHost(), url.getPort(), url.getPath(), url.getQuery(), url.getRef());
+                URL endpoint = uri.toURL();
                 HttpURLConnection connection = (HttpURLConnection) endpoint.openConnection();
-                connection.setRequestMethod("POST");
-                connection.setRequestProperty("Authorization", getString(R.string.FORTNITE_API_KEY));
+                connection.setRequestMethod("GET");
 
                 if (connection.getResponseCode() == 200)
                 {
@@ -119,12 +123,14 @@ public class NewsActivity extends AppCompatActivity{
                 }
                 else
                 {
-                    Log.e("TEST FAIL", "FAIL");
+                    Log.e("TEST FAIL", "FAIL" + connection.getResponseCode() + ":" + connection.getResponseCode());
 
                 }
             } catch (IOException e) {
                 e.printStackTrace();
             } catch (JSONException e) {
+                e.printStackTrace();
+            } catch (URISyntaxException e) {
                 e.printStackTrace();
             }
 
