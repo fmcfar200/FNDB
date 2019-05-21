@@ -304,6 +304,54 @@
 
                     </LinearLayout>
 
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:weightSum="2">
+
+                        <Button
+                            android:id="@+id/s9Skins"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="10dp"
+                            android:padding="15dp"
+                            android:layout_weight="1"
+
+                            android:background="@color/greyishBlue"
+                            android:fontFamily="@font/luckiestguy"
+                            android:textColor="@color/colorWhite"
+                            android:textSize="50sp"
+                            android:autoSizeTextType="uniform"
+                            android:maxLines="1"
+                            android:text="#9">
+
+                        </Button>
+
+                        <Button
+                            android:id="@+id/s10Skins"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="10dp"
+                            android:padding="15dp"
+                            android:layout_weight="1"
+
+                            android:background="@color/greyishBlue"
+                            android:fontFamily="@font/luckiestguy"
+                            android:textColor="@color/colorWhite"
+                            android:textSize="50sp"
+                            android:autoSizeTextType="uniform"
+                            android:maxLines="1"
+                            android:text="#10"
+                            android:clickable="false">
+
+                        </Button>
+
+                    </LinearLayout>
+
+
+
                 </LinearLayout>
 
 

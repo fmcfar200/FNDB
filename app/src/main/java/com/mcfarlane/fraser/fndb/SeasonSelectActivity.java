@@ -29,7 +29,7 @@ public class SeasonSelectActivity extends BaseActivity implements View.OnClickLi
 
     Toolbar toolbar;
 
-    private Button s1Button, s2Button, s3Button, s4Button, s5Button, s6Button, s7Button, s8Button, battlePassButton,
+    private Button s1Button, s2Button, s3Button, s4Button, s5Button, s6Button, s7Button, s8Button, s9Button, battlePassButton,
     itemShopButton,promoButton, holidayButton,uncommonButton, rareButton, epicButton, legendaryButton;
 
     private ViewFlipper layoutFlipper;
@@ -66,6 +66,7 @@ public class SeasonSelectActivity extends BaseActivity implements View.OnClickLi
         s6Button = findViewById(R.id.s6Skins);
         s7Button = findViewById(R.id.s7Skins);
         s8Button = findViewById(R.id.s8Skins);
+        s9Button = findViewById(R.id.s9Skins);
         battlePassButton = findViewById(R.id.battlePassButton);
         itemShopButton = findViewById(R.id.shopSkins);
         promoButton = findViewById(R.id.promoSkins);
@@ -84,6 +85,7 @@ public class SeasonSelectActivity extends BaseActivity implements View.OnClickLi
         s6Button.setOnClickListener(this);
         s7Button.setOnClickListener(this);
         s8Button.setOnClickListener(this);
+        s9Button.setOnClickListener(this);
         battlePassButton.setOnClickListener(this);
         itemShopButton.setOnClickListener(this);
         promoButton.setOnClickListener(this);
@@ -241,6 +243,11 @@ public class SeasonSelectActivity extends BaseActivity implements View.OnClickLi
         else if (v==s8Button)
         {
             season = 8;
+            StartListActivity(season,searchType);
+        }
+        else if (v==s9Button)
+        {
+            season = 9;
             StartListActivity(season,searchType);
         }
 
