@@ -10,14 +10,17 @@ import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.text.Layout;
 import android.util.Log;
 import android.view.View;
 import android.support.v7.widget.Toolbar;
 import android.widget.AdapterView;
-import android.widget.TextView;
 
 import com.google.android.gms.ads.AdView;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -37,14 +40,32 @@ public class WeaponsActivity extends AppCompatActivity implements AdapterView.On
     Toolbar toolbar;
     ProgressDialog dialog;
 
-    ExpandableHeightGridView assaultGridView, heavyGridView, shotgunGrid,
-    smgGrid, pistolGrid, sniperGrid, launcherGrid, otherGrid;
+    ExpandableHeightGridView assaultGridView, machineGridView, shotgunGridView,
+    smgGridView, pistolGridView, sniperGridView, explosiveGridView;
+
+    List<Weapon> assaultWeaponsList;
+    List<Weapon> machineWeaponList;
+    List<Weapon> shotgunWeaponList;
+    List<Weapon> smgWeaponList;
+    List<Weapon> pistolWeaponsList;
+    List<Weapon> sniperWeaponsList;
+    List<Weapon> explosiveWeaponsList;
+
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_weapons);
+
+        assaultWeaponsList = new ArrayList<Weapon>();
+        machineWeaponList = new ArrayList<Weapon>();
+        shotgunWeaponList = new ArrayList<Weapon>();
+        smgWeaponList = new ArrayList<Weapon>();
+        pistolWeaponsList = new ArrayList<Weapon>();
+        sniperWeaponsList = new ArrayList<Weapon>();
+        explosiveWeaponsList = new ArrayList<Weapon>();
+
 
         List<AdView> adsList = new ArrayList<>();
         AdView adView = findViewById(R.id.adView);
@@ -81,36 +102,59 @@ public class WeaponsActivity extends AppCompatActivity implements AdapterView.On
         assaultGridView.setOnItemClickListener(this);
         assaultGridView.setExpanded(true);
 
-        heavyGridView = findViewById(R.id.heavyGrid);
-        heavyGridView.setOnItemClickListener(this);
-        heavyGridView.setExpanded(true);
+        machineGridView = findViewById(R.id.machineGrid);
+        machineGridView.setOnItemClickListener(this);
+        machineGridView.setExpanded(true);
 
-        shotgunGrid = findViewById(R.id.shotgunGrid);
-        shotgunGrid.setOnItemClickListener(this);
-        shotgunGrid.setExpanded(true);
+        shotgunGridView = findViewById(R.id.shotgunGrid);
+        shotgunGridView.setOnItemClickListener(this);
+        shotgunGridView.setExpanded(true);
 
-        smgGrid = findViewById(R.id.smgGrid);
-        smgGrid.setOnItemClickListener(this);
-        smgGrid.setExpanded(true);
+        smgGridView = findViewById(R.id.smgGrid);
+        smgGridView.setOnItemClickListener(this);
+        smgGridView.setExpanded(true);
 
-        pistolGrid = findViewById(R.id.pistolGrid);
-        pistolGrid.setOnItemClickListener(this);
-        pistolGrid.setExpanded(true);
+        pistolGridView = findViewById(R.id.pistolGrid);
+        pistolGridView.setOnItemClickListener(this);
+        pistolGridView.setExpanded(true);
 
-        sniperGrid = findViewById(R.id.sniperGrid);
-        sniperGrid.setOnItemClickListener(this);
-        sniperGrid.setExpanded(true);
+        sniperGridView = findViewById(R.id.sniperGrid);
+        sniperGridView.setOnItemClickListener(this);
+        sniperGridView.setExpanded(true);
 
-        launcherGrid = findViewById(R.id.launcherGrid);
-        launcherGrid.setOnItemClickListener(this);
-        launcherGrid.setExpanded(true);
+        explosiveGridView = findViewById(R.id.explosiveGrid);
+        explosiveGridView.setOnItemClickListener(this);
+        explosiveGridView.setExpanded(true);
 
-        otherGrid = findViewById(R.id.otherGrid);
-        otherGrid.setOnItemClickListener(this);
-        otherGrid.setExpanded(true);
 
+
+        final FirebaseDatabase database = FirebaseDatabase.getInstance();
+        final DatabaseReference dataRef;
+        dataRef = database.getReference("Weapons");
+
+        final DatabaseReference assaultReference = dataRef.child("Assault Weapons");
+        final DatabaseReference explosiveReference = dataRef.child("Explosive Weapons");
+        final DatabaseReference machineReference = dataRef.child("Machine Guns");
+        final DatabaseReference pistolReference = dataRef.child("Pistols");
+        final DatabaseReference smgReference = dataRef.child("SMGs");
+        final DatabaseReference shotgunReference = dataRef.child("Shotguns");
+        final DatabaseReference sniperReference = dataRef.child("Sniper Rifles");
+
+        GetFirebaseWeapons(assaultReference,assaultWeaponsList,assaultGridView);
+        GetFirebaseWeapons(explosiveReference,explosiveWeaponsList,explosiveGridView);
+        GetFirebaseWeapons(machineReference,machineWeaponList,machineGridView);
+        GetFirebaseWeapons(pistolReference,pistolWeaponsList,pistolGridView);
+        GetFirebaseWeapons(smgReference,smgWeaponList,smgGridView);
+        GetFirebaseWeapons(shotgunReference,shotgunWeaponList,shotgunGridView);
+        GetFirebaseWeapons(sniperReference,sniperWeaponsList,sniperGridView);
+
+
+
+
+        /*
         WeaponsFetch fetch = new WeaponsFetch();
         fetch.execute();
+        */
 
         /*
         assaultGridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -120,6 +164,47 @@ public class WeaponsActivity extends AppCompatActivity implements AdapterView.On
             }
         });
         */
+    }
+
+    private void GetFirebaseWeapons(DatabaseReference reference, final List<Weapon> weaponArrayList, final ExpandableHeightGridView gridView)
+    {
+        reference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                for(DataSnapshot item: dataSnapshot.getChildren())
+                {
+
+                    String name = String.valueOf(item.child("name").getValue());
+                    String rarity = String.valueOf(item.child("rarity").getValue());
+                    String imageLinkSmall = String.valueOf(item.child("images").child("image").getValue());
+
+                    double DPS = Double.valueOf(item.child("stats").child("DPS").getValue().toString());
+                    int damage = Integer.valueOf(item.child("stats").child("Damage").getValue().toString());
+                    Double fireRate = Double.valueOf(item.child("stats").child("Fire Rate").getValue().toString());
+                    int magSize = Integer.valueOf(item.child("stats").child("Magazine Size").getValue().toString());
+                    double reloadTime = Double.valueOf(item.child("stats").child("Reload Time").getValue().toString());
+                    int structureDamage = Integer.valueOf(item.child("stats").child("Structure Damage").getValue().toString());
+
+
+                    //test stats
+                    WeaponStats stats = new WeaponStats(new Damage(damage,damage),DPS,fireRate,new Magazine(reloadTime,magSize),1);
+
+                    //test weapon
+                    Weapon weapon = new Weapon(name,rarity,imageLinkSmall,imageLinkSmall,stats);
+
+                    weaponArrayList.add(weapon);
+                }
+
+                WeaponsAdapter testAdapter = new WeaponsAdapter(getApplicationContext(),R.layout.grid_weapon_item,weaponArrayList);
+                gridView.setAdapter(testAdapter);
+
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
     }
 
     @Override
@@ -273,33 +358,23 @@ public class WeaponsActivity extends AppCompatActivity implements AdapterView.On
             assaultGridView.setAdapter(assaultAdapter);
 
             WeaponsAdapter heavyAdapter = new WeaponsAdapter(getApplicationContext(),R.layout.grid_weapon_item,heavy);
-            heavyGridView.setAdapter(heavyAdapter);
+            machineGridView.setAdapter(heavyAdapter);
 
             WeaponsAdapter shotgunAdapter = new WeaponsAdapter(getApplicationContext(),R.layout.grid_weapon_item,shotgun);
-            shotgunGrid.setAdapter(shotgunAdapter);
+            shotgunGridView.setAdapter(shotgunAdapter);
 
             WeaponsAdapter smgAdapter = new WeaponsAdapter(getApplicationContext(),R.layout.grid_weapon_item,smg);
-            smgGrid.setAdapter(smgAdapter);
+            smgGridView.setAdapter(smgAdapter);
 
             WeaponsAdapter pistolAdapter = new WeaponsAdapter(getApplicationContext(),R.layout.grid_weapon_item,pistol);
-            pistolGrid.setAdapter(pistolAdapter);
+            pistolGridView.setAdapter(pistolAdapter);
 
             WeaponsAdapter sniperAdapter = new WeaponsAdapter(getApplicationContext(),R.layout.grid_weapon_item,sniper);
-            sniperGrid.setAdapter(sniperAdapter);
+            sniperGridView.setAdapter(sniperAdapter);
 
             WeaponsAdapter launcherAdapter = new WeaponsAdapter(getApplicationContext(),R.layout.grid_weapon_item,launcher);
-            launcherGrid.setAdapter(launcherAdapter);
+            explosiveGridView.setAdapter(launcherAdapter);
 
-            if (other.size() != 0)
-            {
-                WeaponsAdapter otherAdapter = new WeaponsAdapter(getApplicationContext(),R.layout.grid_weapon_item,other);
-                otherGrid.setAdapter(otherAdapter);
-            }
-            else if (other.isEmpty())
-            {
-                View otherText = findViewById(R.id.otherText);
-                otherText.setVisibility(View.INVISIBLE);
-            }
 
 
             dialog.dismiss();

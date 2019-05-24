@@ -60,12 +60,31 @@ public class PopActivity extends Activity {
 
             Picasso.with(getApplicationContext()).load(weapon.getBacgroundURL()).into(imageView);
 
+            switch(weapon.getRarity())
+            {
+                case "Epic":
+                    imageView.setBackgroundResource(R.color.epicColor);
+                    break;
+                case "Legendary":
+                    imageView.setBackgroundResource(R.color.legendaryColor);
+                    break;
+                case "Rare":
+                    imageView.setBackgroundResource(R.color.rareColor);
+                    break;
+                case "Uncommon":
+                    imageView.setBackgroundResource(R.color.uncommonColor);
+                    break;
+                case "Common":
+                    imageView.setBackgroundResource(R.color.darkGrey);
+                    break;
+            }
+
 
             nameText.setText(weapon.getName());
             rarityText.setText(weapon.getRarity());
             double body = weapon.getStats().getDamage().getBody();
             double head = weapon.getStats().getDamage().getHead();
-            damageText.setText("Body: " + String.valueOf(body) + "  Head: " + String.valueOf(head));
+            damageText.setText("Body: " + String.valueOf(body));
             dpsText.setText(String.valueOf(weapon.getStats().getDps()));
             fireRateText.setText(String.valueOf(weapon.getStats().getFirerate()));
             reloadTimeText.setText(String.valueOf(weapon.getStats().getMagazine().getReload()));

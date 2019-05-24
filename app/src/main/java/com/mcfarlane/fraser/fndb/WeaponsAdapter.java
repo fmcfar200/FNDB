@@ -56,6 +56,25 @@ public class WeaponsAdapter extends BaseAdapter
         ImageView imageView = view.findViewById(R.id.weaponImage);
         Picasso.with(mContext).load(data.get(position).getBacgroundURL()).into(imageView);
 
+        switch(data.get(position).getRarity())
+        {
+            case "Epic":
+                imageView.setBackgroundResource(R.color.epicColor);
+                break;
+            case "Legendary":
+                imageView.setBackgroundResource(R.color.legendaryColor);
+                break;
+            case "Rare":
+                imageView.setBackgroundResource(R.color.rareColor);
+                break;
+            case "Uncommon":
+                imageView.setBackgroundResource(R.color.uncommonColor);
+                break;
+            case "Common":
+                imageView.setBackgroundResource(R.color.darkGrey);
+                break;
+        }
+
         view.setTag(data.get(position));
         return view;
     }

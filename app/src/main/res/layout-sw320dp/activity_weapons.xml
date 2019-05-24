@@ -35,7 +35,7 @@
                     android:textSize="22dp"
                     android:autoSizeTextType="uniform"
                     android:background="@color/greyishBlue"
-                    android:text="Assault Rifles"
+                    android:text="Assault Weapons"
                     />
 
 
@@ -79,13 +79,13 @@
                     android:textSize="22dp"
                     android:autoSizeTextType="uniform"
                     android:background="@color/greyishBlue"
-                    android:text="Heavy Machine Guns"
+                    android:text="Machine Guns"
                     />
 
 
             </LinearLayout>
             <com.mcfarlane.fraser.fndb.ExpandableHeightGridView
-                android:id="@+id/heavyGrid"
+                android:id="@+id/machineGrid"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:horizontalSpacing="10dp"
@@ -111,40 +111,7 @@
                     android:textSize="22dp"
                     android:autoSizeTextType="uniform"
                     android:background="@color/greyishBlue"
-                    android:text="Shotguns"
-                    />
-
-
-            </LinearLayout>
-
-            <com.mcfarlane.fraser.fndb.ExpandableHeightGridView
-                android:id="@+id/shotgunGrid"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:horizontalSpacing="10dp"
-                android:verticalSpacing="10dp"
-                android:gravity="center"
-                android:numColumns="4"
-                >
-            </com.mcfarlane.fraser.fndb.ExpandableHeightGridView>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="50dp"
-                android:background="@color/colorPrimaryDarkAlpha">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:padding="4dp"
-
-                    android:fontFamily="@font/luckiestguy"
-                    android:textColor="@color/colorWhite"
-                    android:textSize="22dp"
-                    android:autoSizeTextType="uniform"
-                    android:background="@color/greyishBlue"
-                    android:text="SMG"
+                    android:text="SMGs"
                     />
 
 
@@ -152,6 +119,39 @@
 
             <com.mcfarlane.fraser.fndb.ExpandableHeightGridView
                 android:id="@+id/smgGrid"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:horizontalSpacing="10dp"
+                android:verticalSpacing="10dp"
+                android:gravity="center"
+                android:numColumns="4"
+                >
+            </com.mcfarlane.fraser.fndb.ExpandableHeightGridView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"
+                android:background="@color/colorPrimaryDarkAlpha">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="4dp"
+
+                    android:fontFamily="@font/luckiestguy"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="22dp"
+                    android:autoSizeTextType="uniform"
+                    android:background="@color/greyishBlue"
+                    android:text="Pistols"
+                    />
+
+
+            </LinearLayout>
+
+            <com.mcfarlane.fraser.fndb.ExpandableHeightGridView
+                android:id="@+id/pistolGrid"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:horizontalSpacing="10dp"
@@ -188,14 +188,14 @@
                     android:textSize="22dp"
                     android:autoSizeTextType="uniform"
                     android:background="@color/greyishBlue"
-                    android:text="Pistols &amp; Revolvers"
+                    android:text="Shotguns"
                     />
 
 
             </LinearLayout>
 
             <com.mcfarlane.fraser.fndb.ExpandableHeightGridView
-                android:id="@+id/pistolGrid"
+                android:id="@+id/shotgunGrid"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:horizontalSpacing="10dp"
@@ -254,14 +254,14 @@
                     android:textSize="22dp"
                     android:autoSizeTextType="uniform"
                     android:background="@color/greyishBlue"
-                    android:text="Launchers"
+                    android:text="Explosive Weapons"
                     />
 
 
             </LinearLayout>
 
             <com.mcfarlane.fraser.fndb.ExpandableHeightGridView
-                android:id="@+id/launcherGrid"
+                android:id="@+id/explosiveGrid"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:horizontalSpacing="10dp"
@@ -282,39 +282,6 @@
 
                 />
 
-            <LinearLayout
-                android:id="@+id/otherText"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="50dp"
-                android:background="@color/colorPrimaryDarkAlpha">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:padding="4dp"
-
-                    android:fontFamily="@font/luckiestguy"
-                    android:textColor="@color/colorWhite"
-                    android:textSize="22dp"
-                    android:autoSizeTextType="uniform"
-                    android:background="@color/greyishBlue"
-                    android:text="Other Weapons"
-                    />
-
-
-            </LinearLayout>
-
-            <com.mcfarlane.fraser.fndb.ExpandableHeightGridView
-                android:id="@+id/otherGrid"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:horizontalSpacing="10dp"
-                android:verticalSpacing="10dp"
-                android:gravity="center"
-                android:numColumns="4"
-                >
-            </com.mcfarlane.fraser.fndb.ExpandableHeightGridView>
 
 
         </LinearLayout>

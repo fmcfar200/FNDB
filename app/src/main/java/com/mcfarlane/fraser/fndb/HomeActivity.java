@@ -114,8 +114,7 @@ public class HomeActivity extends BaseActivity implements View.OnClickListener{
         if (v ==skinBtn) { StartActivity(SeasonSelectActivity.class); }
         if (v == statsButton) { StartActivity(PlayerStatsActivity.class); }
         if (v == newsButton) { StartActivity(NewsActivity.class); }
-        if (v == weaponButton) { Toast.makeText(this,"Coming Back Soon", Toast.LENGTH_LONG).show();}
-            // StartActivity(WeaponsActivity.class)
+        if (v == weaponButton) { StartActivity(WeaponsActivity.class);}
         if (v == challengeButton) { StartActivity(ChallengesActivity.class); }
         if (v == leaderboardButton) { Toast.makeText(this,"Currently Unavailable", Toast.LENGTH_LONG).show();}
             //StartActivity(LeaderboardActivity.class);
